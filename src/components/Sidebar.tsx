@@ -4,7 +4,7 @@ import { useApartmentStore } from "@/store/apartmentStore";
 import { Plus, Building2, MapPin, Star, ArrowUpDown, Pencil } from "lucide-react";
 import { useState } from "react";
 
-export default function Sidebar({ onAddClick, onEditClick }: { onAddClick: () => void, onEditClick: (id: string) => void }) {
+export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAddClick: () => void, onEditClick: (id: string) => void, onViewClick: (id: string) => void }) {
   const { apartments } = useApartmentStore();
   const [sortBy, setSortBy] = useState<"rent" | "rating" | "name">("rent");
 
@@ -60,12 +60,16 @@ export default function Sidebar({ onAddClick, onEditClick }: { onAddClick: () =>
           sortedApartments.map((apt) => (
             <div
               key={apt.id}
-              className="group p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/10 transition-all relative"
+              onClick={() => onViewClick(apt.id)}
+              className="cursor-pointer group p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/10 transition-all relative"
             >
               <div className="flex justify-between items-start mb-2">
                 <h3 className="font-semibold text-gray-100 group-hover:text-white transition-colors">{apt.name}</h3>
                 <div className="flex items-center gap-3">
-                  <button onClick={() => onEditClick(apt.id)} className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-white transition-all">
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); onEditClick(apt.id); }} 
+                    className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-white transition-all"
+                  >
                     <Pencil className="w-3.5 h-3.5" />
                   </button>
                   <div className="flex gap-0.5">

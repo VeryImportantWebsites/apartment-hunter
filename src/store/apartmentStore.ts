@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import defaultData from "@/data/apartments.json";
 
-export type FloorPlan = 'Studio' | '1B' | '2B' | '3B';
+export type FloorPlan = string;
 
 export interface Apartment {
   id: string;
