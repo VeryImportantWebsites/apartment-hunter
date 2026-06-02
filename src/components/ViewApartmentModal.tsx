@@ -119,6 +119,21 @@ export default function ViewApartmentModal({
           </div>
           
         </div>
+
+        {/* Floor Plan Image Section */}
+        {apt.floorPlanImageUrl && (
+          <div className="px-8 pb-8">
+            <h3 className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-3">Floor Plan</h3>
+            <div className="bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden p-2 flex items-center justify-center">
+              <img 
+                src={apt.floorPlanImageUrl} 
+                alt={`${apt.name} Floor Plan`} 
+                className="max-h-96 w-auto object-contain rounded-xl"
+              />
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );

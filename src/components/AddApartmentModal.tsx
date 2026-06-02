@@ -12,6 +12,7 @@ export default function AddApartmentModal({ onClose, editingId }: { onClose: () 
   const [lat, setLat] = useState("40.7447");
   const [lng, setLng] = useState("-73.9485");
   const [floorPlan, setFloorPlan] = useState<FloorPlan>("1B");
+  const [floorPlanImageUrl, setFloorPlanImageUrl] = useState("");
   const [rentBase, setRentBase] = useState("");
   const [rentMonthsFree, setRentMonthsFree] = useState("0");
   const [ranking, setRanking] = useState("3");
@@ -26,6 +27,7 @@ export default function AddApartmentModal({ onClose, editingId }: { onClose: () 
         setLat(apt.coordinates[0].toString());
         setLng(apt.coordinates[1].toString());
         setFloorPlan(apt.floorPlan);
+        setFloorPlanImageUrl(apt.floorPlanImageUrl || "");
         setRentBase(apt.rentBase.toString());
         setRentMonthsFree(apt.rentMonthsFree.toString());
         setRanking(apt.ranking.toString());
@@ -41,6 +43,7 @@ export default function AddApartmentModal({ onClose, editingId }: { onClose: () 
       address,
       coordinates: [parseFloat(lat), parseFloat(lng)] as [number, number],
       floorPlan,
+      floorPlanImageUrl,
       rentBase: parseFloat(rentBase),
       rentMonthsFree: parseFloat(rentMonthsFree),
       ranking: parseInt(ranking),
@@ -56,8 +59,8 @@ export default function AddApartmentModal({ onClose, editingId }: { onClose: () 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div className="glass-panel w-full max-w-md rounded-2xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+      <div className="glass-panel w-full max-w-md rounded-2xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200 my-8">
         <div className="flex items-center justify-between p-6 border-b border-white/5">
           <h2 className="text-xl font-semibold text-white">{editingId ? "Edit Apartment" : "Add Apartment"}</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
@@ -90,17 +93,17 @@ export default function AddApartmentModal({ onClose, editingId }: { onClose: () 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
               <label className="text-xs text-gray-400 uppercase tracking-wider font-medium">Floor Plan</label>
-              <select value={floorPlan} onChange={(e) => setFloorPlan(e.target.value as FloorPlan)} className="w-full premium-input rounded-lg px-3 py-2 text-sm appearance-none">
-                <option value="Studio">Studio</option>
-                <option value="1B">1B</option>
-                <option value="2B">2B</option>
-                <option value="3B">3B</option>
-              </select>
+              <input required type="text" value={floorPlan} onChange={(e) => setFloorPlan(e.target.value)} className="w-full premium-input rounded-lg px-3 py-2 text-sm" placeholder="e.g. 1B, Loft" />
             </div>
             <div className="space-y-1">
               <label className="text-xs text-gray-400 uppercase tracking-wider font-medium">Rating (1-5)</label>
               <input required type="number" min="1" max="5" value={ranking} onChange={(e) => setRanking(e.target.value)} className="w-full premium-input rounded-lg px-3 py-2 text-sm" />
             </div>
+          </div>
+
+          <div className="space-y-1">
+            <label className="text-xs text-gray-400 uppercase tracking-wider font-medium">Floor Plan Image URL</label>
+            <input type="url" value={floorPlanImageUrl} onChange={(e) => setFloorPlanImageUrl(e.target.value)} className="w-full premium-input rounded-lg px-3 py-2 text-sm" placeholder="https://...image.jpg" />
           </div>
 
           <div className="grid grid-cols-2 gap-4">

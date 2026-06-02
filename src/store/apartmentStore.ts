@@ -9,6 +9,7 @@ export interface Apartment {
   address: string;
   coordinates: [number, number]; // [lat, lng]
   floorPlan: FloorPlan;
+  floorPlanImageUrl?: string;
   rentBase: number;
   rentMonthsFree: number;
   netEffectiveRent: number;
