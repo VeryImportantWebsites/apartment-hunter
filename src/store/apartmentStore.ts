@@ -32,7 +32,47 @@ function calculateNetEffective(base: number, monthsFree: number): number {
 export const useApartmentStore = create<ApartmentStore>()(
   persist(
     (set) => ({
-      apartments: [],
+      apartments: [
+        {
+          id: "mock-1",
+          name: "Jackson Park",
+          address: "28-10 Jackson Ave, LIC",
+          coordinates: [40.7486, -73.9385],
+          floorPlan: "1B",
+          rentBase: 4200,
+          rentMonthsFree: 1.5,
+          netEffectiveRent: 3675,
+          perksAndAmenities: ["Gym", "Pool", "In-unit W/D"],
+          ranking: 5,
+          notes: "Amazing amenities but pricey.",
+        },
+        {
+          id: "mock-2",
+          name: "Sven",
+          address: "29-59 Northern Blvd, LIC",
+          coordinates: [40.7505, -73.9366],
+          floorPlan: "2B",
+          rentBase: 5800,
+          rentMonthsFree: 0,
+          netEffectiveRent: 5800,
+          perksAndAmenities: ["LEED Certified", "Outdoor pool"],
+          ranking: 4,
+          notes: "Brand new, great location.",
+        },
+        {
+          id: "mock-3",
+          name: "The Hayden",
+          address: "43-25 Hunter St, LIC",
+          coordinates: [40.7490, -73.9427],
+          floorPlan: "Studio",
+          rentBase: 3100,
+          rentMonthsFree: 1,
+          netEffectiveRent: 2842,
+          perksAndAmenities: ["Basketball court", "Dog run"],
+          ranking: 4,
+          notes: "Good value for money.",
+        }
+      ],
       addApartment: (apt) => set((state) => {
         const id = crypto.randomUUID();
         const netEffectiveRent = calculateNetEffective(apt.rentBase, apt.rentMonthsFree);
