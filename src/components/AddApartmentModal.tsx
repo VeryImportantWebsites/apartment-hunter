@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useApartmentStore, FloorPlan } from "@/store/apartmentStore";
 import { X } from "lucide-react";
 
-export default function AddApartmentModal({ onClose }: { onClose: () => void }) {
-  const { addApartment } = useApartmentStore();
+export default function AddApartmentModal({ onClose, editingId }: { onClose: () => void, editingId?: string | null }) {
+  const { addApartment, updateApartment, apartments } = useApartmentStore();
   
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
@@ -17,19 +17,41 @@ export default function AddApartmentModal({ onClose }: { onClose: () => void }) 
   const [ranking, setRanking] = useState("3");
   const [notes, setNotes] = useState("");
 
+  useEffect(() => {
+    if (editingId) {
+      const apt = apartments.find(a => a.id === editingId);
+      if (apt) {
+        setName(apt.name);
+        setAddress(apt.address);
+        setLat(apt.coordinates[0].toString());
+        setLng(apt.coordinates[1].toString());
+        setFloorPlan(apt.floorPlan);
+        setRentBase(apt.rentBase.toString());
+        setRentMonthsFree(apt.rentMonthsFree.toString());
+        setRanking(apt.ranking.toString());
+        setNotes(apt.notes || "");
+      }
+    }
+  }, [editingId, apartments]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    addApartment({
+    const payload = {
       name,
       address,
-      coordinates: [parseFloat(lat), parseFloat(lng)],
+      coordinates: [parseFloat(lat), parseFloat(lng)] as [number, number],
       floorPlan,
       rentBase: parseFloat(rentBase),
       rentMonthsFree: parseFloat(rentMonthsFree),
-      perksAndAmenities: [], // Can be expanded later
       ranking: parseInt(ranking),
       notes,
-    });
+    };
+
+    if (editingId) {
+      updateApartment(editingId, payload);
+    } else {
+      addApartment({ ...payload, perksAndAmenities: [] });
+    }
     onClose();
   };
 
@@ -37,7 +59,7 @@ export default function AddApartmentModal({ onClose }: { onClose: () => void }) 
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
       <div className="glass-panel w-full max-w-md rounded-2xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
         <div className="flex items-center justify-between p-6 border-b border-white/5">
-          <h2 className="text-xl font-semibold text-white">Add Apartment</h2>
+          <h2 className="text-xl font-semibold text-white">{editingId ? "Edit Apartment" : "Add Apartment"}</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>

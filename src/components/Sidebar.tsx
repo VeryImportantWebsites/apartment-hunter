@@ -1,10 +1,10 @@
 "use client";
 
 import { useApartmentStore } from "@/store/apartmentStore";
-import { Plus, Building2, MapPin, Star, ArrowUpDown } from "lucide-react";
+import { Plus, Building2, MapPin, Star, ArrowUpDown, Pencil } from "lucide-react";
 import { useState } from "react";
 
-export default function Sidebar({ onAddClick }: { onAddClick: () => void }) {
+export default function Sidebar({ onAddClick, onEditClick }: { onAddClick: () => void, onEditClick: (id: string) => void }) {
   const { apartments } = useApartmentStore();
   const [sortBy, setSortBy] = useState<"rent" | "rating" | "name">("rent");
 
@@ -15,7 +15,7 @@ export default function Sidebar({ onAddClick }: { onAddClick: () => void }) {
   });
 
   return (
-    <div className="absolute top-4 left-4 z-10 w-96 max-h-[calc(100vh-2rem)] flex flex-col glass-panel rounded-2xl overflow-hidden">
+    <div className="absolute top-4 left-4 z-10 w-96 max-h-[calc(100vh-2rem)] flex flex-col glass-panel rounded-2xl overflow-hidden shadow-2xl">
       {/* Header */}
       <div className="p-6 border-b border-white/5 flex flex-col gap-4">
         <div className="flex items-center justify-between">
@@ -60,19 +60,24 @@ export default function Sidebar({ onAddClick }: { onAddClick: () => void }) {
           sortedApartments.map((apt) => (
             <div
               key={apt.id}
-              className="group p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/10 transition-all cursor-pointer relative"
+              className="group p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/10 transition-all relative"
             >
               <div className="flex justify-between items-start mb-2">
                 <h3 className="font-semibold text-gray-100 group-hover:text-white transition-colors">{apt.name}</h3>
-                <div className="flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-3.5 h-3.5 ${
-                        i < apt.ranking ? "text-yellow-400 fill-yellow-400" : "text-gray-700"
-                      }`}
-                    />
-                  ))}
+                <div className="flex items-center gap-3">
+                  <button onClick={() => onEditClick(apt.id)} className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-white transition-all">
+                    <Pencil className="w-3.5 h-3.5" />
+                  </button>
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-3.5 h-3.5 ${
+                          i < apt.ranking ? "text-yellow-400 fill-yellow-400" : "text-gray-700"
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
               

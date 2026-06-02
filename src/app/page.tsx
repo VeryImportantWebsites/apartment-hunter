@@ -9,7 +9,18 @@ import AddApartmentModal from "@/components/AddApartmentModal";
 const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 
 export default function Home() {
+  const [editingAptId, setEditingAptId] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = (id?: string) => {
+    setEditingAptId(id || null);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setEditingAptId(null);
+    setIsModalOpen(false);
+  };
 
   return (
     <main className="relative w-full h-screen overflow-hidden bg-[#050505]">
@@ -17,10 +28,10 @@ export default function Home() {
       <Map />
 
       {/* Sidebar Overlay */}
-      <Sidebar onAddClick={() => setIsModalOpen(true)} />
+      <Sidebar onAddClick={() => handleOpenModal()} onEditClick={(id) => handleOpenModal(id)} />
 
-      {/* Add Apartment Modal */}
-      {isModalOpen && <AddApartmentModal onClose={() => setIsModalOpen(false)} />}
+      {/* Add/Edit Apartment Modal */}
+      {isModalOpen && <AddApartmentModal editingId={editingAptId} onClose={handleCloseModal} />}
     </main>
   );
 }
