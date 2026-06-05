@@ -6,11 +6,11 @@
     "coordinates": [40.7486, -73.9385],
     "floorPlan": "1B",
     "rentBase": 4200,
-    "rentMonthsFree": 1.5,
-    "netEffectiveRent": 3675,
+    "rentMonthsFree": 1.0,
+    "netEffectiveRent": 3850,
     "perksAndAmenities": ["Gym", "Pool", "In-unit W/D"],
     "ranking": 5,
-    "notes": "South facing, lots of light."
+    "notes": "Concession dropped from 1.5 to 1.0 months free this week."
   },
   {
     "id": "2",
@@ -19,24 +19,11 @@
     "coordinates": [40.7486, -73.9385],
     "floorPlan": "2B",
     "rentBase": 5800,
-    "rentMonthsFree": 1.5,
-    "netEffectiveRent": 5075,
+    "rentMonthsFree": 1.0,
+    "netEffectiveRent": 5317,
     "perksAndAmenities": ["Gym", "Pool", "In-unit W/D", "Corner unit"],
     "ranking": 5,
     "notes": "Amazing Manhattan views."
-  },
-  {
-    "id": "3",
-    "name": "Jackson Park - Unit 8C",
-    "address": "28-10 Jackson Ave, LIC",
-    "coordinates": [40.7486, -73.9385],
-    "floorPlan": "Studio",
-    "rentBase": 3500,
-    "rentMonthsFree": 1.5,
-    "netEffectiveRent": 3062,
-    "perksAndAmenities": ["Gym", "Pool", "In-unit W/D"],
-    "ranking": 4,
-    "notes": "Lower floor, faces courtyard."
   },
   {
     "id": "4",
@@ -45,11 +32,11 @@
     "coordinates": [40.7505, -73.9366],
     "floorPlan": "1B",
     "rentBase": 4500,
-    "rentMonthsFree": 1,
-    "netEffectiveRent": 4125,
+    "rentMonthsFree": 1.5,
+    "netEffectiveRent": 3938,
     "perksAndAmenities": ["LEED Certified", "Outdoor pool", "Smart Home"],
     "ranking": 5,
-    "notes": "Very high floor, unobstructed views."
+    "notes": "Very high floor, unobstructed views. New 1.5 months free deal!"
   },
   {
     "id": "5",
@@ -65,17 +52,30 @@
     "notes": "Spacious layout, great for roommates."
   },
   {
-    "id": "6",
-    "name": "Sven - Unit 22A",
-    "address": "29-59 Northern Blvd, LIC",
-    "coordinates": [40.7505, -73.9366],
-    "floorPlan": "Studio",
-    "rentBase": 3300,
-    "rentMonthsFree": 0,
-    "netEffectiveRent": 3300,
-    "perksAndAmenities": ["LEED Certified", "Outdoor pool", "Smart Home"],
-    "ranking": 3,
-    "notes": "Standard studio layout."
+    "id": "21",
+    "name": "Gotham Point - Unit 33A",
+    "address": "1-15 57th Ave, LIC",
+    "coordinates": [40.7405, -73.9622],
+    "floorPlan": "1B",
+    "rentBase": 3950,
+    "rentMonthsFree": 2,
+    "netEffectiveRent": 3292,
+    "perksAndAmenities": ["Waterfront", "Rooftop Terrace", "Coworking"],
+    "ranking": 5,
+    "notes": "Brand new listing!"
+  },
+  {
+    "id": "22",
+    "name": "Gotham Point - Unit 18F",
+    "address": "1-15 57th Ave, LIC",
+    "coordinates": [40.7405, -73.9622],
+    "floorPlan": "2B",
+    "rentBase": 5600,
+    "rentMonthsFree": 2,
+    "netEffectiveRent": 4667,
+    "perksAndAmenities": ["Waterfront", "Rooftop Terrace", "Coworking"],
+    "ranking": 4,
+    "notes": "Great layout, new construction."
   },
   {
     "id": "7",
@@ -84,11 +84,11 @@
     "coordinates": [40.7490, -73.9427],
     "floorPlan": "1B",
     "rentBase": 3900,
-    "rentMonthsFree": 2,
-    "netEffectiveRent": 3250,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3575,
     "perksAndAmenities": ["Basketball court", "Dog run", "Rooftop"],
     "ranking": 4,
-    "notes": "Huge concession, very solid deal."
+    "notes": "Concession lowered to 1 month."
   },
   {
     "id": "8",
@@ -96,12 +96,12 @@
     "address": "43-25 Hunter St, LIC",
     "coordinates": [40.7490, -73.9427],
     "floorPlan": "2B",
-    "rentBase": 5500,
-    "rentMonthsFree": 2,
-    "netEffectiveRent": 4583,
+    "rentBase": 5400,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4950,
     "perksAndAmenities": ["Basketball court", "Dog run", "Rooftop"],
     "ranking": 4,
-    "notes": "Corner unit, great deal on a 2B."
+    "notes": "Base rent dropped $100."
   },
   {
     "id": "9",
@@ -167,19 +167,6 @@
     "perksAndAmenities": ["Waterfront", "Tennis Courts", "Roof deck"],
     "ranking": 4,
     "notes": "Solid 1B deal, beautiful park access."
-  },
-  {
-    "id": "14",
-    "name": "4545 Center Blvd - Unit 3C",
-    "address": "45-45 Center Blvd, LIC",
-    "coordinates": [40.7471, -73.9576],
-    "floorPlan": "Studio",
-    "rentBase": 3200,
-    "rentMonthsFree": 2,
-    "netEffectiveRent": 2666,
-    "perksAndAmenities": ["Waterfront", "Tennis Courts"],
-    "ranking": 3,
-    "notes": "Low floor, no view, but cheap net rent."
   },
   {
     "id": "15",
@@ -258,5 +245,18 @@
     "perksAndAmenities": ["Waterfront", "Gym"],
     "ranking": 3,
     "notes": "Nice studio, direct park access."
+  },
+  {
+    "id": "23",
+    "name": "Sven - Unit 66B",
+    "address": "29-59 Northern Blvd, LIC",
+    "coordinates": [40.7505, -73.9366],
+    "floorPlan": "1B",
+    "rentBase": 4650,
+    "rentMonthsFree": 1.5,
+    "netEffectiveRent": 4068,
+    "perksAndAmenities": ["LEED Certified", "Outdoor pool", "Smart Home"],
+    "ranking": 5,
+    "notes": "Penthouse level, newly listed!"
   }
 ]
