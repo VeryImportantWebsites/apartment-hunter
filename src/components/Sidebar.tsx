@@ -6,11 +6,16 @@ import { useState } from "react";
 
 export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAddClick: () => void, onEditClick: (id: string) => void, onViewClick: (id: string) => void }) {
   const { apartments } = useApartmentStore();
-  const [sortBy, setSortBy] = useState<"rent" | "rating" | "name">("rent");
+  const [sortBy, setSortBy] = useState<"rent" | "rating" | "name" | "recent">("rent");
 
   const sortedApartments = [...apartments].sort((a, b) => {
     if (sortBy === "rent") return a.netEffectiveRent - b.netEffectiveRent;
     if (sortBy === "rating") return b.ranking - a.ranking;
+    if (sortBy === "recent") {
+      const dateA = a.lastUpdated ? new Date(a.lastUpdated).getTime() : 0;
+      const dateB = b.lastUpdated ? new Date(b.lastUpdated).getTime() : 0;
+      return dateB - dateA;
+    }
     return a.name.localeCompare(b.name);
   });
 
@@ -44,6 +49,7 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
           >
             <option value="rent" className="bg-[#111]">Net Rent (Low to High)</option>
             <option value="rating" className="bg-[#111]">Rating (High to Low)</option>
+            <option value="recent" className="bg-[#111]">Recently Updated</option>
             <option value="name" className="bg-[#111]">Name (A-Z)</option>
           </select>
         </div>
@@ -63,48 +69,81 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
               onClick={() => onViewClick(apt.id)}
               className="cursor-pointer group p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/10 transition-all relative"
             >
-              <div className="flex justify-between items-start mb-2">
-                <h3 className="font-semibold text-gray-100 group-hover:text-white transition-colors">{apt.name}</h3>
-                <div className="flex items-center gap-3">
-                  <button 
-                    onClick={(e) => { e.stopPropagation(); onEditClick(apt.id); }} 
-                    className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-white transition-all"
-                  >
-                    <Pencil className="w-3.5 h-3.5" />
-                  </button>
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-3.5 h-3.5 ${
-                          i < apt.ranking ? "text-yellow-400 fill-yellow-400" : "text-gray-700"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-              
-              <div className="text-xs text-gray-400 flex items-center gap-1 mb-3">
-                <MapPin className="w-3 h-3" />
-                <span className="truncate">{apt.address}</span>
-              </div>
-
-              <div className="flex items-end justify-between">
-                <div>
-                  <span className="text-xs px-2 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300">
-                    {apt.floorPlan}
-                  </span>
-                </div>
-                <div className="text-right">
-                  {apt.rentMonthsFree > 0 ? (
-                    <>
-                      <div className="text-[10px] text-gray-500 line-through">${apt.rentBase}/mo</div>
-                      <div className="text-sm font-medium text-emerald-400">${apt.netEffectiveRent}/mo</div>
-                    </>
+              <div className="flex gap-4">
+                {/* Thumbnail */}
+                <div className="w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-white/5 border border-white/10 relative">
+                  {apt.images && apt.images.length > 0 ? (
+                    <img src={apt.images[0]} alt={apt.name} className="w-full h-full object-cover" />
                   ) : (
-                    <div className="text-sm font-medium text-emerald-400">${apt.rentBase}/mo</div>
+                    <div className="w-full h-full flex items-center justify-center text-white/20">
+                      <Building2 className="w-8 h-8" />
+                    </div>
                   )}
+                  {apt.source && (
+                    <span className="absolute bottom-1 left-1 text-[8px] uppercase font-bold tracking-wider px-1 py-0.5 rounded bg-black/60 backdrop-blur-sm text-purple-200 border border-white/10">
+                      {apt.source}
+                    </span>
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 flex flex-col justify-between">
+                  <div className="flex justify-between items-start mb-2">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-semibold text-gray-100 group-hover:text-white transition-colors">{apt.name}</h3>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <button 
+                        onClick={(e) => { e.stopPropagation(); onEditClick(apt.id); }} 
+                        className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-white transition-all"
+                      >
+                        <Pencil className="w-3.5 h-3.5" />
+                      </button>
+                      <div className="flex gap-0.5">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-3.5 h-3.5 ${
+                              i < apt.ranking ? "text-yellow-400 fill-yellow-400" : "text-gray-700"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="text-xs text-gray-400 flex items-center gap-1 mb-3">
+                    <MapPin className="w-3 h-3" />
+                    <span className="truncate">{apt.address}</span>
+                  </div>
+
+                  <div className="flex items-end justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs px-2 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300">
+                        {apt.floorPlan}
+                      </span>
+                      {apt.sqft && (
+                        <span className="text-xs text-gray-400">
+                          {apt.sqft} sqft
+                        </span>
+                      )}
+                      {apt.feeStatus && (
+                        <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                          {apt.feeStatus}
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-right">
+                      {apt.rentMonthsFree > 0 ? (
+                        <>
+                          <div className="text-[10px] text-gray-500 line-through">${apt.rentBase}/mo</div>
+                          <div className="text-sm font-medium text-emerald-400">${apt.netEffectiveRent}/mo</div>
+                        </>
+                      ) : (
+                        <div className="text-sm font-medium text-emerald-400">${apt.rentBase}/mo</div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

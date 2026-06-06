@@ -1,262 +1,5352 @@
 [
   {
     "id": "1",
-    "name": "Jackson Park - Unit 14B",
-    "address": "28-10 Jackson Ave, LIC",
-    "coordinates": [40.7486, -73.9385],
-    "floorPlan": "1B",
-    "rentBase": 4200,
-    "rentMonthsFree": 1.0,
-    "netEffectiveRent": 3850,
-    "perksAndAmenities": ["Gym", "Pool", "In-unit W/D"],
-    "ranking": 5,
-    "notes": "Concession dropped from 1.5 to 1.0 months free this week."
-  },
-  {
-    "id": "2",
-    "name": "Jackson Park - Unit 32A",
-    "address": "28-10 Jackson Ave, LIC",
-    "coordinates": [40.7486, -73.9385],
-    "floorPlan": "2B",
-    "rentBase": 5800,
-    "rentMonthsFree": 1.0,
-    "netEffectiveRent": 5317,
-    "perksAndAmenities": ["Gym", "Pool", "In-unit W/D", "Corner unit"],
-    "ranking": 5,
-    "notes": "Amazing Manhattan views."
-  },
-  {
-    "id": "4",
-    "name": "Sven - Unit 45C",
-    "address": "29-59 Northern Blvd, LIC",
-    "coordinates": [40.7505, -73.9366],
-    "floorPlan": "1B",
-    "rentBase": 4500,
-    "rentMonthsFree": 1.5,
-    "netEffectiveRent": 3938,
-    "perksAndAmenities": ["LEED Certified", "Outdoor pool", "Smart Home"],
-    "ranking": 5,
-    "notes": "Very high floor, unobstructed views. New 1.5 months free deal!"
-  },
-  {
-    "id": "5",
-    "name": "Sven - Unit 12D",
-    "address": "29-59 Northern Blvd, LIC",
-    "coordinates": [40.7505, -73.9366],
-    "floorPlan": "2B",
-    "rentBase": 6100,
-    "rentMonthsFree": 1,
-    "netEffectiveRent": 5591,
-    "perksAndAmenities": ["LEED Certified", "Outdoor pool", "Smart Home"],
-    "ranking": 4,
-    "notes": "Spacious layout, great for roommates."
-  },
-  {
-    "id": "21",
-    "name": "Gotham Point - Unit 33A",
-    "address": "1-15 57th Ave, LIC",
-    "coordinates": [40.7405, -73.9622],
-    "floorPlan": "1B",
-    "rentBase": 3950,
-    "rentMonthsFree": 2,
-    "netEffectiveRent": 3292,
-    "perksAndAmenities": ["Waterfront", "Rooftop Terrace", "Coworking"],
-    "ranking": 5,
-    "notes": "Brand new listing!"
-  },
-  {
-    "id": "22",
-    "name": "Gotham Point - Unit 18F",
-    "address": "1-15 57th Ave, LIC",
-    "coordinates": [40.7405, -73.9622],
-    "floorPlan": "2B",
-    "rentBase": 5600,
-    "rentMonthsFree": 2,
-    "netEffectiveRent": 4667,
-    "perksAndAmenities": ["Waterfront", "Rooftop Terrace", "Coworking"],
-    "ranking": 4,
-    "notes": "Great layout, new construction."
-  },
-  {
-    "id": "7",
-    "name": "The Hayden - Unit 19E",
-    "address": "43-25 Hunter St, LIC",
-    "coordinates": [40.7490, -73.9427],
+    "name": "The Beach - Unit 1405",
+    "address": "180 River Dr, Jersey City, NJ 07310",
+    "coordinates": [
+      40.7303,
+      -74.0321
+    ],
     "floorPlan": "1B",
     "rentBase": 3900,
     "rentMonthsFree": 1,
     "netEffectiveRent": 3575,
-    "perksAndAmenities": ["Basketball court", "Dog run", "Rooftop"],
+    "sqft": 750,
+    "petPolicy": "Pet friendly (Dogs and Cats allowed with fee)",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "201-626-5001",
+    "appointmentLink": "https://www.newportrentals.com",
+    "transitDetails": "5-minute walk to Newport PATH Station, Light Rail access, close to Holland Tunnel.",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "In-unit washer/dryer",
+      "Floor-to-ceiling windows",
+      "Stainless steel appliances",
+      "Hardwood floors",
+      "Open-plan kitchen"
+    ],
+    "buildingAmenities": [
+      "24/7 Doorman",
+      "Outdoor pool",
+      "Fitness center",
+      "Coworking spaces",
+      "Roof deck",
+      "Children's playroom"
+    ],
+    "ranking": 5,
+    "notes": "Luxury waterfront building with views of the Manhattan skyline.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A750%20sqft"
+  },
+  {
+    "id": "2",
+    "name": "Aquablu - Unit 812",
+    "address": "110 River Dr, Jersey City, NJ 07310",
+    "coordinates": [
+      40.7288,
+      -74.0325
+    ],
+    "floorPlan": "2B",
+    "rentBase": 4800,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4400,
+    "sqft": 1050,
+    "petPolicy": "Pet friendly (Breed restrictions apply)",
+    "feeStatus": "No Fee",
+    "availability": "Available July 1st",
+    "contactPhone": "201-626-5001",
+    "appointmentLink": "https://www.newportrentals.com",
+    "transitDetails": "7-minute walk to Newport PATH Station.",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "In-unit washer/dryer",
+      "Oversized windows",
+      "Dishwasher",
+      "Granite countertops"
+    ],
+    "buildingAmenities": [
+      "24/7 Concierge",
+      "Fitness center",
+      "Resident lounge",
+      "Rooftop terrace",
+      "On-site parking"
+    ],
     "ranking": 4,
-    "notes": "Concession lowered to 1 month."
+    "notes": "Spacious 2B layout in a well-established luxury Newport building.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "id": "3",
+    "name": "Parkside East - Unit 504",
+    "address": "111 Washington Blvd, Jersey City, NJ 07310",
+    "coordinates": [
+      40.728,
+      -74.035
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3200,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3200,
+    "sqft": 710,
+    "petPolicy": "Pet friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "201-626-5001",
+    "appointmentLink": "https://www.newportrentals.com",
+    "transitDetails": "Very close to Newport PATH Station and Light Rail.",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "Dishwasher",
+      "Hardwood floors",
+      "Large closets",
+      "Updated kitchen"
+    ],
+    "buildingAmenities": [
+      "Doorman",
+      "Fitness center",
+      "Laundry in building",
+      "Elevator"
+    ],
+    "ranking": 4,
+    "notes": "Great value in the Hamilton Park / Newport area, highly convenient for commuting.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A710%20sqft"
+  },
+  {
+    "id": "4",
+    "name": "The Beach - Unit 2202",
+    "address": "180 River Dr, Jersey City, NJ 07310",
+    "coordinates": [
+      40.7303,
+      -74.0321
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4767,
+    "sqft": 1100,
+    "petPolicy": "Pet friendly (Dogs and Cats allowed with fee)",
+    "feeStatus": "No Fee",
+    "availability": "Available August 1st",
+    "contactPhone": "201-626-5001",
+    "appointmentLink": "https://www.newportrentals.com",
+    "transitDetails": "5-minute walk to Newport PATH Station, Light Rail access, close to Holland Tunnel.",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "In-unit washer/dryer",
+      "Private balcony",
+      "Floor-to-ceiling windows",
+      "Stainless steel appliances",
+      "Hardwood floors"
+    ],
+    "buildingAmenities": [
+      "24/7 Doorman",
+      "Outdoor pool",
+      "Fitness center",
+      "Coworking spaces",
+      "Roof deck",
+      "Children's playroom"
+    ],
+    "ranking": 5,
+    "notes": "High floor premium unit with private balcony and unblocked water views.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1100%20sqft"
+  },
+  {
+    "id": "5",
+    "name": "Jackson Park - Unit 22D",
+    "address": "28-10 Jackson Avenue, Long Island City, NY 11101",
+    "coordinates": [
+      40.7485,
+      -73.9388
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4500,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4125,
+    "sqft": 720,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-522-5766",
+    "appointmentLink": "https://jacksonparklic.com/",
+    "transitDetails": "Adjacent to Queens Plaza (E, M, R) and Court Square (7, G, E, M).",
+    "leaseTerm": "12 Months",
+    "perksAndAmenities": [
+      "Floor-to-ceiling windows",
+      "In-unit washer/dryer",
+      "Stainless steel appliances",
+      "Hardwood floors"
+    ],
+    "buildingAmenities": [
+      "1.6-acre private park",
+      "Indoor lap pool",
+      "Outdoor pool",
+      "Basketball court",
+      "Squash courts",
+      "45,000 sq ft fitness center"
+    ],
+    "ranking": 5,
+    "notes": "Known for the best amenity package in LIC.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A720%20sqft"
+  },
+  {
+    "id": "6",
+    "name": "The Hayden - Unit 34B",
+    "address": "43-25 Hunter Street, Long Island City, NY 11101",
+    "coordinates": [
+      40.749,
+      -73.943
+    ],
+    "floorPlan": "2B",
+    "rentBase": 6300,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 6300,
+    "sqft": 1050,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "July 1, 2026",
+    "contactPhone": "718-361-9100",
+    "appointmentLink": "https://rockrose.com/the-hayden",
+    "transitDetails": "Directly across from Court Square subway station (7, G, E, M trains).",
+    "leaseTerm": "12 Months",
+    "perksAndAmenities": [
+      "Granite countertops",
+      "Bosch washer/dryer",
+      "Panoramic Manhattan skyline views",
+      "Private balcony"
+    ],
+    "buildingAmenities": [
+      "Full-size basketball court",
+      "Two-level fitness center",
+      "Rooftop solarium",
+      "Screening room",
+      "Children's playroom"
+    ],
+    "ranking": 4,
+    "notes": "Luxury Rockrose building. Incredibly close to Court Square station, excellent views.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "id": "7",
+    "name": "Linc LIC - Unit 18A",
+    "address": "43-10 Crescent Street, Long Island City, NY 11101",
+    "coordinates": [
+      40.7502,
+      -73.9415
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4250,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4250,
+    "sqft": 680,
+    "petPolicy": "Cats and Dogs Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-361-9100",
+    "appointmentLink": "https://rockrose.com/linc-lic",
+    "transitDetails": "2-3 minute walk to Court Square (7, E, M, G) and Queensboro Plaza (N, W, 7).",
+    "leaseTerm": "12 Months",
+    "perksAndAmenities": [
+      "Floor-to-ceiling windows",
+      "Stainless steel appliances",
+      "Granite countertops",
+      "In-unit washer/dryer"
+    ],
+    "buildingAmenities": [
+      "Two-level fitness center",
+      "Basketball court",
+      "Squash court",
+      "Common roof deck with BBQ",
+      "Billiards table"
+    ],
+    "ranking": 4,
+    "notes": "Great central location, large social lounge and outdoor spaces.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
   },
   {
     "id": "8",
-    "name": "The Hayden - Unit 42F",
-    "address": "43-25 Hunter St, LIC",
-    "coordinates": [40.7490, -73.9427],
-    "floorPlan": "2B",
-    "rentBase": 5400,
-    "rentMonthsFree": 1,
-    "netEffectiveRent": 4950,
-    "perksAndAmenities": ["Basketball court", "Dog run", "Rooftop"],
-    "ranking": 4,
-    "notes": "Base rent dropped $100."
+    "name": "Sven - Unit 34D",
+    "address": "29-59 Northern Blvd, Long Island City, NY 11101",
+    "coordinates": [
+      40.7506,
+      -73.9372
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4350,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4350,
+    "sqft": 680,
+    "petPolicy": "Pet-friendly (weight and breed restrictions apply)",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-751-3457",
+    "appointmentLink": "https://svenlic.com/",
+    "transitDetails": "E, M, R trains at Queens Plaza and N, W, 7 at Queensboro Plaza",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "Washer/Dryer in unit",
+      "Stainless steel appliances",
+      "European quartz countertops",
+      "Light oak wood flooring"
+    ],
+    "buildingAmenities": [
+      "Doorman",
+      "Concierge",
+      "Fitness Center",
+      "Swimming Pool",
+      "Yoga Studio",
+      "Children's Playroom"
+    ],
+    "ranking": 5,
+    "notes": "Luxury unit in a 71-story building with a half-acre public park.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
   },
   {
     "id": "9",
-    "name": "The Hayden - Unit 5A",
-    "address": "43-25 Hunter St, LIC",
-    "coordinates": [40.7490, -73.9427],
-    "floorPlan": "Studio",
-    "rentBase": 3000,
-    "rentMonthsFree": 1,
-    "netEffectiveRent": 2750,
-    "perksAndAmenities": ["Basketball court", "Dog run"],
-    "ranking": 3,
-    "notes": "Faces the street, might be noisy."
+    "name": "Tower 28 - Unit 40K",
+    "address": "42-12 28th St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7501,
+      -73.9388
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5800,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5800,
+    "sqft": 980,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Waitlist",
+    "contactPhone": "929-281-3344",
+    "appointmentLink": "https://tower28nyc.com/",
+    "transitDetails": "E, M, R trains at Queens Plaza",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "In-unit Washer/Dryer",
+      "Stainless steel appliances",
+      "Hardwood floors",
+      "Floor-to-ceiling windows"
+    ],
+    "buildingAmenities": [
+      "24-hour Concierge",
+      "Fitness Center",
+      "Indoor Pool",
+      "Sauna",
+      "Steam Room",
+      "46th-floor Sky Lounge"
+    ],
+    "ranking": 5,
+    "notes": "Highly coveted K-line unit with spectacular skyline views.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A980%20sqft"
   },
   {
     "id": "10",
-    "name": "Lumen LIC - Unit 24B",
-    "address": "42-02 Crescent St, LIC",
-    "coordinates": [40.7503, -73.9416],
+    "name": "Journal Squared - Tower 3",
+    "address": "615 Pavonia Ave, Jersey City, NJ 07306",
+    "coordinates": [
+      40.7321,
+      -74.0631
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3095,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3095,
+    "sqft": 720,
+    "petPolicy": "Pets allowed. Breed restrictions apply.",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 215-2015",
+    "appointmentLink": "https://journalsquared.com/",
+    "transitDetails": "Direct access to Journal Square PATH Station (approx. 15 mins to WTC, 22 mins to Midtown NYC).",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "In-unit washer/dryer",
+      "Stainless steel appliances",
+      "Central air conditioning",
+      "Hardwood floors",
+      "Smart lock entry"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Rooftop pool",
+      "Sky lounge",
+      "Co-working spaces",
+      "24/7 Concierge",
+      "Dog run"
+    ],
+    "ranking": 4,
+    "notes": "Very convenient for PATH commuting. Tower 3 is the newest addition.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A720%20sqft"
+  },
+  {
+    "id": "11",
+    "name": "Haus25",
+    "address": "25 Christopher Columbus Dr, Jersey City, NJ 07302",
+    "coordinates": [
+      40.7177,
+      -74.0384
+    ],
+    "floorPlan": "2B",
+    "rentBase": 4660,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4660,
+    "sqft": 1050,
+    "petPolicy": "Pet friendly. Up to 2 pets per apartment.",
+    "feeStatus": "No Fee",
+    "availability": "Available July 1st",
+    "contactPhone": "(201) 834-8825",
+    "appointmentLink": "https://livehaus25.com/schedule-a-tour/",
+    "transitDetails": "1 block to Exchange Place PATH. Short walk to Grove Street PATH and NY Waterway Ferry.",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "In-unit washer/dryer",
+      "Energy Star appliances",
+      "Quartz countertops",
+      "Balcony",
+      "Custom closets"
+    ],
+    "buildingAmenities": [
+      "Resort-style pool",
+      "Bowling alley",
+      "Golf simulator",
+      "Outdoor fitness areas",
+      "Pet spa",
+      "Makerspace"
+    ],
+    "ranking": 5,
+    "notes": "Highly rated luxury building with exceptional amenities and close proximity to the waterfront.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "id": "12",
+    "name": "Jersey City Urby",
+    "address": "200 Greene St, Jersey City, NJ 07311",
+    "coordinates": [
+      40.7202,
+      -74.0366
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3400,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3138,
+    "sqft": 650,
+    "petPolicy": "Pets welcome. Max 2 pets.",
+    "feeStatus": "No Fee",
+    "availability": "Available mid-July",
+    "contactPhone": "(201) 333-8989",
+    "appointmentLink": "https://www.urby.com/jersey-city/leasing",
+    "transitDetails": "Steps from Exchange Place PATH and Harborside Light Rail.",
+    "leaseTerm": "13 months",
+    "perksAndAmenities": [
+      "In-unit washer/dryer",
+      "Built-in storage",
+      "Oversized windows",
+      "Gas stove",
+      "Keyless entry"
+    ],
+    "buildingAmenities": [
+      "Heated outdoor pool",
+      "9 Bar Cafe on-site",
+      "State-of-the-art gym",
+      "Communal kitchen",
+      "Fire pits"
+    ],
+    "ranking": 4,
+    "notes": "Quirky, modern design. Smaller unit footprints but highly efficient and excellent building community events.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A650%20sqft"
+  },
+  {
+    "id": "13",
+    "name": "Gotham Point - Unit 12A",
+    "address": "1-15 57th Ave, Long Island City, NY 11101",
+    "coordinates": [
+      40.7419,
+      -73.9567
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3850,
+    "sqft": 720,
+    "petPolicy": "Pet Friendly (Cats & Dogs allowed, Dog Spa on-site)",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "646-867-8933",
+    "appointmentLink": "https://gothampoint.com/contact/",
+    "transitDetails": "NYC Ferry (Hunters Point South), 7 train via free shuttle, walk to Vernon-Jackson",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "Floor-to-ceiling windows",
+      "In-unit washer/dryer",
+      "Open kitchen",
+      "Stainless steel appliances",
+      "Dishwasher"
+    ],
+    "buildingAmenities": [
+      "Indoor/outdoor fitness club",
+      "Dog spa",
+      "Rooftop terrace with BBQ",
+      "Resident lounges",
+      "Co-working spaces",
+      "Community boathouse",
+      "Urban rooftop farm",
+      "24-hour attended lobby"
+    ],
+    "ranking": 5,
+    "notes": "Brand new mixed-income development with sweeping East River views and unique amenities like a rooftop farm.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A720%20sqft"
+  },
+  {
+    "id": "14",
+    "name": "4545 Center Blvd - Unit 20D",
+    "address": "4545 Center Blvd, Long Island City, NY 11109",
+    "coordinates": [
+      40.7476,
+      -73.956
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4450,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4450,
+    "sqft": 750,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://www.tfc.com/luxury-apartments/4545-center-blvd",
+    "transitDetails": "Free shuttle service to Vernon-Jackson 7 train station, walking distance to NYC Ferry",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "Private balcony",
+      "Dishwasher",
+      "In-unit washer/dryer",
+      "Hardwood floors",
+      "Walk-in closet"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Yoga room",
+      "Two tennis courts",
+      "Beach volleyball court",
+      "Children's playroom",
+      "Resident lounge",
+      "Landscaped roof terrace",
+      "Parking garage"
+    ],
+    "ranking": 4,
+    "notes": "Established luxury building with an incredible array of recreational amenities, including tennis and beach volleyball courts.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A750%20sqft"
+  },
+  {
+    "id": "15",
+    "name": "4615 Center Blvd - Unit 15E",
+    "address": "4615 Center Blvd, Long Island City, NY 11109",
+    "coordinates": [
+      40.7465,
+      -73.957
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5800,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 5317,
+    "sqft": 1050,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://www.tfc.com/luxury-apartments/4615-center-blvd",
+    "transitDetails": "Free TFC shuttle to 7 train at Vernon-Jackson, near NYC Ferry",
+    "leaseTerm": "12 months",
+    "perksAndAmenities": [
+      "Floor-to-ceiling windows",
+      "Private balcony",
+      "Stainless steel appliances",
+      "Dishwasher",
+      "In-unit washer/dryer"
+    ],
+    "buildingAmenities": [
+      "24-hour doorman",
+      "Fitness center",
+      "Resident lounge",
+      "Valet service",
+      "Package room",
+      "Bike storage",
+      "LEED-certified design"
+    ],
+    "ranking": 4,
+    "notes": "LEED-certified luxury building designed by Arquitectonica. Great value for a 2B.",
+    "lastUpdated": "2026-06-06T17:53:18.000Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "The Beach - Unit 1405",
+    "address": "180 River Dr, Jersey City, NJ 07310",
+    "coordinates": [
+      40.7303,
+      -74.0321
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3900,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3575,
+    "sqft": 750,
+    "petPolicy": "Pet friendly (Dogs and Cats allowed with fee)",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "201-626-5001",
+    "appointmentLink": "https://www.newportrentals.com",
+    "transitDetails": "5-minute walk to Newport PATH Station, Light Rail access, close to Holland Tunnel.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Floor-to-ceiling windows",
+      "Stainless steel appliances",
+      "Hardwood floors",
+      "Open-plan kitchen"
+    ],
+    "buildingAmenities": [
+      "24/7 Doorman",
+      "Outdoor pool",
+      "Fitness center",
+      "Coworking spaces",
+      "Roof deck",
+      "Children's playroom"
+    ],
+    "ranking": 5,
+    "notes": "Luxury waterfront building with views of the Manhattan skyline.",
+    "id": "2a3b4919-9e0a-4ed5-9445-a47d71774403",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.312Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A750%20sqft"
+  },
+  {
+    "name": "Aquablu - Unit 812",
+    "address": "110 River Dr, Jersey City, NJ 07310",
+    "coordinates": [
+      40.7288,
+      -74.0325
+    ],
+    "floorPlan": "2B",
+    "rentBase": 4800,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4400,
+    "sqft": 1050,
+    "petPolicy": "Pet friendly (Breed restrictions apply)",
+    "feeStatus": "No Fee",
+    "availability": "Available July 1st",
+    "contactPhone": "201-626-5001",
+    "appointmentLink": "https://www.newportrentals.com",
+    "transitDetails": "7-minute walk to Newport PATH Station.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Oversized windows",
+      "Dishwasher",
+      "Granite countertops"
+    ],
+    "buildingAmenities": [
+      "24/7 Concierge",
+      "Fitness center",
+      "Resident lounge",
+      "Rooftop terrace",
+      "On-site parking"
+    ],
+    "ranking": 4,
+    "notes": "Spacious 2B layout in a well-established luxury Newport building.",
+    "id": "b80e50f6-78c3-4c00-8e43-62ef939672f7",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Parkside East - Unit 504",
+    "address": "111 Washington Blvd, Jersey City, NJ 07310",
+    "coordinates": [
+      40.728,
+      -74.035
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3200,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3200,
+    "sqft": 710,
+    "petPolicy": "Pet friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "201-626-5001",
+    "appointmentLink": "https://www.newportrentals.com",
+    "transitDetails": "Very close to Newport PATH Station and Light Rail.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Dishwasher",
+      "Hardwood floors",
+      "Large closets",
+      "Updated kitchen"
+    ],
+    "buildingAmenities": [
+      "Doorman",
+      "Fitness center",
+      "Laundry in building",
+      "Elevator"
+    ],
+    "ranking": 4,
+    "notes": "Great value in the Hamilton Park / Newport area, highly convenient for commuting.",
+    "id": "039f0219-6b9b-48aa-b2d5-f9b9a566f3b5",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A710%20sqft"
+  },
+  {
+    "name": "The Beach - Unit 2202",
+    "address": "180 River Dr, Jersey City, NJ 07310",
+    "coordinates": [
+      40.7303,
+      -74.0321
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4767,
+    "sqft": 1100,
+    "petPolicy": "Pet friendly (Dogs and Cats allowed with fee)",
+    "feeStatus": "No Fee",
+    "availability": "Available August 1st",
+    "contactPhone": "201-626-5001",
+    "appointmentLink": "https://www.newportrentals.com",
+    "transitDetails": "5-minute walk to Newport PATH Station, Light Rail access, close to Holland Tunnel.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Private balcony",
+      "Floor-to-ceiling windows",
+      "Stainless steel appliances",
+      "Hardwood floors"
+    ],
+    "buildingAmenities": [
+      "24/7 Doorman",
+      "Outdoor pool",
+      "Fitness center",
+      "Coworking spaces",
+      "Roof deck",
+      "Children's playroom"
+    ],
+    "ranking": 5,
+    "notes": "High floor premium unit with private balcony and unblocked water views.",
+    "id": "052edd98-86c0-40f3-ba80-9c8e5a25a135",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1100%20sqft"
+  },
+  {
+    "name": "Jackson Park - Unit 22D",
+    "address": "28-10 Jackson Avenue, Long Island City, NY 11101",
+    "coordinates": [
+      40.7485,
+      -73.9388
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4500,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4125,
+    "sqft": 720,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-522-5766",
+    "appointmentLink": "https://jacksonparklic.com/",
+    "transitDetails": "Adjacent to Queens Plaza (E, M, R) and Court Square (7, G, E, M).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "In-unit washer/dryer",
+      "Stainless steel appliances",
+      "Hardwood floors"
+    ],
+    "buildingAmenities": [
+      "1.6-acre private park",
+      "Indoor lap pool",
+      "Outdoor pool",
+      "Basketball court",
+      "Squash courts",
+      "45,000 sq ft fitness center"
+    ],
+    "ranking": 5,
+    "notes": "Known for the best amenity package in LIC.",
+    "id": "4830acd8-fe04-4651-b02a-2e2b493dd3d2",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A720%20sqft"
+  },
+  {
+    "name": "The Hayden - Unit 34B",
+    "address": "43-25 Hunter Street, Long Island City, NY 11101",
+    "coordinates": [
+      40.749,
+      -73.943
+    ],
+    "floorPlan": "2B",
+    "rentBase": 6300,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 6300,
+    "sqft": 1050,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "July 1, 2026",
+    "contactPhone": "718-361-9100",
+    "appointmentLink": "https://rockrose.com/the-hayden",
+    "transitDetails": "Directly across from Court Square subway station (7, G, E, M trains).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Granite countertops",
+      "Bosch washer/dryer",
+      "Panoramic Manhattan skyline views",
+      "Private balcony"
+    ],
+    "buildingAmenities": [
+      "Full-size basketball court",
+      "Two-level fitness center",
+      "Rooftop solarium",
+      "Screening room",
+      "Children's playroom"
+    ],
+    "ranking": 4,
+    "notes": "Luxury Rockrose building. Incredibly close to Court Square station, excellent views.",
+    "id": "6db507b3-2b66-419a-9779-e4e185939cdc",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Linc LIC - Unit 18A",
+    "address": "43-10 Crescent Street, Long Island City, NY 11101",
+    "coordinates": [
+      40.7502,
+      -73.9415
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4250,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4250,
+    "sqft": 680,
+    "petPolicy": "Cats and Dogs Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-361-9100",
+    "appointmentLink": "https://rockrose.com/linc-lic",
+    "transitDetails": "2-3 minute walk to Court Square (7, E, M, G) and Queensboro Plaza (N, W, 7).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "Stainless steel appliances",
+      "Granite countertops",
+      "In-unit washer/dryer"
+    ],
+    "buildingAmenities": [
+      "Two-level fitness center",
+      "Basketball court",
+      "Squash court",
+      "Common roof deck with BBQ",
+      "Billiards table"
+    ],
+    "ranking": 4,
+    "notes": "Great central location, large social lounge and outdoor spaces.",
+    "id": "523cd4be-fa0d-4f9a-a17f-bcc255d19232",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "Sven - Unit 34D",
+    "address": "29-59 Northern Blvd, Long Island City, NY 11101",
+    "coordinates": [
+      40.7506,
+      -73.9372
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4350,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4350,
+    "sqft": 680,
+    "petPolicy": "Pet-friendly (weight and breed restrictions apply)",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-751-3457",
+    "appointmentLink": "https://svenlic.com/",
+    "transitDetails": "E, M, R trains at Queens Plaza and N, W, 7 at Queensboro Plaza",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Washer/Dryer in unit",
+      "Stainless steel appliances",
+      "European quartz countertops",
+      "Light oak wood flooring"
+    ],
+    "buildingAmenities": [
+      "Doorman",
+      "Concierge",
+      "Fitness Center",
+      "Swimming Pool",
+      "Yoga Studio",
+      "Children's Playroom"
+    ],
+    "ranking": 5,
+    "notes": "Luxury unit in a 71-story building with a half-acre public park.",
+    "id": "70f24117-559d-4c82-b3bd-eaa848b839e9",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "Tower 28 - Unit 40K",
+    "address": "42-12 28th St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7501,
+      -73.9388
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5800,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5800,
+    "sqft": 980,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Waitlist",
+    "contactPhone": "929-281-3344",
+    "appointmentLink": "https://tower28nyc.com/",
+    "transitDetails": "E, M, R trains at Queens Plaza",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit Washer/Dryer",
+      "Stainless steel appliances",
+      "Hardwood floors",
+      "Floor-to-ceiling windows"
+    ],
+    "buildingAmenities": [
+      "24-hour Concierge",
+      "Fitness Center",
+      "Indoor Pool",
+      "Sauna",
+      "Steam Room",
+      "46th-floor Sky Lounge"
+    ],
+    "ranking": 5,
+    "notes": "Highly coveted K-line unit with spectacular skyline views.",
+    "id": "c481e2f5-202f-49ed-b189-731f2c2704f3",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A980%20sqft"
+  },
+  {
+    "name": "Journal Squared - Tower 3",
+    "address": "615 Pavonia Ave, Jersey City, NJ 07306",
+    "coordinates": [
+      40.7321,
+      -74.0631
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3095,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3095,
+    "sqft": 720,
+    "petPolicy": "Pets allowed. Breed restrictions apply.",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 215-2015",
+    "appointmentLink": "https://journalsquared.com/",
+    "transitDetails": "Direct access to Journal Square PATH Station (approx. 15 mins to WTC, 22 mins to Midtown NYC).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Stainless steel appliances",
+      "Central air conditioning",
+      "Hardwood floors",
+      "Smart lock entry"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Rooftop pool",
+      "Sky lounge",
+      "Co-working spaces",
+      "24/7 Concierge",
+      "Dog run"
+    ],
+    "ranking": 4,
+    "notes": "Very convenient for PATH commuting. Tower 3 is the newest addition.",
+    "id": "998f68bf-5d50-4b6a-a571-7e44aefb0e48",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A720%20sqft"
+  },
+  {
+    "name": "Haus25",
+    "address": "25 Christopher Columbus Dr, Jersey City, NJ 07302",
+    "coordinates": [
+      40.7177,
+      -74.0384
+    ],
+    "floorPlan": "2B",
+    "rentBase": 4660,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4660,
+    "sqft": 1050,
+    "petPolicy": "Pet friendly. Up to 2 pets per apartment.",
+    "feeStatus": "No Fee",
+    "availability": "Available July 1st",
+    "contactPhone": "(201) 834-8825",
+    "appointmentLink": "https://livehaus25.com/schedule-a-tour/",
+    "transitDetails": "1 block to Exchange Place PATH. Short walk to Grove Street PATH and NY Waterway Ferry.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Energy Star appliances",
+      "Quartz countertops",
+      "Balcony",
+      "Custom closets"
+    ],
+    "buildingAmenities": [
+      "Resort-style pool",
+      "Bowling alley",
+      "Golf simulator",
+      "Outdoor fitness areas",
+      "Pet spa",
+      "Makerspace"
+    ],
+    "ranking": 5,
+    "notes": "Highly rated luxury building with exceptional amenities and close proximity to the waterfront.",
+    "id": "2bfe5065-7132-46c1-88c8-25daa5a56a5b",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Jersey City Urby - Unit 105",
+    "address": "200 Greene St, Jersey City, NJ 07311",
+    "coordinates": [
+      40.7202,
+      -74.0366
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3400,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3138,
+    "sqft": 650,
+    "petPolicy": "Pets welcome. Max 2 pets.",
+    "feeStatus": "No Fee",
+    "availability": "Available mid-July",
+    "contactPhone": "(201) 333-8989",
+    "appointmentLink": "https://www.urby.com/jersey-city/leasing",
+    "transitDetails": "Steps from Exchange Place PATH and Harborside Light Rail.",
+    "leaseTerm": 13,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Built-in storage",
+      "Oversized windows",
+      "Gas stove",
+      "Keyless entry"
+    ],
+    "buildingAmenities": [
+      "Heated outdoor pool",
+      "9 Bar Cafe on-site",
+      "State-of-the-art gym",
+      "Communal kitchen",
+      "Fire pits"
+    ],
+    "ranking": 4,
+    "notes": "Quirky, modern design. Smaller unit footprints but highly efficient and excellent building community events.",
+    "id": "1f20bd88-8468-41ca-88a0-5d7720537f45",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A650%20sqft"
+  },
+  {
+    "name": "Gotham Point - Unit 12A",
+    "address": "1-15 57th Ave, Long Island City, NY 11101",
+    "coordinates": [
+      40.7419,
+      -73.9567
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3850,
+    "sqft": 720,
+    "petPolicy": "Pet Friendly (Cats & Dogs allowed, Dog Spa on-site)",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "646-867-8933",
+    "appointmentLink": "https://gothampoint.com/contact/",
+    "transitDetails": "NYC Ferry (Hunters Point South), 7 train via free shuttle, walk to Vernon-Jackson",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "In-unit washer/dryer",
+      "Open kitchen",
+      "Stainless steel appliances",
+      "Dishwasher"
+    ],
+    "buildingAmenities": [
+      "Indoor/outdoor fitness club",
+      "Dog spa",
+      "Rooftop terrace with BBQ",
+      "Resident lounges",
+      "Co-working spaces",
+      "Community boathouse",
+      "Urban rooftop farm",
+      "24-hour attended lobby"
+    ],
+    "ranking": 5,
+    "notes": "Brand new mixed-income development with sweeping East River views and unique amenities like a rooftop farm.",
+    "id": "51bc105f-ff8f-4af9-931f-e05648038e39",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A720%20sqft"
+  },
+  {
+    "name": "4545 Center Blvd - Unit 20D",
+    "address": "4545 Center Blvd, Long Island City, NY 11109",
+    "coordinates": [
+      40.7476,
+      -73.956
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4450,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4450,
+    "sqft": 750,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://www.tfc.com/luxury-apartments/4545-center-blvd",
+    "transitDetails": "Free shuttle service to Vernon-Jackson 7 train station, walking distance to NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Private balcony",
+      "Dishwasher",
+      "In-unit washer/dryer",
+      "Hardwood floors",
+      "Walk-in closet"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Yoga room",
+      "Two tennis courts",
+      "Beach volleyball court",
+      "Children's playroom",
+      "Resident lounge",
+      "Landscaped roof terrace",
+      "Parking garage"
+    ],
+    "ranking": 4,
+    "notes": "Established luxury building with an incredible array of recreational amenities, including tennis and beach volleyball courts.",
+    "id": "a3675c1a-a74c-4cf1-85f3-6dda57392c34",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A750%20sqft"
+  },
+  {
+    "name": "4615 Center Blvd - Unit 15E",
+    "address": "4615 Center Blvd, Long Island City, NY 11109",
+    "coordinates": [
+      40.7465,
+      -73.957
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5800,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 5317,
+    "sqft": 1050,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://www.tfc.com/luxury-apartments/4615-center-blvd",
+    "transitDetails": "Free TFC shuttle to 7 train at Vernon-Jackson, near NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "Private balcony",
+      "Stainless steel appliances",
+      "Dishwasher",
+      "In-unit washer/dryer"
+    ],
+    "buildingAmenities": [
+      "24-hour doorman",
+      "Fitness center",
+      "Resident lounge",
+      "Valet service",
+      "Package room",
+      "Bike storage",
+      "LEED-certified design"
+    ],
+    "ranking": 4,
+    "notes": "LEED-certified luxury building designed by Arquitectonica. Great value for a 2B.",
+    "id": "6a050a67-fa5e-4926-8cde-1e91d4f9c751",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "70 Columbus - Unit 1104",
+    "address": "70 Christopher Columbus Dr, Jersey City, NJ 07302",
+    "coordinates": [
+      40.7196,
+      -74.0415
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3500,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3500,
+    "sqft": 715,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 324-1111",
+    "appointmentLink": "https://www.70columbus.com",
+    "transitDetails": "Directly above the Grove Street PATH station.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Hardwood floors",
+      "Quartz countertops",
+      "Stainless steel appliances"
+    ],
+    "buildingAmenities": [
+      "Doorman",
+      "Fitness center (Base Gym)",
+      "Swimming pool",
+      "Roof deck",
+      "Children's playroom"
+    ],
+    "ranking": 5,
+    "notes": "Unbeatable location for NYC commuters.",
+    "id": "d5711150-a0f6-4686-a250-bc9d60b78a02",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A715%20sqft"
+  },
+  {
+    "name": "The Morgan at Provost Square - Unit 9B",
+    "address": "160 Morgan St, Jersey City, NJ 07302",
+    "coordinates": [
+      40.7208,
+      -74.0392
+    ],
+    "floorPlan": "2B",
+    "rentBase": 4600,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4216,
+    "sqft": 1020,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "(201) 425-1600",
+    "appointmentLink": "https://www.themorganjc.com",
+    "transitDetails": "2 blocks to Grove Street PATH.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Walk-in closets",
+      "Gourmet kitchen",
+      "Floor-to-ceiling windows"
+    ],
+    "buildingAmenities": [
+      "Rooftop pool",
+      "24-hour concierge",
+      "Fitness center",
+      "Club room",
+      "Outdoor lounge with fire pits"
+    ],
+    "ranking": 4,
+    "notes": "Great location and community vibe in the Powerhouse Arts District.",
+    "id": "cc574685-d0f6-4e2d-bfcf-cac9d2f2a095",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1020%20sqft"
+  },
+  {
+    "name": "The One - Unit 14C",
+    "address": "110 First St, Jersey City, NJ 07302",
+    "coordinates": [
+      40.7214,
+      -74.0366
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3200,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3200,
+    "sqft": 690,
+    "petPolicy": "Cats and Dogs Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 626-4400",
+    "appointmentLink": "https://www.theonejc.com",
+    "transitDetails": "Short walk to Grove Street and Newport PATH stations.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Washer/dryer in unit",
+      "Stainless steel appliances",
+      "Granite countertops",
+      "Hardwood flooring"
+    ],
+    "buildingAmenities": [
+      "Swimming pool",
+      "Resident lounge",
+      "Fitness center",
+      "Outdoor terrace",
+      "Doorman"
+    ],
+    "ranking": 4,
+    "notes": "Modern finishes and spacious layouts.",
+    "id": "30185168-c244-4141-990a-e465df189c61",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A690%20sqft"
+  },
+  {
+    "name": "Modera Lofts - Unit 402",
+    "address": "350 Warren St, Jersey City, NJ 07302",
+    "coordinates": [
+      40.7194,
+      -74.0384
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3800,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3800,
+    "sqft": 820,
+    "petPolicy": "Pet friendly",
+    "feeStatus": "No Fee",
+    "availability": "August 1st",
+    "contactPhone": "(844) 663-3725",
+    "appointmentLink": "https://www.moderalofts.com",
+    "transitDetails": "Close to Grove Street PATH and Light Rail.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Exposed brick",
+      "Wood beams",
+      "In-unit washer/dryer",
+      "Stainless steel appliances"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Yoga studio",
+      "Rooftop deck",
+      "Pet spa",
+      "Co-working spaces"
+    ],
+    "ranking": 5,
+    "notes": "Unique loft-style apartments in a historic warehouse conversion.",
+    "id": "c15a93b1-3791-4cc3-a834-0c92ad80694d",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A820%20sqft"
+  },
+  {
+    "name": "QLIC - Unit 8A",
+    "address": "41-42 24th St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7533,
+      -73.9405
+    ],
     "floorPlan": "1B",
     "rentBase": 4100,
     "rentMonthsFree": 1,
     "netEffectiveRent": 3758,
-    "perksAndAmenities": ["Pool", "Fitness Center", "Coworking Space"],
-    "ranking": 5,
-    "notes": "Panoramic Manhattan skyline views."
+    "sqft": 685,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(718) 786-4142",
+    "appointmentLink": "https://qlic.com",
+    "transitDetails": "N, W, 7, G, E, M trains at Queens Plaza and Queensboro Plaza.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Caesarstone countertops",
+      "Stainless steel appliances",
+      "Custom Italian cabinetry"
+    ],
+    "buildingAmenities": [
+      "Rooftop pool",
+      "Fitness center",
+      "Indoor parking",
+      "Resident lounge",
+      "Doorman"
+    ],
+    "ranking": 4,
+    "notes": "Excellent proximity to major subway lines and luxury rooftop amenities.",
+    "id": "5b5cf221-b9e1-4244-b987-3dadbb35dfff",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A685%20sqft"
   },
   {
-    "id": "11",
-    "name": "Lumen LIC - Unit 18C",
-    "address": "42-02 Crescent St, LIC",
-    "coordinates": [40.7503, -73.9416],
+    "name": "The Forge - Unit 12C",
+    "address": "44-28 Purves St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7471,
+      -73.9431
+    ],
     "floorPlan": "2B",
-    "rentBase": 5900,
+    "rentBase": 5500,
     "rentMonthsFree": 1,
-    "netEffectiveRent": 5408,
-    "perksAndAmenities": ["Pool", "Fitness Center", "Coworking Space"],
+    "netEffectiveRent": 5041,
+    "sqft": 950,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(718) 489-3286",
+    "appointmentLink": "https://renttheforge.com",
+    "transitDetails": "Short walk to Court Square (7, E, M, G).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Oak flooring",
+      "Quartz countertops",
+      "High ceilings"
+    ],
+    "buildingAmenities": [
+      "Outdoor pool",
+      "Fitness center",
+      "Screening room",
+      "Sculpture garden",
+      "Children's playroom"
+    ],
     "ranking": 4,
-    "notes": "Good layout, lots of closet space."
+    "notes": "Environmentally conscious, feng-shui inspired luxury building.",
+    "id": "083000af-f866-4ba7-b442-8e57d6196e88",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A950%20sqft"
   },
   {
-    "id": "12",
-    "name": "4545 Center Blvd - Unit 30F",
-    "address": "45-45 Center Blvd, LIC",
-    "coordinates": [40.7471, -73.9576],
-    "floorPlan": "2B",
-    "rentBase": 6500,
-    "rentMonthsFree": 2,
-    "netEffectiveRent": 5416,
-    "perksAndAmenities": ["Waterfront", "Tennis Courts", "Roof deck"],
-    "ranking": 5,
-    "notes": "Incredible views, directly on the water."
-  },
-  {
-    "id": "13",
-    "name": "4545 Center Blvd - Unit 14A",
-    "address": "45-45 Center Blvd, LIC",
-    "coordinates": [40.7471, -73.9576],
+    "name": "Aurora - Unit 20D",
+    "address": "29-11 Queens Plaza North, Long Island City, NY 11101",
+    "coordinates": [
+      40.7516,
+      -73.9377
+    ],
     "floorPlan": "1B",
-    "rentBase": 4300,
-    "rentMonthsFree": 2,
-    "netEffectiveRent": 3583,
-    "perksAndAmenities": ["Waterfront", "Tennis Courts", "Roof deck"],
+    "rentBase": 4200,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4200,
+    "sqft": 700,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(718) 786-2911",
+    "appointmentLink": "https://auroralic.com",
+    "transitDetails": "Direct access to Queens Plaza (E, M, R) and Queensboro Plaza (N, W, 7).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Floor-to-ceiling windows",
+      "White oak floors",
+      "Gourmet kitchen"
+    ],
+    "buildingAmenities": [
+      "Sky lounge",
+      "Fitness center",
+      "Doorman",
+      "Rooftop terrace",
+      "Bicycle storage"
+    ],
     "ranking": 4,
-    "notes": "Solid 1B deal, beautiful park access."
+    "notes": "Modern glass tower with premium finishes and incredible convenience.",
+    "id": "7ac2b920-1263-4982-9816-b41ec0e1cf71",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A700%20sqft"
   },
   {
-    "id": "15",
-    "name": "Linc LIC - Unit 28E",
-    "address": "43-10 Crescent St, LIC",
-    "coordinates": [40.7497, -73.9419],
-    "floorPlan": "1B",
-    "rentBase": 3850,
-    "rentMonthsFree": 0.5,
-    "netEffectiveRent": 3689,
-    "perksAndAmenities": ["Basketball Court", "Resident Lounges"],
-    "ranking": 4,
-    "notes": "Close to Court Square subway lines."
-  },
-  {
-    "id": "16",
-    "name": "Linc LIC - Unit 34F",
-    "address": "43-10 Crescent St, LIC",
-    "coordinates": [40.7497, -73.9419],
+    "name": "1 QPS Tower - Unit 35A",
+    "address": "42-20 24th St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7521,
+      -73.9401
+    ],
     "floorPlan": "2B",
-    "rentBase": 5400,
-    "rentMonthsFree": 0.5,
-    "netEffectiveRent": 5175,
-    "perksAndAmenities": ["Basketball Court", "Resident Lounges"],
-    "ranking": 4,
-    "notes": "High floor, great light."
-  },
-  {
-    "id": "17",
-    "name": "Tower 28 - Unit 40A",
-    "address": "42-12 28th St, LIC",
-    "coordinates": [40.7495, -73.9392],
-    "floorPlan": "2B",
-    "rentBase": 6200,
+    "rentBase": 6100,
     "rentMonthsFree": 1,
-    "netEffectiveRent": 5683,
-    "perksAndAmenities": ["Indoor Pool", "Sauna", "Observation Deck"],
+    "netEffectiveRent": 5591,
+    "sqft": 1080,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "(718) 786-4220",
+    "appointmentLink": "https://1qpstower.com",
+    "transitDetails": "Steps away from N, W, 7, G, E, M trains.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Panoramic views",
+      "Stainless steel appliances",
+      "Private balcony"
+    ],
+    "buildingAmenities": [
+      "Rooftop pool",
+      "Fitness center",
+      "Rock climbing wall",
+      "Library",
+      "Lounge"
+    ],
     "ranking": 5,
-    "notes": "Luxury building, highest observation deck in NYC."
+    "notes": "Premium tower offering luxury lifestyle with a climbing wall and top-tier pool.",
+    "id": "b83a79a3-96ea-48d4-afc3-bfd7434dd16c",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1080%20sqft"
   },
   {
-    "id": "18",
-    "name": "Tower 28 - Unit 15C",
-    "address": "42-12 28th St, LIC",
-    "coordinates": [40.7495, -73.9392],
-    "floorPlan": "1B",
-    "rentBase": 4400,
-    "rentMonthsFree": 1,
-    "netEffectiveRent": 4033,
-    "perksAndAmenities": ["Indoor Pool", "Sauna"],
-    "ranking": 4,
-    "notes": "A bit pricey for a 1B."
-  },
-  {
-    "id": "19",
-    "name": "4615 Center Blvd - Unit 22D",
-    "address": "46-15 Center Blvd, LIC",
-    "coordinates": [40.7460, -73.9575],
+    "name": "Eagle Lofts - Unit 7B",
+    "address": "43-22 Queens St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7481,
+      -73.9392
+    ],
     "floorPlan": "1B",
     "rentBase": 4000,
     "rentMonthsFree": 0,
     "netEffectiveRent": 4000,
-    "perksAndAmenities": ["Waterfront", "Gym"],
+    "sqft": 750,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "(718) 361-9100",
+    "appointmentLink": "https://rockrose.com/eagle-lofts",
+    "transitDetails": "Short walk to Court Square (7, E, M, G).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "High ceilings",
+      "In-unit washer/dryer",
+      "Hardwood floors",
+      "Granite countertops"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Resident lounge",
+      "Roof deck",
+      "Doorman",
+      "Billiards room"
+    ],
     "ranking": 4,
-    "notes": "Great location, no concessions."
+    "notes": "Spacious layouts with an industrial-chic aesthetic in the heart of LIC.",
+    "id": "e95ac841-e427-48b3-bb6d-5b3bf4e28836",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A750%20sqft"
   },
   {
-    "id": "20",
-    "name": "4615 Center Blvd - Unit 9G",
-    "address": "46-15 Center Blvd, LIC",
-    "coordinates": [40.7460, -73.9575],
-    "floorPlan": "Studio",
-    "rentBase": 3200,
-    "rentMonthsFree": 0,
-    "netEffectiveRent": 3200,
-    "perksAndAmenities": ["Waterfront", "Gym"],
-    "ranking": 3,
-    "notes": "Nice studio, direct park access."
-  },
-  {
-    "id": "23",
-    "name": "Sven - Unit 66B",
-    "address": "29-59 Northern Blvd, LIC",
-    "coordinates": [40.7505, -73.9366],
-    "floorPlan": "1B",
-    "rentBase": 4650,
-    "rentMonthsFree": 1.5,
-    "netEffectiveRent": 4068,
-    "perksAndAmenities": ["LEED Certified", "Outdoor pool", "Smart Home"],
+    "name": "90 Columbus - Unit 18C",
+    "address": "90 Christopher Columbus Dr, Jersey City, NJ 07302",
+    "coordinates": [
+      40.7196,
+      -74.0415
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5100,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4675,
+    "sqft": 1100,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "(201) 324-1111",
+    "appointmentLink": "https://www.90columbus.com",
+    "transitDetails": "Directly above Grove Street PATH.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer/dryer",
+      "Oversized windows",
+      "Stainless steel appliances",
+      "Walk-in closets"
+    ],
+    "buildingAmenities": [
+      "Base Gym membership included",
+      "Swimming pool",
+      "Doorman",
+      "Resident lounge",
+      "Dog run"
+    ],
     "ranking": 5,
-    "notes": "Penthouse level, newly listed!"
+    "notes": "Sister building to 70 Columbus, sharing incredible amenities and ultra-convenient PATH access.",
+    "id": "5298259c-6582-4972-bab6-05b81112d9c8",
+    "source": "Zillow",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1100%20sqft"
+  },
+  {
+    "name": "Jackson Park - Unit 22D",
+    "address": "28-10 Jackson Ave, Long Island City, NY 11101",
+    "coordinates": [
+      40.7485,
+      -73.9388
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4500,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4125,
+    "sqft": 720,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-522-5766",
+    "appointmentLink": "https://jacksonparklic.com/",
+    "transitDetails": "Adjacent to Queens Plaza (E, M, R) and Court Square (7, G, E, M).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "In-unit washer/dryer",
+      "Stainless steel appliances",
+      "Hardwood floors"
+    ],
+    "buildingAmenities": [
+      "1.6-acre private park",
+      "Indoor lap pool",
+      "Outdoor pool",
+      "Fitness center",
+      "Basketball court"
+    ],
+    "ranking": 5,
+    "notes": "Known for the best amenity package in LIC.",
+    "id": "f54ca572-dec4-4eb7-b78e-49fee84a497f",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A720%20sqft"
+  },
+  {
+    "name": "The Hayden - Unit 34B",
+    "address": "43-25 Hunter St, Long Island City, NY 11101",
+    "coordinates": [
+      40.749,
+      -73.943
+    ],
+    "floorPlan": "2B",
+    "rentBase": 6300,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 6300,
+    "sqft": 1050,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "718-361-9100",
+    "appointmentLink": "https://rockrose.com/the-hayden",
+    "transitDetails": "Directly across from Court Square station (7, G, E, M).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Granite countertops",
+      "Bosch washer/dryer",
+      "Private balcony",
+      "Manhattan views"
+    ],
+    "buildingAmenities": [
+      "Basketball court",
+      "Two-level fitness center",
+      "Rooftop solarium",
+      "Screening room"
+    ],
+    "ranking": 4,
+    "notes": "Luxury building directly above Court Square station with excellent views.",
+    "id": "166bffd9-d8b1-45ed-936a-a0d5eb17d191",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Linc LIC - Unit 18A",
+    "address": "43-10 Crescent St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7502,
+      -73.9415
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4250,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4250,
+    "sqft": 680,
+    "petPolicy": "Cats and Dogs Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-361-9100",
+    "appointmentLink": "https://rockrose.com/linc-lic",
+    "transitDetails": "3-minute walk to Court Square (7, E, M, G) and Queensboro Plaza (N, W, 7).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "Stainless steel appliances",
+      "In-unit washer/dryer"
+    ],
+    "buildingAmenities": [
+      "Two-level fitness center",
+      "Basketball court",
+      "Squash court",
+      "Common roof deck"
+    ],
+    "ranking": 4,
+    "notes": "Great central location, large social lounge and outdoor spaces.",
+    "id": "dd33cb4b-3725-4d66-bcea-29a1fa8d3171",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "Sven - Unit 34D",
+    "address": "29-59 Northern Blvd, Long Island City, NY 11101",
+    "coordinates": [
+      40.7506,
+      -73.9372
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4350,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4350,
+    "sqft": 680,
+    "petPolicy": "Pet-friendly (weight/breed restrictions)",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-751-3457",
+    "appointmentLink": "https://svenlic.com/",
+    "transitDetails": "E, M, R trains at Queens Plaza and N, W, 7 at Queensboro Plaza",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Washer/Dryer in unit",
+      "Stainless steel appliances",
+      "European quartz countertops",
+      "Light oak wood flooring"
+    ],
+    "buildingAmenities": [
+      "Doorman",
+      "Fitness Center",
+      "Swimming Pool",
+      "Yoga Studio",
+      "Children's Playroom"
+    ],
+    "ranking": 5,
+    "notes": "Luxury unit in a 71-story building with a half-acre public park.",
+    "id": "750f963f-d309-42e8-8d2c-b8be34b28c10",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "Tower 28 - Unit 40K",
+    "address": "42-12 28th St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7501,
+      -73.9388
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5800,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5800,
+    "sqft": 980,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Waitlist",
+    "contactPhone": "929-281-3344",
+    "appointmentLink": "https://tower28nyc.com/",
+    "transitDetails": "E, M, R trains at Queens Plaza",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit Washer/Dryer",
+      "Stainless steel appliances",
+      "Floor-to-ceiling windows"
+    ],
+    "buildingAmenities": [
+      "24-hour Concierge",
+      "Fitness Center",
+      "Indoor Pool",
+      "Sauna",
+      "Steam Room",
+      "Sky Lounge"
+    ],
+    "ranking": 5,
+    "notes": "Highly coveted high-floor unit with spectacular skyline views.",
+    "id": "87d918d6-ea98-4f06-8918-be4d26a89395",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A980%20sqft"
+  },
+  {
+    "name": "Gotham Point - Unit 12A",
+    "address": "1-15 57th Ave, Long Island City, NY 11101",
+    "coordinates": [
+      40.7419,
+      -73.9567
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3850,
+    "sqft": 720,
+    "petPolicy": "Pet Friendly (Dog Spa on-site)",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "646-867-8933",
+    "appointmentLink": "https://gothampoint.com/",
+    "transitDetails": "NYC Ferry, 7 train via free shuttle, walk to Vernon-Jackson",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "In-unit washer/dryer",
+      "Open kitchen",
+      "Dishwasher"
+    ],
+    "buildingAmenities": [
+      "Indoor/outdoor fitness club",
+      "Dog spa",
+      "Rooftop terrace",
+      "Co-working spaces",
+      "Community boathouse"
+    ],
+    "ranking": 5,
+    "notes": "Brand new mixed-income development with sweeping East River views.",
+    "id": "3e866e8d-1e28-4c68-b5a6-83a5c08c790f",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A720%20sqft"
+  },
+  {
+    "name": "4545 Center Blvd - Unit 20D",
+    "address": "4545 Center Blvd, Long Island City, NY 11109",
+    "coordinates": [
+      40.7476,
+      -73.956
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4450,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4450,
+    "sqft": 750,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "718-606-9440",
+    "appointmentLink": "https://www.tfc.com/luxury-apartments/4545-center-blvd",
+    "transitDetails": "Free shuttle service to Vernon-Jackson 7 train station, walking distance to NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Private balcony",
+      "Dishwasher",
+      "In-unit washer/dryer",
+      "Walk-in closet"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Two tennis courts",
+      "Beach volleyball court",
+      "Resident lounge",
+      "Landscaped roof terrace"
+    ],
+    "ranking": 4,
+    "notes": "Established luxury building with an incredible array of recreational amenities.",
+    "id": "f40b5c1b-b921-4b8a-9aa1-1893ed98e9b8",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A750%20sqft"
+  },
+  {
+    "name": "4615 Center Blvd - Unit 15E",
+    "address": "4615 Center Blvd, Long Island City, NY 11109",
+    "coordinates": [
+      40.7465,
+      -73.957
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5800,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 5317,
+    "sqft": 1050,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-606-9440",
+    "appointmentLink": "https://www.tfc.com/luxury-apartments/4615-center-blvd",
+    "transitDetails": "Free TFC shuttle to 7 train at Vernon-Jackson, near NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "Private balcony",
+      "Stainless steel appliances",
+      "In-unit washer/dryer"
+    ],
+    "buildingAmenities": [
+      "24-hour doorman",
+      "Fitness center",
+      "Valet service",
+      "Bike storage",
+      "LEED-certified design"
+    ],
+    "ranking": 4,
+    "notes": "LEED-certified luxury building designed by Arquitectonica.",
+    "id": "790a1bbe-0a97-456f-9b22-36877f389b64",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "The Ariel LIC - Unit 8C",
+    "address": "44-46 Purves St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7482,
+      -73.9421
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3950,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3950,
+    "sqft": 650,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "August 1st",
+    "contactPhone": "718-204-2002",
+    "appointmentLink": "https://streeteasy.com/building/the-ariel-lic",
+    "transitDetails": "Very close to Court Square (7, E, M, G).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Central air",
+      "Hardwood floors",
+      "In-unit washer/dryer",
+      "Dishwasher"
+    ],
+    "buildingAmenities": [
+      "Gym",
+      "Roof deck with barbecue grills",
+      "Bike storage",
+      "Package room",
+      "Live-in super"
+    ],
+    "ranking": 4,
+    "notes": "Modern boutique luxury building completed in 2023.",
+    "id": "56432e0a-f15f-4f1b-81a2-7cbb6590e1b5",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A650%20sqft"
+  },
+  {
+    "name": "ALTA LIC - Unit 14B",
+    "address": "29-22 Northern Blvd, Long Island City, NY 11101",
+    "coordinates": [
+      40.7505,
+      -73.9365
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3850,
+    "sqft": 700,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-806-1800",
+    "appointmentLink": "https://altalic.com/",
+    "transitDetails": "Located steps from Queens Plaza (E, M, R) and Queensboro Plaza (7, N, W).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Keyless entry",
+      "Oversized windows",
+      "Washer/Dryer",
+      "Custom cabinetry"
+    ],
+    "buildingAmenities": [
+      "Indoor lap pool",
+      "Co-working lounge",
+      "18-hole golf simulator",
+      "Outdoor terrace",
+      "Fitness center"
+    ],
+    "ranking": 5,
+    "notes": "Premium co-living and conventional apartment tower.",
+    "id": "cc204804-bae5-42db-9da9-313f3a4f09b1",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A700%20sqft"
+  },
+  {
+    "name": "Watermark LIC - Unit 22F",
+    "address": "27-19 44th Dr, Long Island City, NY 11101",
+    "coordinates": [
+      40.7495,
+      -73.9418
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5600,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5600,
+    "sqft": 950,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-361-9101",
+    "appointmentLink": "https://watermarklic.com/",
+    "transitDetails": "Close to Court Square and Queensboro Plaza.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Hardwood floors",
+      "High ceilings",
+      "Stainless steel appliances",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Rooftop terrace",
+      "Sky lounge",
+      "Fitness center",
+      "Bicycle storage",
+      "Doorman"
+    ],
+    "ranking": 4,
+    "notes": "Sophisticated boutique building in Court Square.",
+    "id": "c125aff0-06ad-4b50-a4b2-3d5b978a4f37",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A950%20sqft"
+  },
+  {
+    "name": "Halo LIC - Unit 10G",
+    "address": "44-41 Purves St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7483,
+      -73.9422
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4100,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3758,
+    "sqft": 690,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "July 15th",
+    "contactPhone": "718-502-6035",
+    "appointmentLink": "https://halolic.com/",
+    "transitDetails": "Court Square (7, E, M, G).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Bluetooth speakers",
+      "Private balcony",
+      "Dishwasher",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Wine tasting room",
+      "Library",
+      "Fitness center",
+      "Spa",
+      "Cinema",
+      "Business center"
+    ],
+    "ranking": 4,
+    "notes": "Known for extensive and unique amenity offerings.",
+    "id": "d6698ebc-c782-4727-9010-7f20eef3cf31",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A690%20sqft"
+  },
+  {
+    "name": "ARC - Unit 5A",
+    "address": "30-02 39th Ave, Long Island City, NY 11101",
+    "coordinates": [
+      40.7544,
+      -73.9348
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3800,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3800,
+    "sqft": 650,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-709-9890",
+    "appointmentLink": "https://arclivingnyc.com/",
+    "transitDetails": "Dutch Kills N, W trains. Short walk to Queens Plaza.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Bosch appliances",
+      "Custom kitchen",
+      "Washer/Dryer",
+      "Wide-plank flooring"
+    ],
+    "buildingAmenities": [
+      "Rooftop pool",
+      "Half-court basketball",
+      "Bocce court",
+      "Greenhouse",
+      "Fitness center"
+    ],
+    "ranking": 5,
+    "notes": "Expansive outdoor spaces and massive rooftop pool.",
+    "id": "2f907fb3-e71c-48bc-a9e4-b1a6636e35b0",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A650%20sqft"
+  },
+  {
+    "name": "The Forge - Unit 11C",
+    "address": "44-28 Purves St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7485,
+      -73.9423
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4300,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3942,
+    "sqft": 710,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-937-2500",
+    "appointmentLink": "https://renttheforge.com/",
+    "transitDetails": "Court Square transit hub (7, E, M, G).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Oak flooring",
+      "Quartz countertops",
+      "In-unit washer/dryer",
+      "Solar shades"
+    ],
+    "buildingAmenities": [
+      "Outdoor pool",
+      "Outdoor movie theater",
+      "Hammock park",
+      "Fitness center",
+      "Sky lounge"
+    ],
+    "ranking": 5,
+    "notes": "LEED Silver certified, environmentally conscious luxury building.",
+    "id": "3e9e2761-9b0d-443a-9ea1-c8485409eaf2",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A710%20sqft"
+  },
+  {
+    "name": "Eagle Lofts - Unit 28H",
+    "address": "43-22 Queens St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7493,
+      -73.9378
+    ],
+    "floorPlan": "2B",
+    "rentBase": 6200,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 6200,
+    "sqft": 1100,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "718-433-2880",
+    "appointmentLink": "https://rockrose.com/eagle-lofts",
+    "transitDetails": "Next to Queens Plaza (E, M, R) and Queensboro Plaza (7, N, W).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "High ceilings",
+      "Industrial chic finishes",
+      "Washer/Dryer",
+      "Stainless steel appliances"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Billiards room",
+      "Roof deck",
+      "Doorman",
+      "Pet wash"
+    ],
+    "ranking": 4,
+    "notes": "Beautiful conversion with a mix of historic loft features and modern luxury.",
+    "id": "b81c318c-07b8-4317-91e3-d6a537aa0986",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1100%20sqft"
+  },
+  {
+    "name": "5241 Center Blvd - Unit 6B",
+    "address": "5241 Center Blvd, Long Island City, NY 11109",
+    "coordinates": [
+      40.7423,
+      -73.9584
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4150,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4150,
+    "sqft": 730,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "August 1st",
+    "contactPhone": "718-606-9440",
+    "appointmentLink": "https://www.tfc.com/",
+    "transitDetails": "NYC Ferry access, shuttle to Vernon-Jackson.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Private balcony",
+      "Hardwood floors",
+      "Granite countertops",
+      "Dishwasher"
+    ],
+    "buildingAmenities": [
+      "Doorman",
+      "Fitness center",
+      "Resident lounge",
+      "Laundry room",
+      "Parking"
+    ],
+    "ranking": 4,
+    "notes": "Part of the Hunter's Point South waterfront community.",
+    "id": "1c169ee6-5787-457a-8f69-703aa5cebf71",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A730%20sqft"
+  },
+  {
+    "name": "QLIC - Unit 19E",
+    "address": "41-42 24th St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7523,
+      -73.9405
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3900,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3575,
+    "sqft": 670,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-392-1200",
+    "appointmentLink": "https://qlic.com/",
+    "transitDetails": "Queensboro Plaza (7, N, W) and Queens Plaza (E, M, R).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "In-unit washer/dryer",
+      "Wide plank floors"
+    ],
+    "buildingAmenities": [
+      "Rooftop pool",
+      "Fitness center",
+      "Outdoor theater",
+      "Indoor parking",
+      "Bike storage"
+    ],
+    "ranking": 4,
+    "notes": "Vibrant building with panoramic views and rooftop pool.",
+    "id": "5b9be4e8-4a01-4102-939c-402e5b57d80b",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A670%20sqft"
+  },
+  {
+    "name": "Pearson Court Square - Unit 12C",
+    "address": "45-50 Pearson St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7468,
+      -73.9463
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5500,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5500,
+    "sqft": 1020,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-433-2555",
+    "appointmentLink": "https://pearsoncourtsquare.com/",
+    "transitDetails": "Court Square (7, E, M, G) just steps away.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Spacious layout",
+      "Washer/Dryer",
+      "Stainless steel appliances",
+      "Large closets"
+    ],
+    "buildingAmenities": [
+      "Rooftop terrace",
+      "Yoga studio",
+      "Fitness center",
+      "Doorman",
+      "Resident lounge"
+    ],
+    "ranking": 4,
+    "notes": "LEED Certified, very close to multiple subway lines.",
+    "id": "a3628b13-c4d8-472f-b64f-215765e00e09",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1020%20sqft"
+  },
+  {
+    "name": "4610 Center Blvd - Unit 32D",
+    "address": "4610 Center Blvd, Long Island City, NY 11109",
+    "coordinates": [
+      40.7467,
+      -73.9558
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4600,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4600,
+    "sqft": 740,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Waitlist",
+    "contactPhone": "718-606-9440",
+    "appointmentLink": "https://www.tfc.com/",
+    "transitDetails": "Free TFC shuttle to 7 train, NYC Ferry nearby.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Manhattan skyline views",
+      "In-unit washer/dryer",
+      "Dishwasher",
+      "Stainless steel appliances"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Club room",
+      "Landscaped terrace",
+      "24-hour concierge"
+    ],
+    "ranking": 5,
+    "notes": "Classic TFC waterfront luxury with unparalleled views.",
+    "id": "8a5de168-61e3-4de1-b876-ed052c5c7dfc",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A740%20sqft"
+  },
+  {
+    "name": "4720 Center Blvd - Unit 18F",
+    "address": "4720 Center Blvd, Long Island City, NY 11109",
+    "coordinates": [
+      40.746,
+      -73.9565
+    ],
+    "floorPlan": "2B",
+    "rentBase": 5900,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 5408,
+    "sqft": 1080,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "718-606-9440",
+    "appointmentLink": "https://www.tfc.com/",
+    "transitDetails": "NYC Ferry and TFC shuttle to Vernon-Jackson.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Corner unit",
+      "Floor-to-ceiling windows",
+      "In-unit washer/dryer",
+      "Hardwood floors"
+    ],
+    "buildingAmenities": [
+      "Doorman",
+      "Gym",
+      "Landscaped roof deck",
+      "Children's playroom",
+      "Bicycle storage"
+    ],
+    "ranking": 4,
+    "notes": "Directly overlooks Gantry Plaza State Park.",
+    "id": "f7151335-6e22-4077-a0d2-301a79b8b95e",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1080%20sqft"
+  },
+  {
+    "name": "21G - Unit 8A",
+    "address": "21-01 41st Ave, Long Island City, NY 11101",
+    "coordinates": [
+      40.754,
+      -73.941
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3750,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3750,
+    "sqft": 640,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-729-1000",
+    "appointmentLink": "https://streeteasy.com/building/21g",
+    "transitDetails": "Queensboro Plaza (7, N, W) is just a block away.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Open kitchen",
+      "Stainless appliances",
+      "Large windows",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Virtual doorman",
+      "Roof deck",
+      "Fitness center",
+      "Lounge"
+    ],
+    "ranking": 4,
+    "notes": "Boutique building offering a quieter environment in a busy area.",
+    "id": "df60a463-609c-40ad-b4f5-86cdeda4c749",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A640%20sqft"
+  },
+  {
+    "name": "The Harrison - Unit 15B",
+    "address": "27-21 44th Dr, Long Island City, NY 11101",
+    "coordinates": [
+      40.7496,
+      -73.9416
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4050,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4050,
+    "sqft": 690,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-361-9102",
+    "appointmentLink": "https://streeteasy.com/building/the-harrison",
+    "transitDetails": "Court Square (7, E, M, G).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Casement windows",
+      "High-end fixtures",
+      "In-unit washer/dryer",
+      "Wide plank flooring"
+    ],
+    "buildingAmenities": [
+      "24-hour attended lobby",
+      "Fitness center",
+      "Rooftop lounge",
+      "Children's playroom"
+    ],
+    "ranking": 5,
+    "notes": "Condo-level finishes in a highly sought-after building.",
+    "id": "7dffc7ce-9e4a-4940-bccb-5c0d284114a0",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A690%20sqft"
+  },
+  {
+    "name": "Hero LIC - Unit 20C",
+    "address": "24-16 Queens Plaza S, Long Island City, NY 11101",
+    "coordinates": [
+      40.7509,
+      -73.9406
+    ],
+    "floorPlan": "1B",
+    "rentBase": 4100,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3758,
+    "sqft": 680,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "August 1st",
+    "contactPhone": "718-433-2000",
+    "appointmentLink": "https://streeteasy.com/building/hero-lic",
+    "transitDetails": "Queensboro Plaza, Queens Plaza.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Balcony",
+      "Smart home features",
+      "Washer/Dryer",
+      "Premium appliances"
+    ],
+    "buildingAmenities": [
+      "Sky room",
+      "Zen garden",
+      "Fitness center",
+      "Yoga studio",
+      "Pet spa"
+    ],
+    "ranking": 4,
+    "notes": "Striking architecture and wellness-focused amenities.",
+    "id": "ac796e77-6bfb-4f19-a583-9b4846d90c27",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "Baker House - Unit 5D",
+    "address": "41-07 Crescent St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7533,
+      -73.9388
+    ],
+    "floorPlan": "1B",
+    "rentBase": 3600,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3600,
+    "sqft": 620,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available Now",
+    "contactPhone": "718-729-1100",
+    "appointmentLink": "https://streeteasy.com/building/baker-house-lic",
+    "transitDetails": "Short walk to Queensboro Plaza (7, N, W).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Exposed brick details",
+      "Washer/Dryer",
+      "Stainless steel appliances"
+    ],
+    "buildingAmenities": [
+      "Rooftop terrace",
+      "Fitness center",
+      "Part-time doorman",
+      "Package room"
+    ],
+    "ranking": 4,
+    "notes": "Industrial-style building with lots of character.",
+    "id": "c1003c42-fd21-4798-8347-498e488db200",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A620%20sqft"
+  },
+  {
+    "name": "1 QPS Tower - Unit 30F",
+    "address": "42-20 24th St, Long Island City, NY 11101",
+    "coordinates": [
+      40.7507,
+      -73.9412
+    ],
+    "floorPlan": "2B",
+    "rentBase": 6100,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 6100,
+    "sqft": 1050,
+    "petPolicy": "Pet Friendly",
+    "feeStatus": "No Fee",
+    "availability": "July 15th",
+    "contactPhone": "718-729-2400",
+    "appointmentLink": "https://1qps.com/",
+    "transitDetails": "Queensboro Plaza (7, N, W), Queens Plaza (E, M, R).",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Corner views",
+      "Washer/Dryer",
+      "Hardwood floors",
+      "Large closets"
+    ],
+    "buildingAmenities": [
+      "Rooftop pool",
+      "Climbing wall",
+      "Fitness center",
+      "Co-working space",
+      "Resident lounge"
+    ],
+    "ranking": 5,
+    "notes": "Known for one of the highest rooftop pools in NYC.",
+    "id": "6b22fe55-5ea0-4d54-b32b-c0c952005973",
+    "source": "StreetEasy",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Jackson Park",
+    "address": "28-10 Jackson Ave, Long Island City, NY 11101",
+    "coordinates": {
+      "lat": 40.7485,
+      "lng": -73.9385
+    },
+    "floorPlan": "1B",
+    "rentBase": 4200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3850,
+    "sqft": 700,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "718-555-0101",
+    "appointmentLink": "https://www.jacksonparklic.com/contact",
+    "transitDetails": "E, M, R at Queens Plaza; 7, N, W at Queensboro Plaza",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Floor-to-ceiling windows",
+      "Stainless steel appliances",
+      "Hardwood floors"
+    ],
+    "buildingAmenities": [
+      "Fitness Center",
+      "Indoor Pool",
+      "Outdoor Pool",
+      "Lounge",
+      "Dog Park",
+      "Golf Simulator"
+    ],
+    "ranking": 5,
+    "notes": "Premium amenities block.",
+    "id": "f5200361-57c2-4953-a60e-af17ecdd813c",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A700%20sqft"
+  },
+  {
+    "name": "Eagle Lofts",
+    "address": "43-22 Queens St, Long Island City, NY 11101",
+    "coordinates": {
+      "lat": 40.749,
+      "lng": -73.9372
+    },
+    "floorPlan": "2B",
+    "rentBase": 5800,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5800,
+    "sqft": 1050,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available within 30 days",
+    "contactPhone": "718-555-0102",
+    "appointmentLink": "https://www.eaglelofts.com/schedule",
+    "transitDetails": "7, N, W, E, M, R nearby",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "High ceilings",
+      "Exposed concrete",
+      "Walk-in closets"
+    ],
+    "buildingAmenities": [
+      "Gym",
+      "Doorman",
+      "Rooftop terrace",
+      "Bike storage"
+    ],
+    "ranking": 4.5,
+    "notes": "Industrial chic design.",
+    "id": "3d0ff847-2534-44b5-a09a-0cd559837649",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Halo LIC",
+    "address": "44-41 Purves St, Long Island City, NY 11101",
+    "coordinates": {
+      "lat": 40.7472,
+      "lng": -73.9404
+    },
+    "floorPlan": "1B",
+    "rentBase": 3950,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3950,
+    "sqft": 650,
+    "petPolicy": "Dogs and Cats Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "718-555-0103",
+    "appointmentLink": "https://www.halolic.com/tour",
+    "transitDetails": "G, E, M, 7 at Court Square",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Balcony",
+      "In-unit W/D",
+      "Dishwasher"
+    ],
+    "buildingAmenities": [
+      "Doorman",
+      "Wine tasting room",
+      "Library",
+      "Fitness Center"
+    ],
+    "ranking": 4,
+    "notes": "Great location near Court Square.",
+    "id": "d91d7bcf-0fae-4218-ac2b-35f20f1bc4e4",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A650%20sqft"
+  },
+  {
+    "name": "Tower 28",
+    "address": "42-12 28th St, Long Island City, NY 11101",
+    "coordinates": {
+      "lat": 40.7495,
+      "lng": -73.938
+    },
+    "floorPlan": "2B",
+    "rentBase": 6100,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 5591,
+    "sqft": 1100,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available within 60 days",
+    "contactPhone": "718-555-0104",
+    "appointmentLink": "https://www.tower28lic.com/appointments",
+    "transitDetails": "N, W, 7 at Queensboro Plaza",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Smart home features",
+      "In-unit W/D",
+      "Luxury baths"
+    ],
+    "buildingAmenities": [
+      "Indoor Pool",
+      "Observation deck",
+      "Spa",
+      "Gym"
+    ],
+    "ranking": 4.8,
+    "notes": "One of the tallest residential towers in NYC outside Manhattan.",
+    "id": "d7562572-731e-463e-851a-7a505041e2b9",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1100%20sqft"
+  },
+  {
+    "name": "The Hayden",
+    "address": "43-25 Hunter St, Long Island City, NY 11101",
+    "coordinates": {
+      "lat": 40.7481,
+      "lng": -73.9419
+    },
+    "floorPlan": "1B",
+    "rentBase": 4050,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4050,
+    "sqft": 680,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "718-555-0105",
+    "appointmentLink": "https://www.haydenlic.com/contact",
+    "transitDetails": "E, M, G, 7 at Court Sq",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Hardwood floors",
+      "Large windows"
+    ],
+    "buildingAmenities": [
+      "Basketball court",
+      "Yoga studio",
+      "Rooftop deck",
+      "Pet spa"
+    ],
+    "ranking": 4.6,
+    "notes": "Spacious layouts.",
+    "id": "d090a0fd-1ca1-4810-8bf8-e726146e4e2a",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "Sven",
+    "address": "29-59 Northern Blvd, Long Island City, NY 11101",
+    "coordinates": {
+      "lat": 40.7507,
+      "lng": -73.936
+    },
+    "floorPlan": "2B",
+    "rentBase": 6500,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 5958,
+    "sqft": 1080,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "718-555-0106",
+    "appointmentLink": "https://www.svenlic.com/leasing",
+    "transitDetails": "E, M, R at Queens Plaza",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Smart lock",
+      "View of Manhattan",
+      "In-unit W/D"
+    ],
+    "buildingAmenities": [
+      "Outdoor Pool",
+      "Fitness center",
+      "Co-working space",
+      "Lounge"
+    ],
+    "ranking": 4.9,
+    "notes": "Brand new ultra-luxury curved tower.",
+    "id": "72c237d3-115d-4305-8b2a-5186ee8c235b",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1080%20sqft"
+  },
+  {
+    "name": "Journal Squared",
+    "address": "615 Pavonia Ave, Jersey City, NJ 07306",
+    "coordinates": {
+      "lat": 40.733,
+      "lng": -74.062
+    },
+    "floorPlan": "1B",
+    "rentBase": 3200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 2933,
+    "sqft": 640,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "201-555-0201",
+    "appointmentLink": "https://www.journalsquared.com/contact",
+    "transitDetails": "Journal Square PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Stainless steel appliances",
+      "Central AC"
+    ],
+    "buildingAmenities": [
+      "Sky lounge",
+      "Fitness center",
+      "Outdoor pool",
+      "Dog run"
+    ],
+    "ranking": 4.5,
+    "notes": "Right next to the PATH station.",
+    "id": "ee384acb-3d53-4617-9e97-fd456d6f8612",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A640%20sqft"
+  },
+  {
+    "name": "The Ellipse",
+    "address": "25 Park Ln S, Jersey City, NJ 07310",
+    "coordinates": {
+      "lat": 40.7299,
+      "lng": -74.0321
+    },
+    "floorPlan": "2B",
+    "rentBase": 5500,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5500,
+    "sqft": 1150,
+    "petPolicy": "Cats and Dogs Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available within 30 days",
+    "contactPhone": "201-555-0202",
+    "appointmentLink": "https://www.ellipsejc.com/tour",
+    "transitDetails": "Newport PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Panoramic NYC views",
+      "In-unit W/D",
+      "Floor-to-ceiling windows"
+    ],
+    "buildingAmenities": [
+      "Outdoor pool",
+      "Fitness center",
+      "Co-working lounge",
+      "Playroom"
+    ],
+    "ranking": 4.8,
+    "notes": "Waterfront location.",
+    "id": "05ccb1c5-db41-4784-b76b-8cf56087a271",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1150%20sqft"
+  },
+  {
+    "name": "Urby Jersey City",
+    "address": "200 Greene St, Jersey City, NJ 07311",
+    "coordinates": {
+      "lat": 40.717,
+      "lng": -74.0335
+    },
+    "floorPlan": "1B",
+    "rentBase": 3500,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3208,
+    "sqft": 620,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "201-555-0203",
+    "appointmentLink": "https://www.urby.com/jersey-city",
+    "transitDetails": "Exchange Place PATH, Harborside Light Rail",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Built-in storage",
+      "In-unit W/D",
+      "Hardwood floors"
+    ],
+    "buildingAmenities": [
+      "Heated outdoor pool",
+      "Fitness center",
+      "Cafe",
+      "9th floor patio"
+    ],
+    "ranking": 4.4,
+    "notes": "Modern minimalist aesthetic.",
+    "id": "16439995-6618-44dd-93a9-a31ee05b7c38",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A620%20sqft"
+  },
+  {
+    "name": "Haus25",
+    "address": "25 Christopher Columbus Dr, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7185,
+      "lng": -74.0382
+    },
+    "floorPlan": "2B",
+    "rentBase": 6200,
+    "rentMonthsFree": 1.5,
+    "netEffectiveRent": 5425,
+    "sqft": 1100,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Available within 30 days",
+    "contactPhone": "201-555-0204",
+    "appointmentLink": "https://www.haus25.com/schedule",
+    "transitDetails": "Grove St PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Energy efficient appliances",
+      "In-unit W/D",
+      "Balcony"
+    ],
+    "buildingAmenities": [
+      "Resort-style pool",
+      "Golf simulator",
+      "Bowling alley",
+      "Fitness center"
+    ],
+    "ranking": 5,
+    "notes": "High-end amenities.",
+    "id": "43db5916-5d2e-4595-a660-18ca011640a3",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1100%20sqft"
+  },
+  {
+    "name": "VyV",
+    "address": "474 Warren St, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7251,
+      "lng": -74.0374
+    },
+    "floorPlan": "1B",
+    "rentBase": 3700,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3700,
+    "sqft": 710,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "201-555-0205",
+    "appointmentLink": "https://www.vyvjc.com/contact",
+    "transitDetails": "Newport PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Large closets",
+      "Stainless steel appliances"
+    ],
+    "buildingAmenities": [
+      "Pool",
+      "BBQ grills",
+      "Gym",
+      "Lounge"
+    ],
+    "ranking": 4.3,
+    "notes": "Convenient to ShopRite.",
+    "id": "e858db08-f58f-4271-a0b0-c7977ba25921",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A710%20sqft"
+  },
+  {
+    "name": "The Hendrix",
+    "address": "350 Warren St, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7208,
+      "lng": -74.0371
+    },
+    "floorPlan": "2B",
+    "rentBase": 5200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4766,
+    "sqft": 1050,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "201-555-0206",
+    "appointmentLink": "https://www.thehendrixjc.com/tour",
+    "transitDetails": "Grove St PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Wood-style flooring",
+      "Quartz countertops"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Lounge",
+      "Roof deck"
+    ],
+    "ranking": 4.2,
+    "notes": "Boutique luxury feel.",
+    "id": "29e8d8dc-1497-4b66-b332-287711ab5b61",
+    "source": "Rent.com",
+    "lastUpdated": "2026-06-06T22:17:42.313Z",
+    "images": [
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Avalon Cove",
+    "address": "444 Washington Boulevard, Jersey City, NJ 07310",
+    "coordinates": {
+      "lat": 40.724,
+      "lng": -74.033
+    },
+    "floorPlan": "1B",
+    "rentBase": 3420,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3420,
+    "sqft": 710,
+    "petPolicy": "Pet-friendly (dogs and cats allowed; weight and breed restrictions apply)",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "(866) 915-3241",
+    "appointmentLink": "https://www.avaloncommunities.com/new-jersey/jersey-city-apartments/avalon-cove/",
+    "transitDetails": "Proximity to PATH stations and NY Waterway ferry.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Renovated interiors",
+      "Gourmet kitchens with granite countertops",
+      "Stainless-steel appliances",
+      "Private patios or balconies"
+    ],
+    "buildingAmenities": [
+      "State-of-the-art fitness center",
+      "Outdoor heated swimming pool",
+      "Clubroom with billiards",
+      "Landscaped BBQ areas",
+      "Waterfront walkway access"
+    ],
+    "ranking": 4.5,
+    "notes": "Direct leasing from AvalonBay. Features a 30-day move-in satisfaction guarantee.",
+    "id": "ce916743-673b-4117-9b02-9d4172cbd7ca",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A710%20sqft"
+  },
+  {
+    "name": "Avalon Cove",
+    "address": "444 Washington Boulevard, Jersey City, NJ 07310",
+    "coordinates": {
+      "lat": 40.724,
+      "lng": -74.033
+    },
+    "floorPlan": "2B",
+    "rentBase": 4990,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4990,
+    "sqft": 1150,
+    "petPolicy": "Pet-friendly (dogs and cats allowed; weight and breed restrictions apply)",
+    "feeStatus": "No-fee",
+    "availability": "Available within 30 days",
+    "contactPhone": "(866) 915-3241",
+    "appointmentLink": "https://www.avaloncommunities.com/new-jersey/jersey-city-apartments/avalon-cove/",
+    "transitDetails": "Proximity to PATH stations and NY Waterway ferry.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Renovated interiors",
+      "Gourmet kitchens with granite countertops",
+      "Stainless-steel appliances",
+      "Fireplace in select units",
+      "In-unit washer/dryer"
+    ],
+    "buildingAmenities": [
+      "State-of-the-art fitness center",
+      "Outdoor heated swimming pool",
+      "Clubroom with billiards",
+      "Landscaped BBQ areas",
+      "Waterfront walkway access"
+    ],
+    "ranking": 4.5,
+    "notes": "Spacious two-bedroom layout with stunning Manhattan views from private balconies.",
+    "id": "4172fdd6-c6ca-4839-b113-8ca2cc752501",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1150%20sqft"
+  },
+  {
+    "name": "70 Greene Apartments",
+    "address": "70 Greene St, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7161,
+      "lng": -74.0345
+    },
+    "floorPlan": "1B",
+    "rentBase": 3497,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3497,
+    "sqft": 750,
+    "petPolicy": "Pet-friendly (dogs and cats allowed; fees apply)",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 676-3310",
+    "appointmentLink": "https://www.equityapartments.com/new-york-city/jersey-city/70-greene-apartments",
+    "transitDetails": "Steps away from Exchange Place PATH station and NY Waterway ferry.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer and dryer",
+      "Dishwasher",
+      "Air conditioning",
+      "Large closets",
+      "Hard surface flooring"
+    ],
+    "buildingAmenities": [
+      "48-story building with floor-to-ceiling views",
+      "24-hour concierge",
+      "Rooftop lounge",
+      "Fitness center",
+      "Outdoor swimming pool",
+      "Valet dry cleaning"
+    ],
+    "ranking": 4.8,
+    "notes": "Equity Residential property offering premium high-rise luxury.",
+    "id": "bf2af3bf-914c-45b2-b807-66480c95b59c",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A750%20sqft"
+  },
+  {
+    "name": "70 Greene Apartments",
+    "address": "70 Greene St, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7161,
+      "lng": -74.0345
+    },
+    "floorPlan": "2B",
+    "rentBase": 5232,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5232,
+    "sqft": 1080,
+    "petPolicy": "Pet-friendly (dogs and cats allowed; fees apply)",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 676-3310",
+    "appointmentLink": "https://www.equityapartments.com/new-york-city/jersey-city/70-greene-apartments",
+    "transitDetails": "Steps away from Exchange Place PATH station and NY Waterway ferry.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer and dryer",
+      "Dishwasher",
+      "Air conditioning",
+      "Large closets",
+      "Hard surface flooring"
+    ],
+    "buildingAmenities": [
+      "48-story building with floor-to-ceiling views",
+      "24-hour concierge",
+      "Rooftop lounge",
+      "Fitness center",
+      "Outdoor swimming pool",
+      "Valet dry cleaning"
+    ],
+    "ranking": 4.8,
+    "notes": "Offers breathtaking corner views of Manhattan, the Hudson River, and the Statue of Liberty.",
+    "id": "28839402-8743-4e32-8e28-47c7109bfc4a",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1080%20sqft"
+  },
+  {
+    "name": "Avalon Clinton",
+    "address": "510 West 52nd Street, New York, NY 10019",
+    "coordinates": {
+      "lat": 40.7656,
+      "lng": -73.9904
+    },
+    "floorPlan": "1B",
+    "rentBase": 5067,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5067,
+    "sqft": 680,
+    "petPolicy": "Pet-friendly community",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "212-370-9269",
+    "appointmentLink": "https://www.avaloncommunities.com/new-york/new-york-city-apartments/avalon-clinton/",
+    "transitDetails": "Close to A, C, E, 1 subway lines at 50th Street.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "Hard surface plank flooring",
+      "Granite countertops",
+      "Stainless steel appliances",
+      "Spacious closets"
+    ],
+    "buildingAmenities": [
+      "Two private fitness centers",
+      "Two rooftop sky decks with Hudson River views",
+      "24-hour concierge",
+      "On-site attended parking garage",
+      "Resident lounge"
+    ],
+    "ranking": 4.6,
+    "notes": "Located centrally in Hell's Kitchen. Direct leasing by AvalonBay.",
+    "id": "a0cb8ecb-a809-4bd8-94c8-f1fd3182e72f",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "Avalon Clinton",
+    "address": "510 West 52nd Street, New York, NY 10019",
+    "coordinates": {
+      "lat": 40.7656,
+      "lng": -73.9904
+    },
+    "floorPlan": "2B",
+    "rentBase": 6575,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 6575,
+    "sqft": 1010,
+    "petPolicy": "Pet-friendly community",
+    "feeStatus": "No-fee",
+    "availability": "Available in 15 days",
+    "contactPhone": "212-370-9269",
+    "appointmentLink": "https://www.avaloncommunities.com/new-york/new-york-city-apartments/avalon-clinton/",
+    "transitDetails": "Close to A, C, E, 1 subway lines at 50th Street.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "Hard surface plank flooring",
+      "Granite countertops",
+      "Stainless steel appliances",
+      "In-unit washer/dryer in select homes"
+    ],
+    "buildingAmenities": [
+      "Two private fitness centers",
+      "Two rooftop sky decks with Hudson River views",
+      "24-hour concierge",
+      "On-site attended parking garage",
+      "Resident lounge"
+    ],
+    "ranking": 4.6,
+    "notes": "Highly desirable 2-bedroom layouts with premium city and river views.",
+    "id": "54df13eb-fc14-46e6-b3a1-190cf49747e4",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1010%20sqft"
+  },
+  {
+    "name": "Portside Towers Apartments",
+    "address": "155 Washington Street, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7155,
+      "lng": -74.0372
+    },
+    "floorPlan": "1B",
+    "rentBase": 3453,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3453,
+    "sqft": 740,
+    "petPolicy": "Pet-friendly (dogs and cats allowed)",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 885-5500",
+    "appointmentLink": "https://www.equityapartments.com/new-york-city/jersey-city/portside-towers-apartments",
+    "transitDetails": "Short walk to Paulus Hook Ferry and Exchange Place PATH.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Stainless steel appliances",
+      "In-home washer and dryer",
+      "Oversized balconies",
+      "Walk-in closets",
+      "Central air conditioning"
+    ],
+    "buildingAmenities": [
+      "Full-size fitness center",
+      "Yoga studio",
+      "Tennis and basketball courts",
+      "24-hour concierge",
+      "Sundeck and gas grilling area"
+    ],
+    "ranking": 4.4,
+    "notes": "Waterfront location with exceptional outdoor and sports amenities.",
+    "id": "50b20e48-23bb-4cab-8402-f7c85f9db4a8",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A740%20sqft"
+  },
+  {
+    "name": "Portside Towers Apartments",
+    "address": "155 Washington Street, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7155,
+      "lng": -74.0372
+    },
+    "floorPlan": "2B",
+    "rentBase": 4232,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4232,
+    "sqft": 1050,
+    "petPolicy": "Pet-friendly (dogs and cats allowed)",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 885-5500",
+    "appointmentLink": "https://www.equityapartments.com/new-york-city/jersey-city/portside-towers-apartments",
+    "transitDetails": "Short walk to Paulus Hook Ferry and Exchange Place PATH.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Stainless steel appliances",
+      "In-home washer and dryer",
+      "Oversized balconies",
+      "Walk-in closets",
+      "Central air conditioning"
+    ],
+    "buildingAmenities": [
+      "Full-size fitness center",
+      "Yoga studio",
+      "Tennis and basketball courts",
+      "24-hour concierge",
+      "Sundeck and gas grilling area"
+    ],
+    "ranking": 4.4,
+    "notes": "Ideal for families or roommates, featuring a Montessori school on-site.",
+    "id": "1176081f-0f0a-4143-a347-14799ad623e5",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Hudson Point Apartments",
+    "address": "131 Dudley Street, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.714,
+      "lng": -74.0381
+    },
+    "floorPlan": "1B",
+    "rentBase": 3328,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3328,
+    "sqft": 700,
+    "petPolicy": "Pet-friendly",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 561-7622",
+    "appointmentLink": "https://www.equityapartments.com/new-york-city/jersey-city/hudson-point-apartments",
+    "transitDetails": "Minutes from Grove St and Exchange Place PATH stations.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-home washer and dryer",
+      "Hard surface flooring",
+      "Updated appliances",
+      "Air conditioning"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Waterfront location",
+      "Parking garage",
+      "Pet-friendly grounds"
+    ],
+    "ranking": 4.2,
+    "notes": "Excellent budget-friendly waterfront luxury by Equity Residential.",
+    "id": "274e8fe5-0f96-465d-a496-68838edda45d",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A700%20sqft"
+  },
+  {
+    "name": "Hudson Point Apartments",
+    "address": "131 Dudley Street, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.714,
+      "lng": -74.0381
+    },
+    "floorPlan": "2B",
+    "rentBase": 4989,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4989,
+    "sqft": 1100,
+    "petPolicy": "Pet-friendly",
+    "feeStatus": "No-fee",
+    "availability": "Available in 30 days",
+    "contactPhone": "(201) 561-7622",
+    "appointmentLink": "https://www.equityapartments.com/new-york-city/jersey-city/hudson-point-apartments",
+    "transitDetails": "Minutes from Grove St and Exchange Place PATH stations.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-home washer and dryer",
+      "Hard surface flooring",
+      "Updated appliances",
+      "Air conditioning",
+      "Private balcony in select units"
+    ],
+    "buildingAmenities": [
+      "Fitness center",
+      "Waterfront location",
+      "Parking garage",
+      "Pet-friendly grounds"
+    ],
+    "ranking": 4.2,
+    "notes": "Spacious two-bedroom floor plans with direct waterfront access.",
+    "id": "42904e62-814c-4350-9599-3f49725e9650",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1100%20sqft"
+  },
+  {
+    "name": "Avalon Midtown West",
+    "address": "250 West 50th Street, New York, NY 10019",
+    "coordinates": {
+      "lat": 40.7615,
+      "lng": -73.984
+    },
+    "floorPlan": "1B",
+    "rentBase": 4816,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4816,
+    "sqft": 650,
+    "petPolicy": "Pet-friendly",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "646-507-5167",
+    "appointmentLink": "https://www.avaloncommunities.com/new-york/new-york-city-apartments/avalon-midtown-west/",
+    "transitDetails": "Extremely close to C, E, and 1 subway lines.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Renovated kitchens with granite countertops",
+      "Stainless steel appliances",
+      "Hardwood floors",
+      "In-unit washer and dryer in select homes"
+    ],
+    "buildingAmenities": [
+      "Indoor swimming pool",
+      "Fitness center",
+      "24-hour doorman",
+      "Resident lounge",
+      "Outdoor terrace"
+    ],
+    "ranking": 4.7,
+    "notes": "Prime Theater District location with resort-style indoor amenities.",
+    "id": "87bb5621-0a10-4300-9139-7048443927cf",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A650%20sqft"
+  },
+  {
+    "name": "Avalon Midtown West",
+    "address": "250 West 50th Street, New York, NY 10019",
+    "coordinates": {
+      "lat": 40.7615,
+      "lng": -73.984
+    },
+    "floorPlan": "2B",
+    "rentBase": 7883,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 7883,
+    "sqft": 1050,
+    "petPolicy": "Pet-friendly",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "646-507-5167",
+    "appointmentLink": "https://www.avaloncommunities.com/new-york/new-york-city-apartments/avalon-midtown-west/",
+    "transitDetails": "Extremely close to C, E, and 1 subway lines.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Renovated kitchens with granite countertops",
+      "Stainless steel appliances",
+      "Hardwood floors",
+      "In-unit washer and dryer",
+      "Expansive city views"
+    ],
+    "buildingAmenities": [
+      "Indoor swimming pool",
+      "Fitness center",
+      "24-hour doorman",
+      "Resident lounge",
+      "Outdoor terrace"
+    ],
+    "ranking": 4.7,
+    "notes": "Luxury 2-bed layouts in the heart of Midtown Manhattan.",
+    "id": "02ccee8b-307f-4d73-862d-3e56dfd5f0c6",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Avalon Bowery Place",
+    "address": "11 East 1st Street, New York, NY 10003",
+    "coordinates": {
+      "lat": 40.7245,
+      "lng": -73.9912
+    },
+    "floorPlan": "1B",
+    "rentBase": 7368,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 7368,
+    "sqft": 710,
+    "petPolicy": "Pet-friendly",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "(929) 249-5247",
+    "appointmentLink": "https://www.avaloncommunities.com/new-york/new-york-city-apartments/avalon-bowery-place/",
+    "transitDetails": "Close to F, M, B, D, 6 train lines at Broadway-Lafayette/Bleecker St.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Gourmet kitchens",
+      "Hardwood floors",
+      "Floor-to-ceiling windows",
+      "In-unit washer and dryer"
+    ],
+    "buildingAmenities": [
+      "Rooftop terrace with lounge seating",
+      "Fitness center",
+      "24-hour concierge",
+      "Resident lounge with Wi-Fi",
+      "Bike storage"
+    ],
+    "ranking": 4.8,
+    "notes": "Highly sought-after East Village / Bowery location with premium finishes.",
+    "id": "50d2bcf8-0b83-4a90-8681-c119c7b0557c",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A710%20sqft"
+  },
+  {
+    "name": "Avalon Bowery Place",
+    "address": "11 East 1st Street, New York, NY 10003",
+    "coordinates": {
+      "lat": 40.7245,
+      "lng": -73.9912
+    },
+    "floorPlan": "2B",
+    "rentBase": 10245,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 10245,
+    "sqft": 1150,
+    "petPolicy": "Pet-friendly",
+    "feeStatus": "No-fee",
+    "availability": "Available in 45 days",
+    "contactPhone": "(929) 249-5247",
+    "appointmentLink": "https://www.avaloncommunities.com/new-york/new-york-city-apartments/avalon-bowery-place/",
+    "transitDetails": "Close to F, M, B, D, 6 train lines at Broadway-Lafayette/Bleecker St.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Gourmet kitchens with stainless steel appliances",
+      "Hardwood floors",
+      "Floor-to-ceiling windows",
+      "In-unit washer and dryer",
+      "Spacious walk-in closets"
+    ],
+    "buildingAmenities": [
+      "Rooftop terrace with lounge seating",
+      "Fitness center",
+      "24-hour concierge",
+      "Resident lounge with Wi-Fi",
+      "Bike storage"
+    ],
+    "ranking": 4.8,
+    "notes": "Spacious luxury 2B layouts in one of downtown Manhattan's premier properties.",
+    "id": "e67449ad-da99-414e-82fe-f18eb6d86c05",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1150%20sqft"
+  },
+  {
+    "name": "Madox Apartments",
+    "address": "198 Van Vorst St, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.715,
+      "lng": -74.041
+    },
+    "floorPlan": "1B",
+    "rentBase": 3390,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3390,
+    "sqft": 680,
+    "petPolicy": "Pet-friendly (dogs and cats allowed)",
+    "feeStatus": "No-fee",
+    "availability": "Available Now",
+    "contactPhone": "(551) 363-4908",
+    "appointmentLink": "https://www.equityapartments.com/new-york-city/jersey-city/madox-apartments",
+    "transitDetails": "Close to Grove Street PATH station and Light Rail.",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit washer and dryer",
+      "Stainless steel appliances",
+      "Hardwood-style flooring",
+      "Large closets"
+    ],
+    "buildingAmenities": [
+      "Rooftop deck",
+      "Fitness center",
+      "Boutique living environment",
+      "Package receiving"
+    ],
+    "ranking": 4.6,
+    "notes": "A boutique Equity Residential building situated in the historic Paulus Hook neighborhood.",
+    "id": "fdcd582f-34fe-4a02-b38b-006d22bee5fb",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "Journal Square Urby - 1B",
+    "address": "532 Summit Ave, Jersey City, NJ 07306",
+    "coordinates": {
+      "lat": 40.7335,
+      "lng": -74.0628
+    },
+    "floorPlan": "1B",
+    "rentBase": 2985,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 2985,
+    "sqft": 620,
+    "petPolicy": "Pets allowed ($75/mo pet rent, restrictions apply)",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(551) 305-4287",
+    "appointmentLink": "https://urby.com/journal-square",
+    "transitDetails": "0.1 miles to Journal Square PATH Station",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Hardwood Floors",
+      "Large Windows",
+      "Smart Home Tech"
+    ],
+    "buildingAmenities": [
+      "24/7 Fitness Center",
+      "Rooftop Pool",
+      "Cafe",
+      "Work-from-home spaces",
+      "Concierge"
+    ],
+    "ranking": 4.6,
+    "notes": "Ironstate property. High-rise tower in Journal Square.",
+    "id": "bb617bde-e68d-491c-871c-6eeac253a4ca",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A620%20sqft"
+  },
+  {
+    "name": "Journal Square Urby - 2B",
+    "address": "532 Summit Ave, Jersey City, NJ 07306",
+    "coordinates": {
+      "lat": 40.7335,
+      "lng": -74.0628
+    },
+    "floorPlan": "2B",
+    "rentBase": 4500,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4500,
+    "sqft": 980,
+    "petPolicy": "Pets allowed ($75/mo pet rent, restrictions apply)",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(551) 305-4287",
+    "appointmentLink": "https://urby.com/journal-square",
+    "transitDetails": "0.1 miles to Journal Square PATH Station",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Hardwood Floors",
+      "Large Windows",
+      "Smart Home Tech"
+    ],
+    "buildingAmenities": [
+      "24/7 Fitness Center",
+      "Rooftop Pool",
+      "Cafe",
+      "Work-from-home spaces",
+      "Concierge"
+    ],
+    "ranking": 4.6,
+    "notes": "Ironstate property.",
+    "id": "0bf1b943-fda2-4178-a636-761e579a8d5a",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A980%20sqft"
+  },
+  {
+    "name": "Jersey City Urby - 1B",
+    "address": "200 Greene St, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7169,
+      "lng": -74.0326
+    },
+    "floorPlan": "1B",
+    "rentBase": 3600,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3600,
+    "sqft": 680,
+    "petPolicy": "Pets allowed ($75/mo pet rent)",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 333-8989",
+    "appointmentLink": "https://urby.com/jersey-city",
+    "transitDetails": "0.2 miles to Exchange Place PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Floor-to-ceiling windows",
+      "Modern finishes"
+    ],
+    "buildingAmenities": [
+      "Heated outdoor pool",
+      "Fitness center",
+      "9 Bar Cafe",
+      "Creative spaces"
+    ],
+    "ranking": 4.5,
+    "notes": "Ironstate property. Harborside waterfront location.",
+    "id": "3f3009fa-e403-4bda-90f8-2b8472d390ab",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "Jersey City Urby - 2B",
+    "address": "200 Greene St, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7169,
+      "lng": -74.0326
+    },
+    "floorPlan": "2B",
+    "rentBase": 5100,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5100,
+    "sqft": 950,
+    "petPolicy": "Pets allowed ($75/mo pet rent)",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 333-8989",
+    "appointmentLink": "https://urby.com/jersey-city",
+    "transitDetails": "0.2 miles to Exchange Place PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Floor-to-ceiling windows",
+      "Furnished options available"
+    ],
+    "buildingAmenities": [
+      "Heated outdoor pool",
+      "Fitness center",
+      "9 Bar Cafe",
+      "Creative spaces"
+    ],
+    "ranking": 4.5,
+    "notes": "Ironstate property.",
+    "id": "81276605-3a6c-46ec-9aec-8b5688e128d6",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A950%20sqft"
+  },
+  {
+    "name": "Journal Squared - 1B (Unit A)",
+    "address": "615 Pavonia Ave, Jersey City, NJ 07306",
+    "coordinates": {
+      "lat": 40.7331,
+      "lng": -74.0629
+    },
+    "floorPlan": "1B",
+    "rentBase": 3095,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 2856,
+    "sqft": 620,
+    "petPolicy": "Pet friendly (Breed restrictions, fees apply)",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 215-2831",
+    "appointmentLink": "https://www.journalsquared.com/",
+    "transitDetails": "Direct connected access to Journal Square PATH",
+    "leaseTerm": 13,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Stainless Steel Appliances",
+      "Quartz Countertops"
+    ],
+    "buildingAmenities": [
+      "Sky Lounge",
+      "Bouldering wall",
+      "Fitness center",
+      "Pools",
+      "Co-working spaces"
+    ],
+    "ranking": 4.8,
+    "notes": "KRE Group property. Assumes typical 1-month free promotion on 13-month lease.",
+    "id": "9e15ff45-3ed9-4e30-959b-69edf1c01c51",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A620%20sqft"
+  },
+  {
+    "name": "Journal Squared - 1B (Unit B)",
+    "address": "615 Pavonia Ave, Jersey City, NJ 07306",
+    "coordinates": {
+      "lat": 40.7331,
+      "lng": -74.0629
+    },
+    "floorPlan": "1B",
+    "rentBase": 3350,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3350,
+    "sqft": 710,
+    "petPolicy": "Pet friendly (Breed restrictions, fees apply)",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 215-2831",
+    "appointmentLink": "https://www.journalsquared.com/",
+    "transitDetails": "Direct connected access to Journal Square PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Stainless Steel Appliances",
+      "Walk-in Closets",
+      "City Views"
+    ],
+    "buildingAmenities": [
+      "Sky Lounge",
+      "Bouldering wall",
+      "Fitness center",
+      "Pools",
+      "Co-working spaces"
+    ],
+    "ranking": 4.8,
+    "notes": "KRE Group property. Higher floor unit.",
+    "id": "ed5cc46c-e645-4891-8a05-86819a6a283c",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A710%20sqft"
+  },
+  {
+    "name": "Journal Squared - 2B (Unit C)",
+    "address": "615 Pavonia Ave, Jersey City, NJ 07306",
+    "coordinates": {
+      "lat": 40.7331,
+      "lng": -74.0629
+    },
+    "floorPlan": "2B",
+    "rentBase": 4625,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4269,
+    "sqft": 1050,
+    "petPolicy": "Pet friendly (Breed restrictions, fees apply)",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 215-2831",
+    "appointmentLink": "https://www.journalsquared.com/",
+    "transitDetails": "Direct connected access to Journal Square PATH",
+    "leaseTerm": 13,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Stainless Steel Appliances",
+      "Quartz Countertops",
+      "Walk-in Closets"
+    ],
+    "buildingAmenities": [
+      "Sky Lounge",
+      "Bouldering wall",
+      "Fitness center",
+      "Pools",
+      "Co-working spaces"
+    ],
+    "ranking": 4.8,
+    "notes": "KRE Group property.",
+    "id": "63b7ba27-e18f-428c-9fbc-05aaa5fc2e21",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1050%20sqft"
+  },
+  {
+    "name": "Journal Squared - 2B (Unit D)",
+    "address": "615 Pavonia Ave, Jersey City, NJ 07306",
+    "coordinates": {
+      "lat": 40.7331,
+      "lng": -74.0629
+    },
+    "floorPlan": "2B",
+    "rentBase": 4800,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4800,
+    "sqft": 1100,
+    "petPolicy": "Pet friendly (Breed restrictions, fees apply)",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 215-2831",
+    "appointmentLink": "https://www.journalsquared.com/",
+    "transitDetails": "Direct connected access to Journal Square PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Premium Appliances",
+      "Quartz Countertops",
+      "Corner Unit"
+    ],
+    "buildingAmenities": [
+      "Sky Lounge",
+      "Bouldering wall",
+      "Fitness center",
+      "Pools",
+      "Co-working spaces"
+    ],
+    "ranking": 4.8,
+    "notes": "KRE Group property.",
+    "id": "29810bca-a511-406c-ae52-6904682fdc37",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1100%20sqft"
+  },
+  {
+    "name": "351 Marin - 1B (Unit 1616)",
+    "address": "351 Marin Blvd, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7208,
+      "lng": -74.0401
+    },
+    "floorPlan": "1B",
+    "rentBase": 4010,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4010,
+    "sqft": 700,
+    "petPolicy": "Pet friendly",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 588-3510",
+    "appointmentLink": "https://www.351marinjc.com/",
+    "transitDetails": "0.3 miles to Grove Street PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "GE Appliances",
+      "Quartz countertops",
+      "Plank flooring"
+    ],
+    "buildingAmenities": [
+      "24-hour concierge",
+      "Fitness center",
+      "Outdoor terrace with fire pits",
+      "Pool",
+      "Sky lounge"
+    ],
+    "ranking": 4.7,
+    "notes": "KRE Group property. Downtown Jersey City.",
+    "id": "d26ac940-30df-44d7-ac1c-474dcdf55701",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A700%20sqft"
+  },
+  {
+    "name": "351 Marin - 1B (Unit 1204)",
+    "address": "351 Marin Blvd, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7208,
+      "lng": -74.0401
+    },
+    "floorPlan": "1B",
+    "rentBase": 4150,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4150,
+    "sqft": 730,
+    "petPolicy": "Pet friendly",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 588-3510",
+    "appointmentLink": "https://www.351marinjc.com/",
+    "transitDetails": "0.3 miles to Grove Street PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "GE Appliances",
+      "Quartz countertops",
+      "Plank flooring"
+    ],
+    "buildingAmenities": [
+      "24-hour concierge",
+      "Fitness center",
+      "Outdoor terrace with fire pits",
+      "Pool",
+      "Sky lounge"
+    ],
+    "ranking": 4.7,
+    "notes": "KRE Group property.",
+    "id": "11d1212d-d43b-44e5-929b-e24951bbec3b",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A730%20sqft"
+  },
+  {
+    "name": "351 Marin - 2B (Unit 1502)",
+    "address": "351 Marin Blvd, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7208,
+      "lng": -74.0401
+    },
+    "floorPlan": "2B",
+    "rentBase": 5970,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5970,
+    "sqft": 1100,
+    "petPolicy": "Pet friendly",
+    "feeStatus": "no-fee",
+    "availability": "July 7, 2026",
+    "contactPhone": "(201) 588-3510",
+    "appointmentLink": "https://www.351marinjc.com/",
+    "transitDetails": "0.3 miles to Grove Street PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "GE Appliances",
+      "Quartz countertops",
+      "Plank flooring"
+    ],
+    "buildingAmenities": [
+      "24-hour concierge",
+      "Fitness center",
+      "Outdoor terrace with fire pits",
+      "Pool",
+      "Sky lounge"
+    ],
+    "ranking": 4.7,
+    "notes": "KRE Group property.",
+    "id": "d7772980-2677-477b-960e-6a3a76f56ef6",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1100%20sqft"
+  },
+  {
+    "name": "351 Marin - 2B (Unit 2108)",
+    "address": "351 Marin Blvd, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7208,
+      "lng": -74.0401
+    },
+    "floorPlan": "2B",
+    "rentBase": 6200,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 6200,
+    "sqft": 1150,
+    "petPolicy": "Pet friendly",
+    "feeStatus": "no-fee",
+    "availability": "August 1, 2026",
+    "contactPhone": "(201) 588-3510",
+    "appointmentLink": "https://www.351marinjc.com/",
+    "transitDetails": "0.3 miles to Grove Street PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "GE Appliances",
+      "Quartz countertops",
+      "Plank flooring",
+      "City Views"
+    ],
+    "buildingAmenities": [
+      "24-hour concierge",
+      "Fitness center",
+      "Outdoor terrace with fire pits",
+      "Pool",
+      "Sky lounge"
+    ],
+    "ranking": 4.7,
+    "notes": "KRE Group property.",
+    "id": "44229259-d4e4-40a4-a041-40717a40de9a",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2B%0A1150%20sqft"
+  },
+  {
+    "name": "Journal Square Urby - 1B (Unit E)",
+    "address": "532 Summit Ave, Jersey City, NJ 07306",
+    "coordinates": {
+      "lat": 40.7335,
+      "lng": -74.0628
+    },
+    "floorPlan": "1B",
+    "rentBase": 3150,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3150,
+    "sqft": 640,
+    "petPolicy": "Pets allowed ($75/mo pet rent, restrictions apply)",
+    "feeStatus": "no-fee",
+    "availability": "Available Soon",
+    "contactPhone": "(551) 305-4287",
+    "appointmentLink": "https://urby.com/journal-square",
+    "transitDetails": "0.1 miles to Journal Square PATH Station",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Hardwood Floors",
+      "Large Windows"
+    ],
+    "buildingAmenities": [
+      "24/7 Fitness Center",
+      "Rooftop Pool",
+      "Cafe",
+      "Work-from-home spaces",
+      "Concierge"
+    ],
+    "ranking": 4.6,
+    "notes": "Ironstate property.",
+    "id": "6c81db26-743b-4e5e-a3ab-cd8c4c1ca2a2",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A640%20sqft"
+  },
+  {
+    "name": "Jersey City Urby - 1B (Unit F)",
+    "address": "200 Greene St, Jersey City, NJ 07302",
+    "coordinates": {
+      "lat": 40.7169,
+      "lng": -74.0326
+    },
+    "floorPlan": "1B",
+    "rentBase": 3750,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3750,
+    "sqft": 700,
+    "petPolicy": "Pets allowed ($75/mo pet rent)",
+    "feeStatus": "no-fee",
+    "availability": "Available Now",
+    "contactPhone": "(201) 333-8989",
+    "appointmentLink": "https://urby.com/jersey-city",
+    "transitDetails": "0.2 miles to Exchange Place PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Floor-to-ceiling windows",
+      "Waterfront Views"
+    ],
+    "buildingAmenities": [
+      "Heated outdoor pool",
+      "Fitness center",
+      "9 Bar Cafe",
+      "Creative spaces"
+    ],
+    "ranking": 4.5,
+    "notes": "Ironstate property.",
+    "id": "6810246c-b83f-4ed6-8288-fccf4bbc2149",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A700%20sqft"
+  },
+  {
+    "name": "Journal Squared - 1B (Unit G)",
+    "address": "615 Pavonia Ave, Jersey City, NJ 07306",
+    "coordinates": {
+      "lat": 40.7331,
+      "lng": -74.0629
+    },
+    "floorPlan": "1B",
+    "rentBase": 3250,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 3250,
+    "sqft": 680,
+    "petPolicy": "Pet friendly (Breed restrictions, fees apply)",
+    "feeStatus": "no-fee",
+    "availability": "July 15, 2026",
+    "contactPhone": "(201) 215-2831",
+    "appointmentLink": "https://www.journalsquared.com/",
+    "transitDetails": "Direct connected access to Journal Square PATH",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "In-unit W/D",
+      "Stainless Steel Appliances",
+      "Quartz Countertops"
+    ],
+    "buildingAmenities": [
+      "Sky Lounge",
+      "Bouldering wall",
+      "Fitness center",
+      "Pools",
+      "Co-working spaces"
+    ],
+    "ranking": 4.8,
+    "notes": "KRE Group property. Upcoming availability.",
+    "id": "689f28d6-6e04-4141-9f37-feeaa8b93a73",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1B%0A680%20sqft"
+  },
+  {
+    "name": "4545 Center Blvd - 1B",
+    "address": "4545 Center Blvd, Long Island City, NY 11109",
+    "coordinates": {
+      "lat": 40.7478,
+      "lng": -73.9576
+    },
+    "floorPlan": "1 Bed / 1 Bath",
+    "rentBase": 4200,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 3850,
+    "sqft": 700,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://tfc.com/residential/4545-center-blvd",
+    "transitDetails": "Free shuttle to Vernon-Jackson 7 train, near NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "In-unit Washer/Dryer",
+      "Stainless Steel Appliances",
+      "Hardwood Floors"
+    ],
+    "buildingAmenities": [
+      "Fitness Center",
+      "Tennis Courts",
+      "24-hour Doorman",
+      "Roof Deck",
+      "Volleyball Court"
+    ],
+    "ranking": 4.5,
+    "notes": "TF Cornerstone building with excellent waterfront views.",
+    "id": "1184966d-b62e-44aa-a037-1da5649b3823",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1%20Bed%20%2F%201%20Bath%0A700%20sqft"
+  },
+  {
+    "name": "4545 Center Blvd - 2B",
+    "address": "4545 Center Blvd, Long Island City, NY 11109",
+    "coordinates": {
+      "lat": 40.7478,
+      "lng": -73.9576
+    },
+    "floorPlan": "2 Bed / 2 Bath",
+    "rentBase": 6100,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 5592,
+    "sqft": 1050,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://tfc.com/residential/4545-center-blvd",
+    "transitDetails": "Free shuttle to Vernon-Jackson 7 train, near NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Floor-to-ceiling windows",
+      "In-unit Washer/Dryer",
+      "Stainless Steel Appliances",
+      "Hardwood Floors"
+    ],
+    "buildingAmenities": [
+      "Fitness Center",
+      "Tennis Courts",
+      "24-hour Doorman",
+      "Roof Deck",
+      "Volleyball Court"
+    ],
+    "ranking": 4.5,
+    "notes": "Spacious 2-bed layout with Manhattan skyline views.",
+    "id": "9669f9b1-e023-4310-b7b9-76f21c0d03b9",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2%20Bed%20%2F%202%20Bath%0A1050%20sqft"
+  },
+  {
+    "name": "4615 Center Blvd - 1B",
+    "address": "4615 Center Blvd, Long Island City, NY 11109",
+    "coordinates": {
+      "lat": 40.747,
+      "lng": -73.9577
+    },
+    "floorPlan": "1 Bed / 1 Bath",
+    "rentBase": 4100,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4100,
+    "sqft": 680,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "July 1st",
+    "contactPhone": "(718) 204-6300",
+    "appointmentLink": "https://tfc.com/residential/4615-center-blvd",
+    "transitDetails": "Free shuttle to Vernon-Jackson 7 train, near NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Open Kitchen",
+      "Walk-in Closet",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Fitness Center",
+      "Co-working space",
+      "Roof Deck",
+      "24-hour Doorman"
+    ],
+    "ranking": 4.3,
+    "notes": "LEED-certified building focusing on sustainability.",
+    "id": "025c104e-4348-4249-a2ae-2a2218afbac6",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1%20Bed%20%2F%201%20Bath%0A680%20sqft"
+  },
+  {
+    "name": "4615 Center Blvd - 2B",
+    "address": "4615 Center Blvd, Long Island City, NY 11109",
+    "coordinates": {
+      "lat": 40.747,
+      "lng": -73.9577
+    },
+    "floorPlan": "2 Bed / 2 Bath",
+    "rentBase": 5950,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5950,
+    "sqft": 1020,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(718) 204-6300",
+    "appointmentLink": "https://tfc.com/residential/4615-center-blvd",
+    "transitDetails": "Free shuttle to Vernon-Jackson 7 train, near NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Open Kitchen",
+      "Walk-in Closet",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Fitness Center",
+      "Co-working space",
+      "Roof Deck",
+      "24-hour Doorman"
+    ],
+    "ranking": 4.3,
+    "notes": "Sustainable living with premium river views.",
+    "id": "8dd87ffe-4002-4ac8-8bd8-c245b31eb60e",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2%20Bed%20%2F%202%20Bath%0A1020%20sqft"
+  },
+  {
+    "name": "4610 Center Blvd - 1B",
+    "address": "4610 Center Blvd, Long Island City, NY 11109",
+    "coordinates": {
+      "lat": 40.7466,
+      "lng": -73.9572
+    },
+    "floorPlan": "1 Bed / 1 Bath",
+    "rentBase": 4350,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4350,
+    "sqft": 710,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://tfc.com/residential/4610-center-blvd",
+    "transitDetails": "Free shuttle to Vernon-Jackson 7 train, near NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Curved Floor Plans",
+      "High Ceilings",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Fitness Center",
+      "Lounge",
+      "Billiard Room",
+      "24-hour Doorman"
+    ],
+    "ranking": 4.4,
+    "notes": "Known as the building behind the Pepsi-Cola sign.",
+    "id": "2267dac1-810d-41d6-bad2-5616173410a0",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1%20Bed%20%2F%201%20Bath%0A710%20sqft"
+  },
+  {
+    "name": "4610 Center Blvd - 2B",
+    "address": "4610 Center Blvd, Long Island City, NY 11109",
+    "coordinates": {
+      "lat": 40.7466,
+      "lng": -73.9572
+    },
+    "floorPlan": "2 Bed / 2 Bath",
+    "rentBase": 6200,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 6200,
+    "sqft": 1080,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "August 1st",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://tfc.com/residential/4610-center-blvd",
+    "transitDetails": "Free shuttle to Vernon-Jackson 7 train, near NYC Ferry",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Curved Floor Plans",
+      "High Ceilings",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Fitness Center",
+      "Lounge",
+      "Billiard Room",
+      "24-hour Doorman"
+    ],
+    "ranking": 4.4,
+    "notes": "Large layouts with unobstructed views.",
+    "id": "38cf2549-e7ef-4612-a41e-22ab2bf715af",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2%20Bed%20%2F%202%20Bath%0A1080%20sqft"
+  },
+  {
+    "name": "MiMA - 1B",
+    "address": "450 W 42nd St, New York, NY 10036",
+    "coordinates": {
+      "lat": 40.7588,
+      "lng": -73.9936
+    },
+    "floorPlan": "1 Bed / 1 Bath",
+    "rentBase": 5200,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5200,
+    "sqft": 720,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(212) 586-5055",
+    "appointmentLink": "https://www.relatedrentals.com/apartment-rentals/new-york-city/midtown-west/mima/contact-us",
+    "transitDetails": "Near Times Square 42nd St (A, C, E, N, Q, R, W, 1, 2, 3, 7, S)",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "High ceilings",
+      "Floor-to-ceiling windows",
+      "In-unit Washer/Dryer",
+      "Oak flooring"
+    ],
+    "buildingAmenities": [
+      "Equinox Fitness Club",
+      "Indoor Lap Pool",
+      "Basketball Court",
+      "M Club Lounge",
+      "Dog City"
+    ],
+    "ranking": 4.8,
+    "notes": "Related Companies ultra-luxury building with premium amenities.",
+    "id": "e3776f0b-3113-4bea-917a-61123592dc88",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1%20Bed%20%2F%201%20Bath%0A720%20sqft"
+  },
+  {
+    "name": "MiMA - 2B",
+    "address": "450 W 42nd St, New York, NY 10036",
+    "coordinates": {
+      "lat": 40.7588,
+      "lng": -73.9936
+    },
+    "floorPlan": "2 Bed / 2 Bath",
+    "rentBase": 7800,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 7800,
+    "sqft": 1100,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "August 1st",
+    "contactPhone": "(212) 586-5055",
+    "appointmentLink": "https://www.relatedrentals.com/apartment-rentals/new-york-city/midtown-west/mima/contact-us",
+    "transitDetails": "Near Times Square 42nd St (A, C, E, N, Q, R, W, 1, 2, 3, 7, S)",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "High ceilings",
+      "Floor-to-ceiling windows",
+      "In-unit Washer/Dryer",
+      "Oak flooring"
+    ],
+    "buildingAmenities": [
+      "Equinox Fitness Club",
+      "Indoor Lap Pool",
+      "Basketball Court",
+      "M Club Lounge",
+      "Dog City"
+    ],
+    "ranking": 4.8,
+    "notes": "Premium Midtown luxury living.",
+    "id": "49fea5eb-5cee-4ab8-a4c8-25a70c972923",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80",
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2%20Bed%20%2F%202%20Bath%0A1100%20sqft"
+  },
+  {
+    "name": "505 W 37th St - 1B",
+    "address": "505 W 37th St, New York, NY 10018",
+    "coordinates": {
+      "lat": 40.7562,
+      "lng": -73.9986
+    },
+    "floorPlan": "1 Bed / 1 Bath",
+    "rentBase": 4500,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 4125,
+    "sqft": 690,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(212) 563-3000",
+    "appointmentLink": "https://tfc.com/residential/505w37",
+    "transitDetails": "Near 34th St-Hudson Yards (7 train)",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Hardwood Floors",
+      "Stainless Steel Appliances",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Sky Club",
+      "Fitness Center",
+      "Landscaped Roof Deck",
+      "24-hour Doorman"
+    ],
+    "ranking": 4.2,
+    "notes": "TFC Hudson Yards/Hell's Kitchen location.",
+    "id": "d30b27cc-ca72-4d31-bb85-533f3cb49b02",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1%20Bed%20%2F%201%20Bath%0A690%20sqft"
+  },
+  {
+    "name": "505 W 37th St - 2B",
+    "address": "505 W 37th St, New York, NY 10018",
+    "coordinates": {
+      "lat": 40.7562,
+      "lng": -73.9986
+    },
+    "floorPlan": "2 Bed / 2 Bath",
+    "rentBase": 6300,
+    "rentMonthsFree": 1,
+    "netEffectiveRent": 5775,
+    "sqft": 1000,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(212) 563-3000",
+    "appointmentLink": "https://tfc.com/residential/505w37",
+    "transitDetails": "Near 34th St-Hudson Yards (7 train)",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Hardwood Floors",
+      "Stainless Steel Appliances",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Sky Club",
+      "Fitness Center",
+      "Landscaped Roof Deck",
+      "24-hour Doorman"
+    ],
+    "ranking": 4.2,
+    "notes": "Modern finishes and spacious living room.",
+    "id": "84d3955f-6a37-43fb-a547-deb99021fce4",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2%20Bed%20%2F%202%20Bath%0A1000%20sqft"
+  },
+  {
+    "name": "2-21 Malt Drive - 1B",
+    "address": "2-21 Malt Drive, Long Island City, NY 11101",
+    "coordinates": {
+      "lat": 40.7381,
+      "lng": -73.9555
+    },
+    "floorPlan": "1 Bed / 1 Bath",
+    "rentBase": 4400,
+    "rentMonthsFree": 2,
+    "netEffectiveRent": 3771,
+    "sqft": 710,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://tfc.com/residential/malt-drive",
+    "transitDetails": "Near Hunters Point South Ferry, Vernon-Jackson 7 train",
+    "leaseTerm": 14,
+    "unitAmenities": [
+      "Modern finishes",
+      "In-unit Washer/Dryer",
+      "Large Windows"
+    ],
+    "buildingAmenities": [
+      "HomeWork space",
+      "Fitness Center",
+      "Rooftop Pool",
+      "Children's Playroom"
+    ],
+    "ranking": 4.6,
+    "notes": "Newer TFC development in Hunters Point.",
+    "id": "d5803995-f53a-46c3-b4b7-489208433ffe",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1%20Bed%20%2F%201%20Bath%0A710%20sqft"
+  },
+  {
+    "name": "2-21 Malt Drive - 2B",
+    "address": "2-21 Malt Drive, Long Island City, NY 11101",
+    "coordinates": {
+      "lat": 40.7381,
+      "lng": -73.9555
+    },
+    "floorPlan": "2 Bed / 2 Bath",
+    "rentBase": 6500,
+    "rentMonthsFree": 2,
+    "netEffectiveRent": 5571,
+    "sqft": 1040,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "July 15th",
+    "contactPhone": "(718) 606-9440",
+    "appointmentLink": "https://tfc.com/residential/malt-drive",
+    "transitDetails": "Near Hunters Point South Ferry, Vernon-Jackson 7 train",
+    "leaseTerm": 14,
+    "unitAmenities": [
+      "Modern finishes",
+      "In-unit Washer/Dryer",
+      "Large Windows"
+    ],
+    "buildingAmenities": [
+      "HomeWork space",
+      "Fitness Center",
+      "Rooftop Pool",
+      "Children's Playroom"
+    ],
+    "ranking": 4.6,
+    "notes": "Brand new construction with top-tier amenities.",
+    "id": "4cc76e78-a1ea-456f-a303-22b29d863000",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1de2d93688?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2%20Bed%20%2F%202%20Bath%0A1040%20sqft"
+  },
+  {
+    "name": "2 Gold Street - 1B",
+    "address": "2 Gold St, New York, NY 10038",
+    "coordinates": {
+      "lat": 40.707,
+      "lng": -74.0069
+    },
+    "floorPlan": "1 Bed / 1 Bath",
+    "rentBase": 4100,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 4100,
+    "sqft": 650,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(212) 785-5555",
+    "appointmentLink": "https://tfc.com/residential/2-gold-st",
+    "transitDetails": "Near Fulton St transit hub (2, 3, 4, 5, A, C, J, Z)",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Parquet Floors",
+      "Updated Kitchen",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Glass-enclosed heated lap pool",
+      "Fitness Center",
+      "Rooftop Deck",
+      "Lounge"
+    ],
+    "ranking": 4.1,
+    "notes": "TFC building in the Financial District.",
+    "id": "de69eb81-3628-4511-b4c4-85ce76ed6240",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+      "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&q=80",
+      "https://images.unsplash.com/photo-1583847268964-b28e503d5dd9?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1%20Bed%20%2F%201%20Bath%0A650%20sqft"
+  },
+  {
+    "name": "2 Gold Street - 2B",
+    "address": "2 Gold St, New York, NY 10038",
+    "coordinates": {
+      "lat": 40.707,
+      "lng": -74.0069
+    },
+    "floorPlan": "2 Bed / 2 Bath",
+    "rentBase": 5800,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5800,
+    "sqft": 950,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(212) 785-5555",
+    "appointmentLink": "https://tfc.com/residential/2-gold-st",
+    "transitDetails": "Near Fulton St transit hub (2, 3, 4, 5, A, C, J, Z)",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "Parquet Floors",
+      "Updated Kitchen",
+      "Washer/Dryer"
+    ],
+    "buildingAmenities": [
+      "Glass-enclosed heated lap pool",
+      "Fitness Center",
+      "Rooftop Deck",
+      "Lounge"
+    ],
+    "ranking": 4.1,
+    "notes": "TFC building in the Financial District.",
+    "id": "e67ade96-024f-4a67-8170-d609bbe4d621",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80",
+      "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=800&q=80",
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A2%20Bed%20%2F%202%20Bath%0A950%20sqft"
+  },
+  {
+    "name": "MiMA - 1B with Powder Room",
+    "address": "450 W 42nd St, New York, NY 10036",
+    "coordinates": {
+      "lat": 40.7588,
+      "lng": -73.9936
+    },
+    "floorPlan": "1 Bed / 1.5 Bath",
+    "rentBase": 5600,
+    "rentMonthsFree": 0,
+    "netEffectiveRent": 5600,
+    "sqft": 800,
+    "petPolicy": "Pets Allowed",
+    "feeStatus": "No Fee",
+    "availability": "Immediate",
+    "contactPhone": "(212) 586-5055",
+    "appointmentLink": "https://www.relatedrentals.com/apartment-rentals/new-york-city/midtown-west/mima/contact-us",
+    "transitDetails": "Near Times Square 42nd St (A, C, E, N, Q, R, W, 1, 2, 3, 7, S)",
+    "leaseTerm": 12,
+    "unitAmenities": [
+      "High ceilings",
+      "Floor-to-ceiling windows",
+      "In-unit Washer/Dryer",
+      "Oak flooring",
+      "Powder Room"
+    ],
+    "buildingAmenities": [
+      "Equinox Fitness Club",
+      "Indoor Lap Pool",
+      "Basketball Court",
+      "M Club Lounge",
+      "Dog City"
+    ],
+    "ranking": 4.8,
+    "notes": "Large 1-bedroom layout with additional half-bath.",
+    "id": "5fa588f4-38af-4fa0-b172-0896a8bdf624",
+    "source": "Direct Building",
+    "lastUpdated": "2026-06-06T22:17:42.314Z",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+      "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80"
+    ],
+    "floorPlanImageUrl": "https://placehold.co/600x400/222222/ffffff/png?text=Floor%20Plan%0A1%20Bed%20%2F%201.5%20Bath%0A800%20sqft"
   }
 ]
