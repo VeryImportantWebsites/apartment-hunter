@@ -196,7 +196,7 @@ export default function ViewApartmentModal({
             <div>
               <h3 className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-3">Amenities & Perks</h3>
               <div className="flex flex-col gap-3">
-                {apt.perksAndAmenities.length === 0 ? (
+                {!apt.perksAndAmenities || apt.perksAndAmenities.length === 0 ? (
                   <p className="text-gray-500 text-sm italic">None listed</p>
                 ) : (
                   apt.perksAndAmenities.map((amenity, idx) => (
