@@ -34,7 +34,7 @@ export default function ViewApartmentModal({
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
-      <div className="glass-panel w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+      <div className="glass-panel w-full max-w-2xl rounded-3xl overflow-y-auto overflow-x-hidden max-h-[90vh] shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
         
         {/* Header Section */}
         <div className="h-64 bg-gradient-to-br from-blue-900/40 to-[#050505] relative border-b border-white/5 overflow-hidden group">
