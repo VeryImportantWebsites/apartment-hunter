@@ -7,7 +7,8 @@ const path = require('path');
 
 const APARTMENTS_FILE = path.join(__dirname, '../src/data/apartments.json');
 
-async function delay(ms) {
+async function delay(minMs, maxMs) {
+  const ms = maxMs ? Math.floor(Math.random() * (maxMs - minMs + 1) + minMs) : minMs;
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
@@ -20,14 +21,14 @@ async function fetchImagesForApartment(page, apt, type) {
   
   try {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-    await delay(1000);
+    await delay(2000, 4000);
     
     const images = await page.evaluate((numImages) => {
       const imgs = Array.from(document.querySelectorAll('img'));
       return imgs
         .map(img => img.src || img.getAttribute('data-src'))
         .filter(src => src && (src.startsWith('http') || src.startsWith('data:image')))
-        .filter(src => !src.includes('s.yimg.com')) // exclude yahoo logos
+        .filter(src => !src.includes('s.yimg.com') && !src.includes('images.search.yahoo.com')) // exclude yahoo logos and search urls
         .slice(0, numImages);
     }, type === 'floorplan' ? 1 : 3);
     
@@ -55,8 +56,8 @@ async function main() {
   let updatedCount = 0;
   
   for (let i = 0; i < data.length; i++) {
-    if (updatedCount >= 50) {
-      console.log("Successfully fetched data for 50 apartments. Stopping.");
+    if (updatedCount >= 200) {
+      console.log("Successfully fetched data for 200 apartments. Stopping.");
       break;
     }
     
@@ -82,7 +83,7 @@ async function main() {
         fs.writeFileSync(APARTMENTS_FILE, JSON.stringify(data, null, 2));
       }
       
-      await delay(1500);
+      await delay(3000, 6000);
     }
   }
   
