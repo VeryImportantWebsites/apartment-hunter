@@ -16,17 +16,29 @@ function normalizeAvailability(val) {
   if (!val) return "Available Now";
   const str = val.trim();
   
-  if (str === "Immediate" || str === "Available Now") {
+  if (str === "Immediate" || str === "Available Now" || str === "Immediate move-in") {
     return "Available Now";
   }
-  if (str === "July 1st" || str === "Available July 1st" || str === "July 1, 2026" || str === "July 7, 2026") {
-    return "Available July 1, 2026";
+  if (str.includes("September 15") || str === "Available September 15, 2026") {
+    return "Available September 15, 2026";
   }
-  if (str === "July 15th" || str === "Available mid-July" || str === "July 15, 2026") {
-    return "Available July 15, 2026";
+  if (str.includes("October 1") || str === "Available October 1, 2026" || str === "Oct 1") {
+    return "Available October 1, 2026";
   }
-  if (str === "August 1st" || str === "Available August 1st" || str === "August 1, 2026") {
-    return "Available August 1, 2026";
+  if (str.includes("October 15") || str === "Available October 15, 2026" || str === "Oct 15") {
+    return "Available October 15, 2026";
+  }
+  if (str.includes("November 1") || str === "Available November 1, 2026" || str === "Nov 1") {
+    return "Available November 1, 2026";
+  }
+  if (str.includes("November 15") || str === "Available November 15, 2026" || str === "Nov 15") {
+    return "Available November 15, 2026";
+  }
+  if (str.includes("December 1") || str === "Available December 1, 2026" || str === "Dec 1") {
+    return "Available December 1, 2026";
+  }
+  if (str === "July 1st" || str === "Available July 1st" || str === "July 1, 2026" || str === "July 7, 2026" || str === "August 1st" || str === "August 1, 2026") {
+    return "Available Now"; // Past dates rolled over to Available Now
   }
   if (str === "Available within 30 days" || str === "Available in 30 days" || str === "Available Soon") {
     return "Available within 30 days";

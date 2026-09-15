@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <main className="relative w-full h-screen overflow-hidden bg-[#050505]">
       {/* Interactive Map Background */}
-      <Map />
+      <Map onViewClick={(id) => setViewingAptId(id)} />
 
       {/* Sidebar Overlay */}
       <Sidebar 
