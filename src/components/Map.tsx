@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -15,6 +15,16 @@ const customIcon = new L.Icon({
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+// Selected Pin Icon (Gold accent with prominent sizing)
+const selectedIcon = new L.Icon({
+  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [28, 45],
+  iconAnchor: [14, 45],
+  popupAnchor: [1, -38],
   shadowSize: [41, 41]
 });
 
@@ -280,13 +290,65 @@ function MapControls({ totalCount }: { totalCount: number }) {
   );
 }
 
+export interface FocusCommand {
+  id: string;
+  coordinates: [number, number];
+  zoom?: number;
+  timestamp: number;
+}
+
+function MapController({
+  focusCommand,
+  markerRefs
+}: {
+  focusCommand?: FocusCommand | null;
+  markerRefs: React.MutableRefObject<Record<string, L.Marker>>;
+}) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (!focusCommand) return;
+    const { coordinates, zoom, id } = focusCommand;
+
+    if (zoom !== undefined) {
+      // Zoom and center (from list selection)
+      map.flyTo(coordinates, zoom, {
+        animate: true,
+        duration: 1.2
+      });
+    } else {
+      // Center (no zoom) (from pin selection)
+      map.panTo(coordinates, {
+        animate: true,
+        duration: 0.5
+      });
+    }
+
+    const marker = markerRefs.current[id];
+    if (marker) {
+      setTimeout(() => {
+        marker.openPopup();
+      }, 350);
+    }
+  }, [focusCommand, map, markerRefs]);
+
+  return null;
+}
+
 export default function Map({
+  selectedId,
+  focusCommand,
+  onSelectPin,
   onViewClick
 }: {
+  selectedId?: string | null;
+  focusCommand?: FocusCommand | null;
+  onSelectPin?: (apt: Apartment) => void;
   onViewClick?: (id: string) => void;
 }) {
   const [mounted, setMounted] = useState(false);
   const { apartments } = useApartmentStore();
+  const markerRefs = useRef<Record<string, L.Marker>>({});
 
   useEffect(() => {
     setMounted(true);
@@ -312,13 +374,34 @@ export default function Map({
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         />
         <MapControls totalCount={apartments.length} />
-        {apartments.map((apt) => (
-          <Marker key={apt.id} position={apt.coordinates} icon={customIcon}>
-            <Popup className="premium-popup" minWidth={300} maxWidth={320}>
-              <ApartmentPopupCard apt={apt} onViewClick={onViewClick} />
-            </Popup>
-          </Marker>
-        ))}
+        <MapController focusCommand={focusCommand} markerRefs={markerRefs} />
+        {apartments.map((apt) => {
+          const isSelected = selectedId === apt.id;
+          return (
+            <Marker
+              key={apt.id}
+              position={apt.coordinates}
+              icon={isSelected ? selectedIcon : customIcon}
+              zIndexOffset={isSelected ? 1000 : 0}
+              ref={(ref) => {
+                if (ref) {
+                  markerRefs.current[apt.id] = ref;
+                } else {
+                  delete markerRefs.current[apt.id];
+                }
+              }}
+              eventHandlers={{
+                click: () => {
+                  onSelectPin?.(apt);
+                }
+              }}
+            >
+              <Popup className="premium-popup" minWidth={300} maxWidth={320}>
+                <ApartmentPopupCard apt={apt} onViewClick={onViewClick} />
+              </Popup>
+            </Marker>
+          );
+        })}
       </MapContainer>
     </div>
   );
