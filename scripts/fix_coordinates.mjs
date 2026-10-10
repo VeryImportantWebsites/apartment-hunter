@@ -2,6 +2,10 @@
 //
 //   node scripts/fix_coordinates.mjs            # dry run: report only
 //   node scripts/fix_coordinates.mjs --apply    # write src/data/apartments.json
+//   node scripts/fix_coordinates.mjs --boroughs [--apply]
+//        relabel generic "New York, NY" addresses with their real borough ("Brooklyn, NY"),
+//        only when the street geocodes inside that borough AND within 1.5 km of the stored pin
+//        (two sources agree). Found by the 2026-10-10 blind QA run 3 (F5).
 //
 // A listing is suspect when its pin is on the wrong side of the Hudson for its city (a New York
 // address with a New Jersey pin, or the reverse), or when units of one building are pinned more
@@ -61,16 +65,56 @@ function expectedCounties(addr) {
 // Backstop only: the county check and the metro box already reject same-named streets elsewhere.
 // 405 West 206th Street (Inwood) was pinned in Jersey City, 16.9 km from its real spot.
 const MAX_MOVE_KM = 20;
+// "26-41 3rd Street" style numbers are a Queens convention. Nominatim matched one to Brooklyn's
+// 3rd Street (the pin it produced then "agreed" with itself in --boroughs). Such a result is held
+// for review, never applied. Manhattan has hyphenated *ranges* ("25-27 Mercer"), so this only
+// blocks; it never forces Queens.
+const MANHATTAN_RANGE_STREETS = /^\d+-\d+\s+(Mercer|Broadway|Greene|Wooster|Crosby)\b/i; // ranges, not Queens numbers
+const queensStyle = (addr) => /^\d{1,3}-\d{1,3}\s/.test(addr.trim()) && !MANHATTAN_RANGE_STREETS.test(addr.trim());
 const ALREADY_OK_KM = 0.05; // within 50 m of the geocode: the pin is right, nothing to do
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function geocode(q) {
   // viewbox = left,top,right,bottom around the NYC metro; bounded=1 keeps results inside it
   const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=us&addressdetails=1&viewbox=-74.30,40.95,-73.70,40.48&bounded=1&q=${encodeURIComponent(q)}`;
-  const res = await fetch(url, { headers: { "User-Agent": UA, "Accept-Language": "en" } });
+  // 15 s timeout: a stalled connection once hung the whole run for 37 minutes.
+  const res = await fetch(url, { headers: { "User-Agent": UA, "Accept-Language": "en" }, signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const [hit] = await res.json();
   return hit || null;
+}
+
+if (process.argv.includes("--boroughs")) {
+  const BORO = { "Kings County": "Brooklyn", "Queens County": "Queens", "Bronx County": "Bronx", "Richmond County": "Staten Island" };
+  const generic = new Map(); // street -> listings
+  for (const a of data) {
+    if (!/,\s*New York,\s*NY\b/i.test(a.address) || a.locationUnverified) continue;
+    const street = building(a.address);
+    if (!generic.has(street)) generic.set(street, []);
+    generic.get(street).push(a);
+  }
+  let relabeled = 0, manhattan = 0, unsure = 0;
+  console.log(`${generic.size} buildings with a generic "New York, NY" address`);
+  for (const [street, units] of generic) {
+    await sleep(1100);
+    let hit;
+    try { hit = await geocode(`${street}, New York City, NY`); } catch (e) { console.log(`SKIP  ${street}: ${e.message}`); unsure++; continue; }
+    const county = hit?.address?.county || hit?.address?.city_district || ""; // NYC: county is in city_district
+    if (!hit || !NYC.includes(county)) { console.log(`SKIP  ${street}: ${hit ? county || "?" : "no result"}`); unsure++; continue; }
+    const far = units.some((a) => km(a.coordinates, [Number(hit.lat), Number(hit.lon)]) > 1.5);
+    if (far) { console.log(`SKIP  ${street}: geocode in ${county} disagrees with the stored pin`); unsure++; continue; }
+    if (queensStyle(units[0].address) && county !== "Queens County") { console.log(`HOLD  ${street}: Queens-style number but result in ${county}; review by hand`); unsure++; continue; }
+    if (!BORO[county]) { manhattan++; continue; }
+    for (const a of units) {
+      const next = a.address.replace(/,\s*New York,\s*NY\b/i, `, ${BORO[county]}, NY`);
+      console.log(`${APPLY ? "LABEL" : "WOULD"} ${a.address} -> ${next}`);
+      if (APPLY) a.address = next;
+      relabeled++;
+    }
+  }
+  console.log(`${APPLY ? "relabeled" : "would relabel"} ${relabeled} listings; ${manhattan} buildings confirmed Manhattan; ${unsure} buildings left unchanged (no agreement)`);
+  if (APPLY) writeFileSync(FILE, JSON.stringify(data, null, 2) + "\n");
+  process.exit(0);
 }
 
 let fixed = 0, skipped = 0, alreadyOk = 0;
@@ -101,6 +145,9 @@ for (const s of suspects.values()) {
   const lat = Number(hit.lat), lng = Number(hit.lon);
   const county = hit.address?.county || hit.address?.city_district || "";
   const anyAddr = byId.get([...s.ids][0]).address;
+  if (queensStyle(anyAddr) && county !== "Queens County") {
+    console.log(`HOLD  ${s.query}: Queens-style number but result in ${county || "?"}; review by hand`); skipped++; markUnverified(s); continue;
+  }
   if (!expectedCounties(anyAddr).includes(county)) {
     console.log(`SKIP  ${s.query}: result in ${county || "?"} (${hit.display_name})`); skipped++; markUnverified(s); continue;
   }

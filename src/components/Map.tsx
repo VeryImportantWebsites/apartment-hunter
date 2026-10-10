@@ -40,31 +40,34 @@ function ApartmentPopupCard({
   today,
   untrustedFloorPlans,
   untrustedSqft,
+  untrustedImages,
 }: {
   apt: Apartment;
   onViewClick?: (id: string) => void;
   today: Date;
   untrustedFloorPlans: Set<string>;
   untrustedSqft: Set<string>;
+  untrustedImages: Set<string>;
 }) {
+  const photos = (apt.images || []).filter((u) => !untrustedImages.has(u));
   const bookingLink = usableBookingLink(apt.appointmentLink);
   const [activeTab, setActiveTab] = useState<"photo" | "floorplan">("photo");
   const [photoIndex, setPhotoIndex] = useState(0);
 
-  const hasPhotos = Boolean(apt.images && apt.images.length > 0);
+  const hasPhotos = Boolean(photos.length > 0);
   const hasFloorPlan = Boolean(apt.floorPlanImageUrl) && !untrustedFloorPlans.has(apt.floorPlanImageUrl!);
 
   const nextPhoto = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (apt.images && apt.images.length > 0) {
-      setPhotoIndex((prev) => (prev + 1) % apt.images!.length);
+    if (photos.length > 0) {
+      setPhotoIndex((prev) => (prev + 1) % photos.length);
     }
   };
 
   const prevPhoto = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (apt.images && apt.images.length > 0) {
-      setPhotoIndex((prev) => (prev - 1 + apt.images!.length) % apt.images!.length);
+    if (photos.length > 0) {
+      setPhotoIndex((prev) => (prev - 1 + photos.length) % photos.length);
     }
   };
 
@@ -75,7 +78,7 @@ function ApartmentPopupCard({
         {activeTab === "photo" && hasPhotos ? (
           <>
             <SafeImage
-              src={apt.images![photoIndex]}
+              src={photos[photoIndex]}
               alt={`${apt.name} interior`}
               className="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105"
               onClick={() => onViewClick?.(apt.id)}
@@ -86,7 +89,7 @@ function ApartmentPopupCard({
                 </div>
               }
             />
-            {apt.images!.length > 1 && (
+            {photos.length > 1 && (
               <>
                 <button
                   type="button"
@@ -105,7 +108,7 @@ function ApartmentPopupCard({
                   <ChevronRight className="w-4 h-4" />
                 </button>
                 <span className="absolute bottom-2 right-2 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-black/70 backdrop-blur-sm text-white/90 border border-white/10">
-                  {photoIndex + 1} / {apt.images!.length}
+                  {photoIndex + 1} / {photos.length}
                 </span>
               </>
             )}
@@ -144,7 +147,7 @@ function ApartmentPopupCard({
                   : "bg-black/60 text-white/80 hover:bg-black/80"
               }`}
             >
-              Photos ({apt.images?.length})
+              Photos ({photos.length})
             </button>
             <button
               type="button"
@@ -304,12 +307,31 @@ function MapControls({ shownCount, totalCount }: { shownCount: number; totalCoun
   );
 }
 
-// Tracks whether a popup is open so phone-sized layouts can move overlapping controls aside.
+// Tracks whether a popup is open so phone-sized layouts can move overlapping controls aside, and
+// keeps an open popup clear of the list panel and the screen edges, on open and on resize (a popup
+// opened at desktop size slid behind the panel after rotating a phone, blind QA run 3 F7).
 function PopupTracker() {
+  const map = useMap();
   const setPopupOpen = useFilterStore((s) => s.setPopupOpen);
+  const keepClear = () => {
+    const el = document.querySelector(".leaflet-popup") as HTMLElement | null;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const panel = document.querySelector("[data-list-panel]")?.getBoundingClientRect();
+    const m = 12;
+    let dx = 0, dy = 0;
+    // Side by side with the panel: move right of it (desktop / landscape).
+    if (panel && window.innerWidth >= 640 && r.left < panel.right + m && r.top < panel.bottom) dx = panel.right + m - r.left;
+    if (r.right + dx > window.innerWidth - m) dx -= r.right + dx - (window.innerWidth - m);
+    if (r.top < m) dy = m - r.top;
+    if (r.bottom + dy > window.innerHeight - m) dy -= r.bottom + dy - (window.innerHeight - m);
+    // panBy moves the view; the content moves the opposite way.
+    if (dx || dy) map.panBy([-dx, -dy], { animate: !document.hidden });
+  };
   useMapEvents({
-    popupopen: () => setPopupOpen(true),
+    popupopen: () => { setPopupOpen(true); setTimeout(keepClear, 0); },
     popupclose: () => setPopupOpen(false),
+    resize: () => setTimeout(keepClear, 0),
   });
   return null;
 }
@@ -335,14 +357,19 @@ const TILES = CARTO_KEY
 // on the left, on phones it covers the top of the screen, so pad that side by its real size.
 function FitToResults({ positions, filtered }: { positions: globalThis.Map<string, [number, number]>; filtered: boolean }) {
   const map = useMap();
+  const collapsed = useFilterStore((s) => s.panelCollapsed);
   const key = [...positions.keys()].join(",");
   useEffect(() => {
     if (!filtered || positions.size === 0) return;
     const pts = [...positions.values()];
     const wide = window.innerWidth >= 640;
-    const panel = document.querySelector("[data-list-panel]")?.getBoundingClientRect();
+    const panel = collapsed ? null : document.querySelector("[data-list-panel]")?.getBoundingClientRect();
+    // Phones with the panel open leave only a strip of map. A few pins fit in it; many pins
+    // would force a regional zoom (run 3 F10: "1 Bed" framed the Hudson Valley), so fit those to
+    // the full map instead. They come into view when the panel is collapsed, which re-fits.
+    const useStrip = !wide && panel && positions.size <= 5;
     const left = wide && panel ? panel.right + 24 : 24;
-    const top = !wide && panel ? panel.bottom + 16 : 32;
+    const top = useStrip && panel ? panel.bottom + 16 : wide ? 32 : 96;
     const opts = {
       paddingTopLeft: [left, top] as L.PointTuple,
       paddingBottomRight: (wide ? [80, 32] : [72, 24]) as L.PointTuple, // phones: controls on the right
@@ -357,7 +384,7 @@ function FitToResults({ positions, filtered }: { positions: globalThis.Map<strin
     else map.flyToBounds(L.latLngBounds(pts), { ...opts, duration: 0.8 });
     // positions is derived from the same filter result as key
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [key, filtered, map]);
+  }, [key, filtered, collapsed, map]);
   return null;
 }
 
@@ -417,7 +444,7 @@ export default function Map({
   onSelectPin?: (apt: Apartment) => void;
   onViewClick?: (id: string) => void;
 }) {
-  const { visible, total, today, untrustedFloorPlans, untrustedSqft } = useListingView();
+  const { visible, total, today, untrustedFloorPlans, untrustedSqft, untrustedImages } = useListingView();
   const markerRefs = useRef<Record<string, L.Marker>>({});
   // Spread listings that share exact coordinates so each pin can be picked.
   // Listings whose pin is known to be wrong (locationUnverified) are not drawn.
@@ -470,7 +497,7 @@ export default function Map({
                 autoPanPaddingTopLeft={[16, 88]}
                 autoPanPaddingBottomRight={[16, 16]}
               >
-                <ApartmentPopupCard apt={apt} onViewClick={onViewClick} today={today} untrustedFloorPlans={untrustedFloorPlans} untrustedSqft={untrustedSqft} />
+                <ApartmentPopupCard apt={apt} onViewClick={onViewClick} today={today} untrustedFloorPlans={untrustedFloorPlans} untrustedSqft={untrustedSqft} untrustedImages={untrustedImages} />
               </Popup>
             </Marker>
           );

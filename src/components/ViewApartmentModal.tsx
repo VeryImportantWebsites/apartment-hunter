@@ -45,8 +45,10 @@ export default function ViewApartmentModal({
   onClose: () => void;
 }) {
   const { apartments } = useApartmentStore();
-  const { today, untrustedFloorPlans, untrustedSqft } = useListingView();
-  const apt = apartments.find((a) => a.id === apartmentId);
+  const { today, untrustedFloorPlans, untrustedSqft, untrustedImages } = useListingView();
+  const found = apartments.find((a) => a.id === apartmentId);
+  // Photos shared with other buildings are not this building (blind QA run 3, F6).
+  const apt = found && { ...found, images: (found.images || []).filter((u) => !untrustedImages.has(u)) };
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<ModalTab>("overview");
@@ -139,14 +141,14 @@ export default function ViewApartmentModal({
                 <>
                   <button
                     onClick={prevImage}
-                    className="absolute left-4 top-16 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md z-10 transition-all cursor-pointer"
+                    className="absolute left-4 top-16 [@media(max-height:600px)]:hidden p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md z-10 transition-all cursor-pointer"
                     title="Previous photo (←)"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-4 top-16 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md z-10 transition-all cursor-pointer"
+                    className="absolute right-4 top-16 [@media(max-height:600px)]:hidden p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md z-10 transition-all cursor-pointer"
                     title="Next photo (→)"
                   >
                     <ChevronRight className="w-5 h-5" />

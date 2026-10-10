@@ -133,9 +133,16 @@ export function formatRating(ranking: number): string {
   return Number.isFinite(ranking) ? ranking.toFixed(1) : "–";
 }
 
-/** Whole stars to fill: 4.7 fills 4, never rounds up to 5. */
+/** Stars rounded to the nearest half: 4.7 -> 4.5 (4 full + 1 half), 4.0 -> 4, 4.8 -> 5.
+ *  Whole-star flooring made 4.7 look the same as 4.0 (blind QA run 3, F4). */
+export function starParts(ranking: number): { full: number; half: boolean } {
+  const r = Math.max(0, Math.min(5, Math.round((Number.isFinite(ranking) ? ranking : 0) * 2) / 2));
+  return { full: Math.floor(r), half: r % 1 !== 0 };
+}
+
+/** @deprecated use starParts; kept for callers that need whole stars only. */
 export function filledStars(ranking: number): number {
-  return Math.max(0, Math.min(5, Math.floor(ranking + 1e-9)));
+  return starParts(ranking).full;
 }
 
 // ---------- contact, links, notes ----------
@@ -237,21 +244,33 @@ export type AvailabilityFilter = string;
 
 export interface Filters {
   search: string;
-  quick: QuickFilter;
+  /** Combinable chips: price, fee and "now" stack; studio / 1b / 2b are one choice. Empty = all. */
+  quick: QuickFilter[];
   availability: AvailabilityFilter;
   sort: SortBy;
 }
 
-export const DEFAULT_FILTERS: Filters = { search: "", quick: "all", availability: "all", sort: "rent" };
+export const DEFAULT_FILTERS: Filters = { search: "", quick: [], availability: "all", sort: "rent" };
+
+const BED_CHIPS: QuickFilter[] = ["studio", "1b", "2b"];
+
+/** Toggle one chip. "all" clears; bed chips replace each other; the rest stack (blind QA run 3, F9). */
+export function toggleQuick(current: QuickFilter[], id: QuickFilter): QuickFilter[] {
+  if (id === "all") return [];
+  if (current.includes(id)) return current.filter((q) => q !== id);
+  const rest = BED_CHIPS.includes(id) ? current.filter((q) => !BED_CHIPS.includes(q)) : current;
+  return [...rest, id];
+}
 
 export function matchesFilters(apt: ListingLike, f: Filters, today: Date): boolean {
   const beds = bedrooms(apt.floorPlan);
-  if (f.quick === "now" && effectiveAvailability(apt.availability, today).kind !== "now") return false;
-  if (f.quick === "nofee" && !isNoFee(apt.feeStatus)) return false;
-  if (f.quick === "studio" && beds !== "studio") return false;
-  if (f.quick === "1b" && beds !== 1) return false;
-  if (f.quick === "2b" && beds !== 2) return false;
-  if (f.quick === "under3500" && apt.netEffectiveRent >= 3500) return false;
+  const on = (id: QuickFilter) => f.quick.includes(id);
+  if (on("now") && effectiveAvailability(apt.availability, today).kind !== "now") return false;
+  if (on("nofee") && !isNoFee(apt.feeStatus)) return false;
+  if (on("studio") && beds !== "studio") return false;
+  if (on("1b") && beds !== 1) return false;
+  if (on("2b") && beds !== 2) return false;
+  if (on("under3500") && apt.netEffectiveRent >= 3500) return false;
 
   const q = f.search.toLowerCase().trim();
   if (q) {
@@ -304,7 +323,7 @@ export function availableMonths(list: ListingLike[], today: Date): string[] {
 export function filtersToQuery(f: Filters, apt?: string | null): string {
   const p = new URLSearchParams();
   if (f.search) p.set("q", f.search);
-  if (f.quick !== DEFAULT_FILTERS.quick) p.set("chip", f.quick);
+  if (f.quick.length) p.set("chip", f.quick.join(","));
   if (f.availability !== DEFAULT_FILTERS.availability) p.set("avail", f.availability);
   if (f.sort !== DEFAULT_FILTERS.sort) p.set("sort", f.sort);
   if (apt) p.set("apt", apt);
@@ -317,13 +336,13 @@ const SORTS: SortBy[] = ["rent", "rating", "name", "recent", "availability"];
 
 export function filtersFromQuery(search: string): { filters: Filters; apt: string | null } {
   const p = new URLSearchParams(search);
-  const chip = p.get("chip") as QuickFilter | null;
+  const chips = (p.get("chip") || "").split(",").filter((c): c is QuickFilter => QUICK.includes(c as QuickFilter) && c !== "all");
   const sort = p.get("sort") as SortBy | null;
   const avail = p.get("avail");
   return {
     filters: {
       search: p.get("q") || "",
-      quick: chip && QUICK.includes(chip) ? chip : DEFAULT_FILTERS.quick,
+      quick: chips.reduce<QuickFilter[]>((acc, c) => (acc.includes(c) ? acc : toggleQuick(acc, c)), []),
       sort: sort && SORTS.includes(sort) ? sort : DEFAULT_FILTERS.sort,
       availability: avail && /^(all|now|30days|waitlist|\d{4}-\d{2})$/.test(avail) ? avail : DEFAULT_FILTERS.availability,
     },
@@ -380,4 +399,41 @@ export function untrustedSqftIds(list: (ListingLike & { sqft?: number })[]): Set
 
 export function formatMoney(n: number): string {
   return `$${Math.round(n).toLocaleString("en-US")}`;
+}
+
+// ---------- photos ----------
+
+/** Photo URLs that appear on listings in more than one building are stock or search results,
+ *  not this building (blind QA run 3, F6). Same rule as floor plans. */
+export function untrustedImageUrls(list: (ListingLike & { images?: string[] })[]): Set<string> {
+  const buildings = new Map<string, Set<string>>();
+  for (const a of list) {
+    for (const u of a.images || []) {
+      if (!buildings.has(u)) buildings.set(u, new Set());
+      buildings.get(u)!.add(buildingKey(a.address));
+    }
+  }
+  return new Set([...buildings].filter(([, b]) => b.size > 1).map(([u]) => u));
+}
+
+// ---------- add / edit form ----------
+
+export interface ListingInput {
+  rentBase: number;
+  rentMonthsFree: number;
+  ranking: number;
+  leaseTerm?: string | number;
+  sqft?: number;
+}
+
+/** Returns a message per invalid field (blind QA run 3, F1); empty object = valid. */
+export function validateListingInput(v: ListingInput): Partial<Record<keyof ListingInput, string>> {
+  const errors: Partial<Record<keyof ListingInput, string>> = {};
+  const lease = Number(String(v.leaseTerm ?? "").match(/\d+/)?.[0] ?? 12) || 12;
+  if (!Number.isFinite(v.rentBase) || v.rentBase <= 0) errors.rentBase = "Base rent must be more than $0.";
+  if (!Number.isFinite(v.rentMonthsFree) || v.rentMonthsFree < 0) errors.rentMonthsFree = "Months free cannot be negative.";
+  else if (v.rentMonthsFree >= lease) errors.rentMonthsFree = `Months free must be less than the ${lease}-month lease.`;
+  if (!Number.isFinite(v.ranking) || v.ranking < 1 || v.ranking > 5) errors.ranking = "Rating must be between 1 and 5.";
+  if (v.sqft !== undefined && (!Number.isFinite(v.sqft) || v.sqft <= 0)) errors.sqft = "Size must be more than 0 sqft.";
+  return errors;
 }

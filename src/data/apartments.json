@@ -4363,7 +4363,7 @@
   {
     "id": "81276611",
     "name": "97-12 65th Road #4C",
-    "address": "97-12 65th Road #4C, New York, NY",
+    "address": "97-12 65th Road #4C, Queens, NY",
     "coordinates": [
       40.727933,
       -73.85759
@@ -4402,7 +4402,7 @@
   {
     "id": "81276612",
     "name": "960 Franklin Avenue #443",
-    "address": "960 Franklin Avenue #443, New York, NY",
+    "address": "960 Franklin Avenue #443, Brooklyn, NY",
     "coordinates": [
       40.664992,
       -73.96013
@@ -4480,10 +4480,10 @@
   {
     "id": "81276614",
     "name": "26-41 3rd Street #370",
-    "address": "26-41 3rd Street #370, New York, NY",
+    "address": "26-41 3rd Street #370, Queens, NY",
     "coordinates": [
-      40.667993,
-      -73.972561
+      40.775722,
+      -73.933897
     ],
     "floorPlan": "1B",
     "rentBase": 2930,
@@ -4519,7 +4519,7 @@
   {
     "id": "81276615",
     "name": "500 Degraw Street #403",
-    "address": "500 Degraw Street #403, New York, NY",
+    "address": "500 Degraw Street #403, Brooklyn, NY",
     "coordinates": [
       40.680712,
       -73.988448
@@ -4636,7 +4636,7 @@
   {
     "id": "81276618",
     "name": "52 4th Avenue #501",
-    "address": "52 4th Avenue #501, New York, NY",
+    "address": "52 4th Avenue #501, Brooklyn, NY",
     "coordinates": [
       40.68589830004231,
       -73.98262848453133
@@ -4675,7 +4675,7 @@
   {
     "id": "81276619",
     "name": "960 Franklin Avenue #448",
-    "address": "960 Franklin Avenue #448, New York, NY",
+    "address": "960 Franklin Avenue #448, Brooklyn, NY",
     "coordinates": [
       40.664992,
       -73.96013
@@ -4871,7 +4871,7 @@
   {
     "id": "81276624",
     "name": "60 Wharf Dr #3304",
-    "address": "60 Wharf Dr #3304, New York, NY",
+    "address": "60 Wharf Dr #3304, Brooklyn, NY",
     "coordinates": [
       40.726905,
       -73.960677

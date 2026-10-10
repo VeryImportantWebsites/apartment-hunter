@@ -6,6 +6,7 @@ import {
   Filters,
   availableMonths,
   untrustedFloorPlanUrls,
+  untrustedImageUrls,
   untrustedSqftIds,
   visibleListings,
 } from "@/lib/listing";
@@ -19,6 +20,9 @@ interface FilterStore {
   /** A map popup is open: small screens hide overlapping controls while it is. */
   popupOpen: boolean;
   setPopupOpen: (open: boolean) => void;
+  /** List panel collapsed to its pill: the map re-fits its results to the space it frees. */
+  panelCollapsed: boolean;
+  setPanelCollapsed: (collapsed: boolean) => void;
 }
 
 export const useFilterStore = create<FilterStore>()((set) => ({
@@ -27,6 +31,8 @@ export const useFilterStore = create<FilterStore>()((set) => ({
   resetFilters: () => set({ filters: DEFAULT_FILTERS }),
   popupOpen: false,
   setPopupOpen: (popupOpen) => set({ popupOpen }),
+  panelCollapsed: false,
+  setPanelCollapsed: (panelCollapsed) => set({ panelCollapsed }),
 }));
 
 /** The filtered, sorted listings plus derived data every view needs. */
@@ -42,6 +48,7 @@ export function useListingView() {
       months: availableMonths(apartments, today),
       untrustedFloorPlans: untrustedFloorPlanUrls(apartments),
       untrustedSqft: untrustedSqftIds(apartments),
+      untrustedImages: untrustedImageUrls(apartments),
     };
   }, [apartments, filters]);
 }
