@@ -172,7 +172,11 @@ test("re-run F2/F5: units of one building share a location, and pins sit on the 
   const pacific = DATA.filter((a) => a.address.startsWith("328 Pacific Avenue"));
   const spread = Math.max(...pacific.flatMap((x) => pacific.map((y) => km(x.coordinates, y.coordinates))));
   assert.ok(spread < 0.05, `328 Pacific units ${spread.toFixed(2)} km apart`);
-  assert.deepEqual(DATA.filter((a) => a.locationUnverified).map((a) => a.name), ["1065 Second Avenue #6L"]);
+  // 1065 Second Avenue had no OSM match; NYC GeoSearch (the city's address data) places it in
+  // Midtown East 10022, so no listing is left without a verified location.
+  assert.deepEqual(DATA.filter((a) => a.locationUnverified).map((a) => a.name), []);
+  const second = DATA.find((a) => a.name === "1065 Second Avenue #6L").coordinates;
+  assert.ok(Math.abs(second[0] - 40.759) < 0.002 && Math.abs(second[1] + 73.966) < 0.002, `1065 Second Ave at ${second}`);
 });
 
 test("run 3 F9: chips combine; bed chips replace each other; 'All' clears", () => {
@@ -217,4 +221,22 @@ test("run 3 F5: city labels name the real borough where two sources agree", () =
   const astor = DATA.find((a) => a.name === "26-41 3rd Street #370");
   assert.match(astor.address, /, Queens, NY$/);
   assert.ok(astor.coordinates[0] > 40.74 && astor.coordinates[1] > -73.96, `pin ${astor.coordinates}`);
+});
+
+test("all NYC pins agree with the city's address data (GeoSearch audit, 2026-10-10)", () => {
+  const near = (n, lat, lng) => {
+    const c = DATA.find((a) => a.name === n).coordinates;
+    return Math.abs(c[0] - lat) < 0.003 && Math.abs(c[1] - lng) < 0.003;
+  };
+  // pins that were 2-20 km off
+  assert.ok(near("4778 Broadway #10E", 40.86558, -73.92604), "4778 Broadway: GeoSearch 10034");
+  assert.ok(DATA.find((a) => a.name === "4778 Broadway #10E").coordinates[0] > 40.85);
+  assert.match(DATA.find((a) => a.name === "40 Bruckner Boulevard #B8260").address, /, Bronx, NY$/);
+  assert.match(DATA.find((a) => a.name === "8 Court Square #18C").address, /, Queens, NY$/);
+  assert.match(DATA.find((a) => a.name === "203 Wyckoff Avenue #2L").address, /, Brooklyn, NY$/);
+  // same-named streets exist in two boroughs: these Manhattan pins were right and must stay
+  for (const n of ["737 Park Avenue", "810 Fifth Avenue", "212 5th Ave", "67 Franklin St"]) {
+    const a = DATA.find((x) => x.address.startsWith(n));
+    assert.ok(a && a.coordinates[1] > -74.02 && a.coordinates[1] < -73.94 && a.coordinates[0] > 40.70, `${n} stays in Manhattan`);
+  }
 });

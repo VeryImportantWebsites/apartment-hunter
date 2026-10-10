@@ -1,5 +1,16 @@
 import { create } from 'zustand';
 import defaultData from "@/data/apartments.json";
+import {
+  EMPTY_OVERLAY,
+  OVERLAY_KEY,
+  Overlay,
+  applyOverlay,
+  overlayCount,
+  parseOverlay,
+  recordAdd,
+  recordEdit,
+  recordRemove,
+} from "@/lib/overlay";
 
 export type FloorPlan = string;
 
@@ -37,6 +48,12 @@ export interface Apartment {
 
 interface ApartmentStore {
   apartments: Apartment[];
+  /** The user's own changes, saved in this browser (see lib/overlay.ts). */
+  overlay: Overlay;
+  /** False when the browser refused storage (private mode, blocked site data). */
+  canSave: boolean;
+  /** Apply saved changes; called once after the page mounts (the static HTML has none). */
+  loadMyChanges: () => void;
   addApartment: (apt: Omit<Apartment, 'id' | 'netEffectiveRent'>) => void;
   updateApartment: (id: string, apt: Partial<Omit<Apartment, 'id' | 'netEffectiveRent'>>) => void;
   removeApartment: (id: string) => void;
@@ -55,30 +72,51 @@ function calculateNetEffective(base: number, monthsFree: number, leaseTerm?: str
   return Math.round((base * (termMonths - monthsFree)) / termMonths);
 }
 
-export const useApartmentStore = create<ApartmentStore>()((set) => ({
-  apartments: defaultData as Apartment[],
-  addApartment: (apt) => set((state) => {
-    const id = crypto.randomUUID();
-    const netEffectiveRent = calculateNetEffective(apt.rentBase, apt.rentMonthsFree, apt.leaseTerm);
-    const lastUpdated = new Date().toISOString();
-    return {
-      apartments: [...state.apartments, { ...apt, id, netEffectiveRent, lastUpdated }],
-    };
-  }),
-  updateApartment: (id, apt) => set((state) => {
-    return {
-      apartments: state.apartments.map((a) => {
-        if (a.id === id) {
-          const updated = { ...a, ...apt };
-          updated.netEffectiveRent = calculateNetEffective(updated.rentBase, updated.rentMonthsFree, updated.leaseTerm);
-          updated.lastUpdated = new Date().toISOString();
-          return updated;
-        }
-        return a;
-      }),
-    };
-  }),
-  removeApartment: (id) => set((state) => ({
-    apartments: state.apartments.filter((a) => a.id !== id),
-  })),
-}));
+const BASE = defaultData as Apartment[];
+
+function save(o: Overlay): boolean {
+  try {
+    if (overlayCount(o) === 0) localStorage.removeItem(OVERLAY_KEY);
+    else localStorage.setItem(OVERLAY_KEY, JSON.stringify(o));
+    return true;
+  } catch {
+    return false; // storage blocked or full: changes still work for this tab
+  }
+}
+
+export const useApartmentStore = create<ApartmentStore>()((set, get) => {
+  const commit = (overlay: Overlay) => {
+    const canSave = save(overlay);
+    set({ overlay, canSave, apartments: applyOverlay(BASE, overlay) });
+  };
+  return {
+    apartments: BASE,
+    overlay: EMPTY_OVERLAY,
+    canSave: true,
+    loadMyChanges: () => {
+      let raw: string | null = null;
+      let canSave = true;
+      try { raw = localStorage.getItem(OVERLAY_KEY); } catch { canSave = false; }
+      const overlay = parseOverlay(raw);
+      set({ overlay, canSave, apartments: applyOverlay(BASE, overlay) });
+    },
+    addApartment: (apt) => {
+      const id = crypto.randomUUID();
+      const netEffectiveRent = calculateNetEffective(apt.rentBase, apt.rentMonthsFree, apt.leaseTerm);
+      const lastUpdated = new Date().toISOString();
+      commit(recordAdd(get().overlay, { ...apt, id, netEffectiveRent, lastUpdated }));
+    },
+    updateApartment: (id, apt) => {
+      const current = get().apartments.find((a) => a.id === id);
+      if (!current) return;
+      const merged = { ...current, ...apt };
+      const patch = {
+        ...apt,
+        netEffectiveRent: calculateNetEffective(merged.rentBase, merged.rentMonthsFree, merged.leaseTerm),
+        lastUpdated: new Date().toISOString(),
+      };
+      commit(recordEdit(get().overlay, id, patch));
+    },
+    removeApartment: (id) => commit(recordRemove(get().overlay, id)),
+  };
+});

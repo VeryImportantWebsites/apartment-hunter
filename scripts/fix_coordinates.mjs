@@ -2,6 +2,13 @@
 //
 //   node scripts/fix_coordinates.mjs            # dry run: report only
 //   node scripts/fix_coordinates.mjs --apply    # write src/data/apartments.json
+//   node scripts/fix_coordinates.mjs --nyc-check [--apply]
+//        check EVERY New York City listing against NYC Planning's GeoSearch (the city's own
+//        address database, keyless). A pin within 100 m of a match is OK. Otherwise, if the
+//        listing's own borough hints (link text, city) and GeoSearch agree on one borough, move
+//        the pin to GeoSearch's point and name the borough. Anything else is held for review.
+//        Added after the 2026-10-10 audit: 13 pins were 2-20 km off, and Nominatim had matched
+//        same-named streets in the wrong borough (737 Park Avenue -> Brooklyn).
 //   node scripts/fix_coordinates.mjs --boroughs [--apply]
 //        relabel generic "New York, NY" addresses with their real borough ("Brooklyn, NY"),
 //        only when the street geocodes inside that borough AND within 1.5 km of the stored pin
@@ -82,6 +89,89 @@ async function geocode(q) {
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const [hit] = await res.json();
   return hit || null;
+}
+
+if (process.argv.includes("--nyc-check")) {
+  const BORO_CITY = { Manhattan: "New York", Brooklyn: "Brooklyn", Queens: "Queens", Bronx: "Bronx", "Staten Island": "Staten Island" };
+  const hints = (a) => {
+    const t = `${a.address} ${a.appointmentLink || ""} ${a.link || ""}`.toLowerCase();
+    const h = new Set();
+    if (/brooklyn|greenpoint|williamsburg|bushwick|dumbo|park[-_ ]slope|sunset/.test(t)) h.add("Brooklyn");
+    if (/queens|long[-_ ]island[-_ ]city|\blic\b|astoria|rego[-_ ]park|forest[-_ ]hills/.test(t)) h.add("Queens");
+    if (/bronx/.test(t)) h.add("Bronx");
+    // A generic "New York, NY" is what is being checked, so it is not evidence; only links count.
+    const links = `${a.appointmentLink || ""} ${a.link || ""}`.toLowerCase();
+    if (/manhattan|new[-_]york\b|nyc/.test(links) && !h.size) h.add("Manhattan");
+    return h;
+  };
+  // "11 Beach St" and "288 W 14th St" found nothing or the wrong borough until spelled out.
+  const expand = (q) => q
+    .replace(/\bW\b\.?/g, "West").replace(/\bE\b\.?/g, "East").replace(/\bN\b\.?/g, "North").replace(/\bS\b\.?(?=\s+\d)/g, "South")
+    .replace(/\bSt\b\.?/gi, "Street").replace(/\bAve\b\.?/gi, "Avenue").replace(/\bBlvd\b\.?/gi, "Boulevard").replace(/\bPl\b\.?/gi, "Place").replace(/\bDr\b\.?/gi, "Drive").replace(/\bRd\b\.?/gi, "Road");
+  // Compare street names, not just house numbers: "260 Kent Ave" matched 260 Kent *Street* in
+  // Greenpoint and would have moved a correct pin 2.2 km.
+  const ORD = { FIRST: 1, SECOND: 2, THIRD: 3, FOURTH: 4, FIFTH: 5, SIXTH: 6, SEVENTH: 7, EIGHTH: 8, NINTH: 9, TENTH: 10, ELEVENTH: 11, TWELFTH: 12 };
+  const normStreet = (x) => expand(String(x || "")).toUpperCase()
+    .replace(/\b(FIRST|SECOND|THIRD|FOURTH|FIFTH|SIXTH|SEVENTH|EIGHTH|NINTH|TENTH|ELEVENTH|TWELFTH)\b/g, (w) => String(ORD[w]))
+    .replace(/\b(\d+)(ST|ND|RD|TH)\b/g, "$1").replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+  const ourStreet = (st) => normStreet(st.replace(/^[\d-]+[A-Z]?\s+/i, ""));
+  const gs = async (q) => {
+    await sleep(350);
+    const r = await fetch(`https://geosearch.planninglabs.nyc/v2/search?size=6&text=${encodeURIComponent(q)}`, { signal: AbortSignal.timeout(15000) });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return ((await r.json()).features || []).filter((f) => f.properties?.housenumber);
+  };
+  const nycListings = data.filter((a) => !isNJ(a.address));
+  const byBuilding = new Map();
+  for (const a of nycListings) {
+    const k = building(a.address);
+    if (!byBuilding.has(k)) byBuilding.set(k, []);
+    byBuilding.get(k).push(a);
+  }
+  let ok = 0, moved = 0, held = 0;
+  for (const [street, units] of byBuilding) {
+    let feats;
+    try { feats = await gs(expand(street)); } catch (e) { console.log(`HOLD  ${street}: ${e.message}`); held++; continue; }
+    const hn = street.match(/^[\d-]+[A-Z]?/i)?.[0]?.toUpperCase();
+    const want = ourStreet(street);
+    const exact = feats.filter((f) => String(f.properties.housenumber).toUpperCase() === hn && normStreet(f.properties.street) === want);
+    const pts = exact.map((f) => ({ boro: f.properties.borough, zip: f.properties.postalcode, lat: f.geometry.coordinates[1], lng: f.geometry.coordinates[0] }));
+    // Within 300 m of ANY match is the same building: a building's middle vs the city's address
+    // point (97 of the first run's 123 "moves" were this). Any match, so ranges ("25-27 Mercer")
+    // and pairs ("173 and 176 Perry") count too.
+    const anyPts = feats.map((f) => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
+    if (units.every((a) => anyPts.some((q) => km(a.coordinates, q) < 0.3))) { ok++; continue; }
+    const h = hints(units[0]);
+    const boros = [...new Set(pts.map((p) => p.boro))];
+    let pick = boros.filter((b) => h.has(b));
+    // No link hint and GeoSearch found one borough: accept only if Nominatim, a separate
+    // database, independently puts the street in the same borough ("W 14th" alone matched
+    // Coney Island in GeoSearch; this check stops a Manhattan building moving to Brooklyn).
+    if (pick.length === 0 && h.size === 0 && boros.length === 1) {
+      const COUNTY = { Manhattan: "New York County", Brooklyn: "Kings County", Queens: "Queens County", Bronx: "Bronx County", "Staten Island": "Richmond County" };
+      let second = null;
+      try { await sleep(1100); second = await geocode(`${expand(street)}, New York City, NY`); } catch {}
+      const c = second?.address?.county || second?.address?.city_district || "";
+      if (c === COUNTY[boros[0]]) pick = boros;
+      else { console.log(`HOLD  ${street}: GeoSearch says ${boros[0]}, Nominatim says ${c || "nothing"}`); held++; continue; }
+    }
+    if (pick.length !== 1) { console.log(`HOLD  ${street}: GeoSearch boroughs [${boros}] vs hints [${[...h]}]`); held++; continue; }
+    const p = pts.find((x) => x.boro === pick[0]);
+    for (const a of units) {
+      const city = BORO_CITY[p.boro];
+      const nextAddr = a.address.replace(/,\s*(New York|Brooklyn|Queens|Bronx|Staten Island),\s*NY\b/i, `, ${city}, NY`);
+      console.log(`${APPLY ? "FIX  " : "WOULD"} ${a.name}: ${km(a.coordinates, [p.lat, p.lng]).toFixed(2)} km -> ${p.boro} ${p.zip}${nextAddr !== a.address ? ` | "${nextAddr}"` : ""}`);
+      if (APPLY) {
+        a.coordinates = [Number(p.lat.toFixed(6)), Number(p.lng.toFixed(6))];
+        a.address = nextAddr;
+        delete a.locationUnverified;
+      }
+      moved++;
+    }
+  }
+  console.log(`${byBuilding.size} NYC buildings: ${ok} pins confirmed, ${moved} listings ${APPLY ? "fixed" : "would be fixed"}, ${held} buildings held for review`);
+  if (APPLY) writeFileSync(FILE, JSON.stringify(data, null, 2) + "\n");
+  process.exit(0);
 }
 
 if (process.argv.includes("--boroughs")) {
