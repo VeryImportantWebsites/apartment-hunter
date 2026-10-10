@@ -19,6 +19,7 @@ export interface ListingLike {
   rentMonthsFree: number;
   ranking: number;
   lastUpdated?: string;
+  sqft?: number;
   notes?: string;
   source?: string;
   perksAndAmenities?: string[];
@@ -328,4 +329,55 @@ export function filtersFromQuery(search: string): { filters: Filters; apt: strin
     },
     apt: p.get("apt"),
   };
+}
+
+// ---------- lease term, size ----------
+
+/** "12" (a bare number in 75 records) reads "12 months"; text values pass through. */
+export function leaseLabel(lease: string | number | undefined): string | null {
+  if (lease === undefined || lease === null || String(lease).trim() === "") return null;
+  const s = String(lease).trim();
+  if (/^\d+$/.test(s)) return `${s} month${s === "1" ? "" : "s"}`;
+  return s.replace(/\bMonths\b/, "months");
+}
+
+// Square footage outside these bounds for the unit type is not this unit's size (the scraper
+// reused values: studios at 1,200 sqft, 2-beds at 700). Treated as missing, like other
+// untrustworthy fields (repo rule: no mock data).
+const SQFT_BOUNDS: Record<string, [number, number]> = {
+  studio: [250, 900],
+  "1": [350, 1300],
+  "2": [750, 2200],
+  "3": [1000, 3500],
+};
+
+function buildingKey(address: string): string {
+  return address.split(",")[0].replace(/\s*(#|unit\b|apt\.?)\s*[\w-]+/gi, "").trim().toLowerCase();
+}
+
+/** Ids whose sqft is implausible for the unit type, or equal across different unit types in one building. */
+export function untrustedSqftIds(list: (ListingLike & { sqft?: number })[]): Set<string> {
+  const bad = new Set<string>();
+  const byBuilding = new Map<string, (ListingLike & { sqft?: number })[]>();
+  for (const a of list) {
+    if (!a.sqft) continue;
+    const bounds = SQFT_BOUNDS[String(bedrooms(a.floorPlan))];
+    if (bounds && (a.sqft < bounds[0] || a.sqft > bounds[1])) bad.add(a.id);
+    const k = buildingKey(a.address);
+    if (!byBuilding.has(k)) byBuilding.set(k, []);
+    byBuilding.get(k)!.push(a);
+  }
+  for (const units of byBuilding.values()) {
+    const bySize = new Map<number, Set<string>>();
+    for (const u of units) {
+      if (!bySize.has(u.sqft!)) bySize.set(u.sqft!, new Set());
+      bySize.get(u.sqft!)!.add(String(bedrooms(u.floorPlan)));
+    }
+    for (const u of units) if (bySize.get(u.sqft!)!.size > 1) bad.add(u.id);
+  }
+  return bad;
+}
+
+export function formatMoney(n: number): string {
+  return `$${Math.round(n).toLocaleString("en-US")}`;
 }

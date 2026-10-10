@@ -503,8 +503,8 @@
     "name": "Jersey City Urby",
     "address": "200 Greene St, Jersey City, NJ 07311",
     "coordinates": [
-      40.7202,
-      -74.0366
+      40.720359,
+      -74.034638
     ],
     "floorPlan": "1B",
     "rentBase": 3400,
@@ -692,8 +692,8 @@
     "name": "Jersey City Urby - Unit 105",
     "address": "200 Greene St, Jersey City, NJ 07311",
     "coordinates": [
-      40.7202,
-      -74.0366
+      40.720359,
+      -74.034638
     ],
     "floorPlan": "1B",
     "rentBase": 3400,
@@ -2389,8 +2389,8 @@
     "name": "Urby Jersey City",
     "address": "200 Greene St, Jersey City, NJ 07311",
     "coordinates": [
-      40.717,
-      -74.0335
+      40.720359,
+      -74.034638
     ],
     "floorPlan": "1B",
     "rentBase": 3500,
@@ -4170,8 +4170,8 @@
     "name": "305 East 86th Street #21J1",
     "address": "305 East 86th Street #21J1, New York, NY",
     "coordinates": [
-      40.745019392552216,
-      -74.02107311435026
+      40.778148,
+      -73.951238
     ],
     "floorPlan": "1B",
     "rentBase": 9595,
@@ -4365,8 +4365,8 @@
     "name": "97-12 65th Road #4C",
     "address": "97-12 65th Road #4C, New York, NY",
     "coordinates": [
-      40.73142181876019,
-      -74.02050918915553
+      40.727933,
+      -73.85759
     ],
     "floorPlan": "1B",
     "rentBase": 4025,
@@ -4404,8 +4404,8 @@
     "name": "960 Franklin Avenue #443",
     "address": "960 Franklin Avenue #443, New York, NY",
     "coordinates": [
-      40.73855778681051,
-      -74.01175449577153
+      40.664992,
+      -73.96013
     ],
     "floorPlan": "1B",
     "rentBase": 5650,
@@ -4443,8 +4443,8 @@
     "name": "405 West 206th Street #1507E",
     "address": "405 West 206th Street #1507E, New York, NY",
     "coordinates": [
-      40.744143951845565,
-      -74.04365334867161
+      40.863178,
+      -73.91771
     ],
     "floorPlan": "1B",
     "rentBase": 3520,
@@ -4482,8 +4482,8 @@
     "name": "26-41 3rd Street #370",
     "address": "26-41 3rd Street #370, New York, NY",
     "coordinates": [
-      40.75274444632629,
-      -74.02841425085208
+      40.667993,
+      -73.972561
     ],
     "floorPlan": "1B",
     "rentBase": 2930,
@@ -4521,8 +4521,8 @@
     "name": "500 Degraw Street #403",
     "address": "500 Degraw Street #403, New York, NY",
     "coordinates": [
-      40.724617551634786,
-      -74.0497354056914
+      40.680712,
+      -73.988448
     ],
     "floorPlan": "Studio",
     "rentBase": 3810,
@@ -4677,8 +4677,8 @@
     "name": "960 Franklin Avenue #448",
     "address": "960 Franklin Avenue #448, New York, NY",
     "coordinates": [
-      40.69789252697649,
-      -73.99846378322657
+      40.664992,
+      -73.96013
     ],
     "floorPlan": "1B",
     "rentBase": 5650,
@@ -4865,15 +4865,16 @@
       "https://tse2.mm.bing.net/th/id/OIP.zoRj624X78ecjzvfWAo8ZwHaE7?pid=Api",
       "https://tse1.mm.bing.net/th/id/OIP.ku9Gr4Z1jfMtxrvPCKWpgAHaFF?pid=Api"
     ],
-    "ranking": 4
+    "ranking": 4,
+    "locationUnverified": true
   },
   {
     "id": "81276624",
     "name": "60 Wharf Dr #3304",
     "address": "60 Wharf Dr #3304, New York, NY",
     "coordinates": [
-      40.6660097820962,
-      -74.04669078729651
+      40.726905,
+      -73.960677
     ],
     "floorPlan": "1B",
     "rentBase": 9275,
@@ -4950,8 +4951,8 @@
     "name": "555 West 45th Street #2B",
     "address": "555 West 45th Street #2B, New York, NY",
     "coordinates": [
-      40.755057449402784,
-      -74.02620911724735
+      40.762349,
+      -73.995739
     ],
     "floorPlan": "Studio",
     "rentBase": 4400,
@@ -5028,8 +5029,8 @@
     "name": "162 East 36th Street #5H",
     "address": "162 East 36th Street #5H, New York, NY",
     "coordinates": [
-      40.71262840066633,
-      -74.05578667238879
+      40.74711,
+      -73.977648
     ],
     "floorPlan": "Studio",
     "rentBase": 5110,
@@ -5303,8 +5304,8 @@
     "name": "328 Pacific Avenue #230",
     "address": "328 Pacific Avenue #230, Jersey City, NJ",
     "coordinates": [
-      40.72416785583969,
-      -74.09617736723928
+      40.712002,
+      -74.061704
     ],
     "floorPlan": "1B",
     "rentBase": 2550,
@@ -5343,8 +5344,8 @@
     "name": "328 Pacific Avenue #334",
     "address": "328 Pacific Avenue #334, Jersey City, NJ",
     "coordinates": [
-      40.72551780435564,
-      -74.0878050591544
+      40.712002,
+      -74.061704
     ],
     "floorPlan": "2B",
     "rentBase": 3175,
@@ -5423,8 +5424,8 @@
     "name": "49 Fisk Street #108",
     "address": "49 Fisk Street #108, Jersey City, NJ",
     "coordinates": [
-      40.7472514096324,
-      -74.09146461348273
+      40.713345,
+      -74.093278
     ],
     "floorPlan": "1B",
     "rentBase": 2520,
@@ -5463,8 +5464,8 @@
     "name": "49 Fisk Street #PH60",
     "address": "49 Fisk Street #PH60, Jersey City, NJ",
     "coordinates": [
-      40.74446669392516,
-      -74.09382671710021
+      40.713345,
+      -74.093278
     ],
     "floorPlan": "2B",
     "rentBase": 3330,
@@ -5543,8 +5544,8 @@
     "name": "342 Johnston Avenue #533",
     "address": "342 Johnston Avenue #533, Jersey City, NJ",
     "coordinates": [
-      40.72144160572213,
-      -74.06349511683784
+      40.713625,
+      -74.058374
     ],
     "floorPlan": "1B",
     "rentBase": 2675,
@@ -5583,8 +5584,8 @@
     "name": "342 Johnston Avenue #351",
     "address": "342 Johnston Avenue #351, Jersey City, NJ",
     "coordinates": [
-      40.71004697372411,
-      -74.0814992653127
+      40.713625,
+      -74.058374
     ],
     "floorPlan": "2B",
     "rentBase": 3300,
@@ -5623,8 +5624,8 @@
     "name": "328 Pacific Avenue #226",
     "address": "328 Pacific Avenue #226, Jersey City, NJ",
     "coordinates": [
-      40.73372886530078,
-      -74.0626872340827
+      40.712002,
+      -74.061704
     ],
     "floorPlan": "2B",
     "rentBase": 3250,
@@ -5703,8 +5704,8 @@
     "name": "328 Pacific Avenue #340",
     "address": "328 Pacific Avenue #340, Jersey City, NJ",
     "coordinates": [
-      40.72365457394001,
-      -74.06604084253625
+      40.712002,
+      -74.061704
     ],
     "floorPlan": "1B",
     "rentBase": 2600,
@@ -5743,8 +5744,8 @@
     "name": "49 Fisk Street #416",
     "address": "49 Fisk Street #416, Jersey City, NJ",
     "coordinates": [
-      40.73598108143775,
-      -74.06625213845722
+      40.713345,
+      -74.093278
     ],
     "floorPlan": "2B",
     "rentBase": 3685,
@@ -8924,8 +8925,8 @@
     "name": "Estuary - Unit 718",
     "address": "1600 Harbor Blvd, Weehawken, NJ 07086",
     "coordinates": [
-      40.7618,
-      -74.0195
+      40.762842,
+      -74.021193
     ],
     "floorPlan": "2B",
     "rentBase": 5100,
@@ -9876,8 +9877,8 @@
     "name": "RiverTrace at Port Imperial - Unit 508",
     "address": "1100 Ave at Port Imperial, Weehawken, NJ 07086",
     "coordinates": [
-      40.7744,
-      -74.0135
+      40.772885,
+      -74.012619
     ],
     "floorPlan": "1B",
     "rentBase": 3700,
@@ -9922,8 +9923,8 @@
     "name": "The Capstone at Port Imperial - Unit 714",
     "address": "1750 Ave at Port Imperial, Weehawken, NJ 07086",
     "coordinates": [
-      40.7788,
-      -74.0118
+      40.772885,
+      -74.012619
     ],
     "floorPlan": "2B",
     "rentBase": 4950,

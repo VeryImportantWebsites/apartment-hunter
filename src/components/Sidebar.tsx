@@ -12,6 +12,7 @@ import {
   effectiveAvailability,
   feeLabel,
   filledStars,
+  formatMoney,
   monthLabel,
 } from "@/lib/listing";
 
@@ -21,7 +22,7 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
   const setFilters = useFilterStore((st) => st.setFilters);
   const resetFilters = useFilterStore((st) => st.resetFilters);
   const popupOpen = useFilterStore((st) => st.popupOpen);
-  const { visible: sortedApartments, total, months, today } = useListingView();
+  const { visible: sortedApartments, total, months, today, untrustedSqft } = useListingView();
   const filteredApartments = sortedApartments;
   const searchQuery = filters.search;
   const isFiltered = JSON.stringify(filters) !== JSON.stringify(DEFAULT_FILTERS);
@@ -56,7 +57,7 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
   ];
 
   return (
-    <div className="absolute top-4 left-4 z-10 w-[calc(100vw-2rem)] sm:w-[410px] max-h-[calc(100dvh-2rem)] flex flex-col glass-panel-elevated rounded-2xl overflow-hidden [@media(max-height:560px)]:overflow-y-auto shadow-2xl border border-white/10 transition-all duration-300">
+    <div data-list-panel className="absolute top-4 left-4 z-10 w-[calc(100vw-2rem)] sm:w-[410px] max-h-[calc(100dvh-2rem)] max-sm:max-h-[calc(100dvh-12rem)] flex flex-col glass-panel-elevated rounded-2xl overflow-hidden [@media(max-height:560px)]:overflow-y-auto shadow-2xl border border-white/10 transition-all duration-300">
       {/* Header */}
       <div className="p-4 border-b border-white/5 flex flex-col gap-3 shrink-0">
         <div className="flex items-center justify-between">
@@ -119,6 +120,7 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
               <button
                 key={pill.id}
                 onClick={() => setFilters({ quick: pill.id })}
+                aria-pressed={isActive}
                 className={`pill-filter text-[11px] font-medium whitespace-nowrap px-2.5 py-1 rounded-full border cursor-pointer ${
                   isActive
                     ? "bg-white text-black font-semibold border-white shadow-sm"
@@ -266,7 +268,7 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
                       <span className="text-xs px-2 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300">
                         {apt.floorPlan}
                       </span>
-                      {apt.sqft && (
+                      {apt.sqft && !untrustedSqft.has(apt.id) && (
                         <span className="text-xs text-gray-400">
                           {apt.sqft} sqft
                         </span>
@@ -280,11 +282,11 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
                     <div className="text-right">
                       {apt.rentMonthsFree > 0 ? (
                         <>
-                          <div className="text-[10px] text-gray-500 line-through">${apt.rentBase}/mo</div>
-                          <div className="text-sm font-medium text-emerald-400">${apt.netEffectiveRent}/mo</div>
+                          <div className="text-[10px] text-gray-500 line-through">{formatMoney(apt.rentBase)}/mo</div>
+                          <div className="text-sm font-medium text-emerald-400">{formatMoney(apt.netEffectiveRent)}/mo</div>
                         </>
                       ) : (
-                        <div className="text-sm font-medium text-emerald-400">${apt.rentBase}/mo</div>
+                        <div className="text-sm font-medium text-emerald-400">{formatMoney(apt.rentBase)}/mo</div>
                       )}
                     </div>
                   </div>

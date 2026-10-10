@@ -30,6 +30,9 @@ export interface Apartment {
   source?: string;
   buildingAmenities?: string[];
   lastUpdated?: string;
+  /** Set by scripts/fix_coordinates.mjs when the address could not be geocoded: the stored pin
+   *  is known to be wrong, so the map does not draw it. */
+  locationUnverified?: boolean;
 }
 
 interface ApartmentStore {

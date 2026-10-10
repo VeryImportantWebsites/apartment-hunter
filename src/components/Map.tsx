@@ -39,11 +39,13 @@ function ApartmentPopupCard({
   onViewClick,
   today,
   untrustedFloorPlans,
+  untrustedSqft,
 }: {
   apt: Apartment;
   onViewClick?: (id: string) => void;
   today: Date;
   untrustedFloorPlans: Set<string>;
+  untrustedSqft: Set<string>;
 }) {
   const bookingLink = usableBookingLink(apt.appointmentLink);
   const [activeTab, setActiveTab] = useState<"photo" | "floorplan">("photo");
@@ -196,7 +198,7 @@ function ApartmentPopupCard({
           <span className="px-2 py-0.5 rounded-md bg-white/10 text-white font-medium border border-white/10">
             {apt.floorPlan}
           </span>
-          {apt.sqft && (
+          {apt.sqft && !untrustedSqft.has(apt.id) && (
             <span className="px-2 py-0.5 rounded-md bg-white/5 text-gray-300 border border-white/5">
               {apt.sqft.toLocaleString()} sqft
             </span>
@@ -265,7 +267,7 @@ function MapControls({ shownCount, totalCount }: { shownCount: number; totalCoun
   const popupOpen = useFilterStore((s) => s.popupOpen);
 
   return (
-    <div className={`absolute top-4 right-4 z-[400] flex flex-col items-end gap-2 pointer-events-auto ${popupOpen ? "max-sm:hidden" : ""}`}>
+    <div className={`absolute top-4 right-4 max-sm:top-auto max-sm:bottom-8 max-sm:flex-row max-sm:items-end z-[400] flex flex-col items-end gap-2 pointer-events-none [&>*]:pointer-events-auto ${popupOpen ? "max-sm:hidden" : ""}`}>
       <div className="glass-panel px-3.5 py-1.5 rounded-full flex items-center gap-2 text-xs font-semibold text-white shadow-2xl border border-white/10">
         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
         <span>{shownCount === totalCount ? `${totalCount} Units Tracked` : `${shownCount} of ${totalCount} Units`}</span>
@@ -328,6 +330,37 @@ const TILES = CARTO_KEY
       className: "tiles-dark",
     };
 
+// When filters narrow the list, move the map so the matching pins are in the visible area, not
+// under the list panel (blind QA re-run F6). The panel is measured at fit time: on desktop it sits
+// on the left, on phones it covers the top of the screen, so pad that side by its real size.
+function FitToResults({ positions, filtered }: { positions: globalThis.Map<string, [number, number]>; filtered: boolean }) {
+  const map = useMap();
+  const key = [...positions.keys()].join(",");
+  useEffect(() => {
+    if (!filtered || positions.size === 0) return;
+    const pts = [...positions.values()];
+    const wide = window.innerWidth >= 640;
+    const panel = document.querySelector("[data-list-panel]")?.getBoundingClientRect();
+    const left = wide && panel ? panel.right + 24 : 24;
+    const top = !wide && panel ? panel.bottom + 16 : 32;
+    const opts = {
+      paddingTopLeft: [left, top] as L.PointTuple,
+      paddingBottomRight: (wide ? [80, 32] : [72, 24]) as L.PointTuple, // phones: controls on the right
+      // 18, not 16: units of one building are spread ~12 m apart, which is ~5 px at zoom 16
+      // (pins overlap) and ~20 px at zoom 18 (each can be picked).
+      maxZoom: 18,
+    };
+    // Fly only when it can be seen: users who ask for reduced motion, and hidden tabs (which run
+    // no animation frames, so a flight would never start), get the result immediately.
+    const still = document.hidden || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (still) map.fitBounds(L.latLngBounds(pts), { ...opts, animate: false });
+    else map.flyToBounds(L.latLngBounds(pts), { ...opts, duration: 0.8 });
+    // positions is derived from the same filter result as key
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key, filtered, map]);
+  return null;
+}
+
 export interface FocusCommand {
   id: string;
   coordinates: [number, number];
@@ -384,10 +417,12 @@ export default function Map({
   onSelectPin?: (apt: Apartment) => void;
   onViewClick?: (id: string) => void;
 }) {
-  const { visible, total, today, untrustedFloorPlans } = useListingView();
+  const { visible, total, today, untrustedFloorPlans, untrustedSqft } = useListingView();
   const markerRefs = useRef<Record<string, L.Marker>>({});
   // Spread listings that share exact coordinates so each pin can be picked.
-  const positions = useMemo(() => spreadCoordinates(visible), [visible]);
+  // Listings whose pin is known to be wrong (locationUnverified) are not drawn.
+  const mapped = useMemo(() => visible.filter((a) => !a.locationUnverified), [visible]);
+  const positions = useMemo(() => spreadCoordinates(mapped), [mapped]);
 
   // No mounted guard needed: page.tsx loads this component with dynamic(..., { ssr: false }).
 
@@ -405,8 +440,9 @@ export default function Map({
         <TileLayer attribution={TILES.attribution} url={TILES.url} className={TILES.className} />
         <MapControls shownCount={visible.length} totalCount={total} />
         <PopupTracker />
+        <FitToResults positions={positions} filtered={visible.length < total} />
         <MapController focusCommand={focusCommand} markerRefs={markerRefs} />
-        {visible.map((apt) => {
+        {mapped.map((apt) => {
           const isSelected = selectedId === apt.id;
           return (
             <Marker
@@ -434,7 +470,7 @@ export default function Map({
                 autoPanPaddingTopLeft={[16, 88]}
                 autoPanPaddingBottomRight={[16, 16]}
               >
-                <ApartmentPopupCard apt={apt} onViewClick={onViewClick} today={today} untrustedFloorPlans={untrustedFloorPlans} />
+                <ApartmentPopupCard apt={apt} onViewClick={onViewClick} today={today} untrustedFloorPlans={untrustedFloorPlans} untrustedSqft={untrustedSqft} />
               </Popup>
             </Marker>
           );
