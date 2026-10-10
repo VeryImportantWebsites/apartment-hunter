@@ -143,3 +143,14 @@
   background: rgba(0, 0, 0, 0.9) !important;
   color: #fff !important;
 }
+
+/* Keyless OpenStreetMap fallback tiles, darkened to match the app (blind QA #2).
+   Used only when NEXT_PUBLIC_CARTO_API_KEY is not set; see TILES in Map.tsx. */
+.tiles-dark {
+  filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9) saturate(0.4);
+}
+
+/* Selected pin: the self-hosted default marker, tinted gold. */
+.leaflet-marker-icon.marker-selected {
+  filter: hue-rotate(185deg) saturate(2.2) brightness(1.15);
+}

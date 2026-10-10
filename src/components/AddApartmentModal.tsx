@@ -1,62 +1,37 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useApartmentStore, FloorPlan } from "@/store/apartmentStore";
 import { X } from "lucide-react";
 
 export default function AddApartmentModal({ onClose, editingId }: { onClose: () => void, editingId?: string | null }) {
   const { addApartment, updateApartment, apartments } = useApartmentStore();
   
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [lat, setLat] = useState("40.7447");
-  const [lng, setLng] = useState("-73.9485");
-  const [floorPlan, setFloorPlan] = useState<FloorPlan>("1B");
-  const [floorPlanImageUrl, setFloorPlanImageUrl] = useState("");
-  const [rentBase, setRentBase] = useState("");
-  const [rentMonthsFree, setRentMonthsFree] = useState("0");
-  const [ranking, setRanking] = useState("3");
-  const [notes, setNotes] = useState("");
+  // The modal mounts fresh on every open, so seed the fields from the listing being edited.
+  // (Copying them in an effect re-ran whenever the store changed and could wipe typed edits.)
+  const editing = editingId ? apartments.find((a) => a.id === editingId) : undefined;
 
-  const [sqft, setSqft] = useState("");
-  const [petPolicy, setPetPolicy] = useState("");
-  const [feeStatus, setFeeStatus] = useState("");
-  const [availability, setAvailability] = useState("");
-  const [contactPhone, setContactPhone] = useState("");
-  const [contactEmail, setContactEmail] = useState("");
-  const [appointmentLink, setAppointmentLink] = useState("");
-  const [transitDetails, setTransitDetails] = useState("");
-  const [leaseTerm, setLeaseTerm] = useState("");
-  const [source, setSource] = useState("");
+  const [name, setName] = useState(editing?.name ?? "");
+  const [address, setAddress] = useState(editing?.address ?? "");
+  const [lat, setLat] = useState(editing ? editing.coordinates[0].toString() : "40.7447");
+  const [lng, setLng] = useState(editing ? editing.coordinates[1].toString() : "-73.9485");
+  const [floorPlan, setFloorPlan] = useState<FloorPlan>(editing?.floorPlan ?? "1B");
+  const [floorPlanImageUrl, setFloorPlanImageUrl] = useState(editing?.floorPlanImageUrl ?? "");
+  const [rentBase, setRentBase] = useState(editing ? editing.rentBase.toString() : "");
+  const [rentMonthsFree, setRentMonthsFree] = useState(editing ? editing.rentMonthsFree.toString() : "0");
+  const [ranking, setRanking] = useState(editing ? editing.ranking.toString() : "3");
+  const [notes, setNotes] = useState(editing?.notes ?? "");
 
-  useEffect(() => {
-    if (editingId) {
-      const apt = apartments.find(a => a.id === editingId);
-      if (apt) {
-        setName(apt.name);
-        setAddress(apt.address);
-        setLat(apt.coordinates[0].toString());
-        setLng(apt.coordinates[1].toString());
-        setFloorPlan(apt.floorPlan);
-        setFloorPlanImageUrl(apt.floorPlanImageUrl || "");
-        setRentBase(apt.rentBase.toString());
-        setRentMonthsFree(apt.rentMonthsFree.toString());
-        setRanking(apt.ranking.toString());
-        setNotes(apt.notes || "");
-        
-        setSqft(apt.sqft?.toString() || "");
-        setPetPolicy(apt.petPolicy || "");
-        setFeeStatus(apt.feeStatus || "");
-        setAvailability(apt.availability || "");
-        setContactPhone(apt.contactPhone || "");
-        setContactEmail(apt.contactEmail || "");
-        setAppointmentLink(apt.appointmentLink || "");
-        setTransitDetails(apt.transitDetails || "");
-        setLeaseTerm(apt.leaseTerm || "");
-        setSource(apt.source || "");
-      }
-    }
-  }, [editingId, apartments]);
+  const [sqft, setSqft] = useState(editing?.sqft?.toString() ?? "");
+  const [petPolicy, setPetPolicy] = useState(editing?.petPolicy ?? "");
+  const [feeStatus, setFeeStatus] = useState(editing?.feeStatus ?? "");
+  const [availability, setAvailability] = useState(editing?.availability ?? "");
+  const [contactPhone, setContactPhone] = useState(editing?.contactPhone ?? "");
+  const [contactEmail, setContactEmail] = useState(editing?.contactEmail ?? "");
+  const [appointmentLink, setAppointmentLink] = useState(editing?.appointmentLink ?? "");
+  const [transitDetails, setTransitDetails] = useState(editing?.transitDetails ?? "");
+  const [leaseTerm, setLeaseTerm] = useState(editing?.leaseTerm ?? "");
+  const [source, setSource] = useState(editing?.source ?? "");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
