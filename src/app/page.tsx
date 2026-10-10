@@ -6,6 +6,7 @@ import Sidebar from "@/components/Sidebar";
 import AddApartmentModal from "@/components/AddApartmentModal";
 import ViewApartmentModal from "@/components/ViewApartmentModal";
 import { useFilterStore } from "@/store/filterStore";
+import { useApartmentStore } from "@/store/apartmentStore";
 import { filtersFromQuery, filtersToQuery } from "@/lib/listing";
 
 // Dynamically import the map to avoid SSR issues with Leaflet
@@ -18,6 +19,11 @@ export default function Home() {
   const filters = useFilterStore((s) => s.filters);
   const setFilters = useFilterStore((s) => s.setFilters);
   const hydrated = useRef(false);
+  const loadMyChanges = useApartmentStore((s) => s.loadMyChanges);
+
+  // The user's saved additions and edits live in this browser; apply them after mount so the
+  // first render matches the static HTML.
+  useEffect(() => { loadMyChanges(); }, [loadMyChanges]);
 
   // URL state (blind QA #5 / F10): filters live in the query string so a reload or a shared link
   // restores them, and an open listing is a history entry so Back closes it instead of leaving

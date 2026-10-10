@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 import { validateListingInput } from "@/lib/listing";
 
 export default function AddApartmentModal({ onClose, editingId }: { onClose: () => void, editingId?: string | null }) {
-  const { addApartment, updateApartment, apartments } = useApartmentStore();
+  const { addApartment, updateApartment, apartments, canSave } = useApartmentStore();
   
   // The modal mounts fresh on every open, so seed the fields from the listing being edited.
   // (Copying them in an effect re-ran whenever the store changed and could wipe typed edits.)
@@ -91,10 +91,12 @@ export default function AddApartmentModal({ onClose, editingId }: { onClose: () 
         </div>
         
         <form onSubmit={handleSubmit} className="p-6 grid grid-cols-2 gap-4">
-          {/* There is no backend (static export, in-memory store): say so before anyone types
-              (blind QA run 3, F2: an added listing vanished on reload with no warning). */}
-          <p className="col-span-2 text-xs text-amber-300/90 bg-amber-500/10 border border-amber-500/20 rounded-lg px-3 py-2">
-            Changes stay in this browser tab only. They are not saved and disappear when you reload the page.
+          {/* There is no backend: changes are saved in this browser (lib/overlay.ts). Say where they
+              live before anyone types (blind QA run 3, F2). */}
+          <p className={`col-span-2 text-xs rounded-lg px-3 py-2 border ${canSave ? "text-gray-300 bg-white/5 border-white/10" : "text-amber-300/90 bg-amber-500/10 border-amber-500/20"}`}>
+            {canSave
+              ? "Your changes are saved in this browser only. Other people and other devices do not see them."
+              : "This browser blocks saving, so your changes last only until you reload the page."}
           </p>
           <div className="col-span-2 space-y-1">
             <label className="text-xs text-gray-400 uppercase tracking-wider font-medium">Name</label>

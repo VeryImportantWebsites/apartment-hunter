@@ -547,8 +547,8 @@
     "name": "Gotham Point - Unit 12A",
     "address": "1-15 57th Ave, Long Island City, NY 11101",
     "coordinates": [
-      40.7419,
-      -73.9567
+      40.73914,
+      -73.96109
     ],
     "floorPlan": "1B",
     "rentBase": 4200,
@@ -1876,8 +1876,8 @@
     "name": "The Harrison - Unit 15B",
     "address": "27-21 44th Dr, Long Island City, NY 11101",
     "coordinates": [
-      40.7496,
-      -73.9416
+      40.746557,
+      -73.941663
     ],
     "floorPlan": "1B",
     "rentBase": 4050,
@@ -3956,8 +3956,8 @@
     "name": "2-21 Malt Drive - 1B",
     "address": "2-21 Malt Drive, Long Island City, NY 11101",
     "coordinates": [
-      40.7381,
-      -73.9555
+      40.7402,
+      -73.95843
     ],
     "floorPlan": "1 Bed / 1 Bath",
     "rentBase": 4400,
@@ -3998,8 +3998,8 @@
     "name": "2-21 Malt Drive - 2B",
     "address": "2-21 Malt Drive, Long Island City, NY 11101",
     "coordinates": [
-      40.7381,
-      -73.9555
+      40.7402,
+      -73.95843
     ],
     "floorPlan": "2 Bed / 2 Bath",
     "rentBase": 6500,
@@ -4207,10 +4207,10 @@
   {
     "id": "81276607",
     "name": "203 Wyckoff Avenue #2L",
-    "address": "203 Wyckoff Avenue #2L, New York, NY",
+    "address": "203 Wyckoff Avenue #2L, Brooklyn, NY",
     "coordinates": [
-      40.70236489994659,
-      -73.96849396922774
+      40.702528,
+      -73.915997
     ],
     "floorPlan": "1B",
     "rentBase": 4100,
@@ -4248,8 +4248,8 @@
     "name": "4778 Broadway #10E",
     "address": "4778 Broadway #10E, New York, NY",
     "coordinates": [
-      40.68335041810476,
-      -73.96726706566162
+      40.86558,
+      -73.92604
     ],
     "floorPlan": "1B",
     "rentBase": 4200,
@@ -4285,10 +4285,10 @@
   {
     "id": "81276609",
     "name": "126 Sandford Street #1004",
-    "address": "126 Sandford Street #1004, New York, NY",
+    "address": "126 Sandford Street #1004, Brooklyn, NY",
     "coordinates": [
-      40.66686205347488,
-      -73.95770225321026
+      40.69508,
+      -73.95383
     ],
     "floorPlan": "1B",
     "rentBase": 7305,
@@ -4560,8 +4560,8 @@
     "name": "252 South Street #43F",
     "address": "252 South Street #43F, New York, NY",
     "coordinates": [
-      40.663509995925374,
-      -73.98813611264568
+      40.710429,
+      -73.99147
     ],
     "floorPlan": "1B",
     "rentBase": 6200,
@@ -4599,8 +4599,8 @@
     "name": "626 1st Avenue #E22D",
     "address": "626 1st Avenue #E22D, New York, NY",
     "coordinates": [
-      40.713689798233,
-      -73.98590442880996
+      40.744689,
+      -73.972236
     ],
     "floorPlan": "1B",
     "rentBase": 6081,
@@ -4638,8 +4638,8 @@
     "name": "52 4th Avenue #501",
     "address": "52 4th Avenue #501, Brooklyn, NY",
     "coordinates": [
-      40.68589830004231,
-      -73.98262848453133
+      40.68305,
+      -73.97961
     ],
     "floorPlan": "1B",
     "rentBase": 4650,
@@ -4716,8 +4716,8 @@
     "name": "136 William Street #6A",
     "address": "136 William Street #6A, New York, NY",
     "coordinates": [
-      40.69271638500814,
-      -73.99080620409944
+      40.709268,
+      -74.006469
     ],
     "floorPlan": "1B",
     "rentBase": 8999,
@@ -4755,8 +4755,8 @@
     "name": "212 Avenue B #9",
     "address": "212 Avenue B #9, New York, NY",
     "coordinates": [
-      40.66346341201088,
-      -73.9881287034387
+      40.728704,
+      -73.978823
     ],
     "floorPlan": "1B",
     "rentBase": 5300,
@@ -4794,8 +4794,8 @@
     "name": "222 East 44th Street #38L",
     "address": "222 East 44th Street #38L, New York, NY",
     "coordinates": [
-      40.743452026504016,
-      -73.9943483003417
+      40.7513,
+      -73.972782
     ],
     "floorPlan": "1B",
     "rentBase": 9400,
@@ -4833,8 +4833,8 @@
     "name": "1065 Second Avenue #6L",
     "address": "1065 Second Avenue #6L, New York, NY",
     "coordinates": [
-      40.68386138976004,
-      -74.02987297516295
+      40.75909,
+      -73.965878
     ],
     "floorPlan": "Studio",
     "rentBase": 4999,
@@ -4865,8 +4865,7 @@
       "https://tse2.mm.bing.net/th/id/OIP.zoRj624X78ecjzvfWAo8ZwHaE7?pid=Api",
       "https://tse1.mm.bing.net/th/id/OIP.ku9Gr4Z1jfMtxrvPCKWpgAHaFF?pid=Api"
     ],
-    "ranking": 4,
-    "locationUnverified": true
+    "ranking": 4
   },
   {
     "id": "81276624",
@@ -4912,8 +4911,8 @@
     "name": "19 Dutch Street #49H",
     "address": "19 Dutch Street #49H, New York, NY",
     "coordinates": [
-      40.75314831513408,
-      -73.97317159457592
+      40.70982,
+      -74.007382
     ],
     "floorPlan": "1B",
     "rentBase": 6825,
@@ -4990,8 +4989,8 @@
     "name": "125 West 31st Street #39E",
     "address": "125 West 31st Street #39E, New York, NY",
     "coordinates": [
-      40.75207968103778,
-      -74.00469999027183
+      40.748739,
+      -73.990129
     ],
     "floorPlan": "1B",
     "rentBase": 5895,
@@ -5066,10 +5065,10 @@
   {
     "id": "81276630",
     "name": "201 25th Street #7H",
-    "address": "201 25th Street #7H, New York, NY",
+    "address": "201 25th Street #7H, Brooklyn, NY",
     "coordinates": [
-      40.761732674454635,
-      -73.98540391850365
+      40.66056,
+      -73.99741
     ],
     "floorPlan": "1B",
     "rentBase": 5090,
@@ -5105,10 +5104,10 @@
   {
     "id": "81276631",
     "name": "40 Bruckner Boulevard #B8260",
-    "address": "40 Bruckner Boulevard #B8260, New York, NY",
+    "address": "40 Bruckner Boulevard #B8260, Bronx, NY",
     "coordinates": [
-      40.70652901213553,
-      -73.9862090235474
+      40.8063,
+      -73.92722
     ],
     "floorPlan": "1B",
     "rentBase": 3300,
@@ -5144,10 +5143,10 @@
   {
     "id": "81276632",
     "name": "504 Sackett Street #604",
-    "address": "504 Sackett Street #604, New York, NY",
+    "address": "504 Sackett Street #604, Brooklyn, NY",
     "coordinates": [
-      40.72148170753255,
-      -74.00630496547934
+      40.68001,
+      -73.98861
     ],
     "floorPlan": "1B",
     "rentBase": 4210,
@@ -5183,10 +5182,10 @@
   {
     "id": "81276633",
     "name": "8 Court Square #18C",
-    "address": "8 Court Square #18C, New York, NY",
+    "address": "8 Court Square #18C, Queens, NY",
     "coordinates": [
-      40.7545994229788,
-      -73.97629511861645
+      40.74667,
+      -73.94248
     ],
     "floorPlan": "1B",
     "rentBase": 4995,
@@ -9468,8 +9467,8 @@
     "name": "The Rowan - Unit 4B",
     "address": "21-21 31st St, Astoria, NY 11105",
     "coordinates": [
-      40.7742,
-      -73.9085
+      40.777079,
+      -73.909072
     ],
     "floorPlan": "1B",
     "rentBase": 3750,
@@ -9559,8 +9558,8 @@
     "name": "10 Halletts Point - Unit 11H",
     "address": "10 Halletts Point, Astoria, NY 11102",
     "coordinates": [
-      40.7731,
-      -73.9366
+      40.776474,
+      -73.935127
     ],
     "floorPlan": "1B",
     "rentBase": 3950,

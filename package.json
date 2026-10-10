@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --test src/lib/listing.test.mjs"
+    "test": "node --test src/lib/listing.test.mjs src/lib/overlay.test.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
