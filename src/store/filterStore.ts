@@ -6,6 +6,7 @@ import {
   Filters,
   availableMonths,
   untrustedFloorPlanUrls,
+  untrustedSqftIds,
   visibleListings,
 } from "@/lib/listing";
 
@@ -40,6 +41,7 @@ export function useListingView() {
       visible: visibleListings(apartments, filters, today),
       months: availableMonths(apartments, today),
       untrustedFloorPlans: untrustedFloorPlanUrls(apartments),
+      untrustedSqft: untrustedSqftIds(apartments),
     };
   }, [apartments, filters]);
 }

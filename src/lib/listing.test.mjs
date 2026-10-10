@@ -8,7 +8,7 @@ import {
   availabilitySortKey, availableMonths, bedrooms, isNoFee, formatRating, filledStars,
   usablePhone, usableBookingLink, publicNotes, usableTransit, untrustedFloorPlanUrls,
   spreadCoordinates, visibleListings, matchesFilters, DEFAULT_FILTERS,
-  filtersToQuery, filtersFromQuery,
+  filtersToQuery, filtersFromQuery, leaseLabel, untrustedSqftIds, formatMoney,
 } from "./listing.ts";
 
 const TODAY = new Date(2026, 9, 10); // 2026-10-10, the day of the blind run
@@ -133,4 +133,29 @@ test("#5 F10: filters and the open listing round-trip through the URL", () => {
   assert.equal(filtersToQuery(DEFAULT_FILTERS, null), "");
   // junk in the URL falls back to defaults instead of breaking the page
   assert.deepEqual(filtersFromQuery("?chip=evil&sort=drop&avail=x").filters, DEFAULT_FILTERS);
+});
+
+test("re-run F8: a bare lease term number reads as months", () => {
+  assert.equal(leaseLabel(12), "12 months");
+  assert.equal(leaseLabel("12"), "12 months");
+  assert.equal(leaseLabel("12 Months"), "12 months");
+  assert.equal(leaseLabel(1), "1 month");
+  assert.equal(leaseLabel(""), null);
+  assert.ok(DATA.every((a) => a.leaseTerm === undefined || !/^\d+$/.test(leaseLabel(a.leaseTerm))));
+});
+
+test("re-run F4: implausible or reused square footage is not trusted", () => {
+  const bad = untrustedSqftIds(DATA);
+  const studio1200 = DATA.find((a) => a.name === "162 East 36th Street #5H");
+  assert.ok(studio1200 && studio1200.sqft === 1200 && bad.has(studio1200.id));
+  const pacific = DATA.filter((a) => a.address.startsWith("328 Pacific Avenue"));
+  assert.ok(pacific.length === 4 && pacific.every((a) => bad.has(a.id))); // 1B and 2B both "700"
+  const ok = DATA.find((a) => a.name === "Otto Greenpoint - Unit 5C");
+  assert.ok(!ok || !bad.has(ok.id));
+  assert.ok(bad.size < DATA.length / 3); // a filter, not a wipe
+});
+
+test("prices are formatted with thousands separators", () => {
+  assert.equal(formatMoney(3250), "$3,250");
+  assert.equal(formatMoney(3483.4), "$3,483");
 });

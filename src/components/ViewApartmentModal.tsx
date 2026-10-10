@@ -6,6 +6,7 @@ import {
   feeLabel,
   formatRating,
   isNoFee,
+  leaseLabel,
   publicNotes,
   usableBookingLink,
   usablePhone,
@@ -44,7 +45,7 @@ export default function ViewApartmentModal({
   onClose: () => void;
 }) {
   const { apartments } = useApartmentStore();
-  const { today, untrustedFloorPlans } = useListingView();
+  const { today, untrustedFloorPlans, untrustedSqft } = useListingView();
   const apt = apartments.find((a) => a.id === apartmentId);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -76,8 +77,11 @@ export default function ViewApartmentModal({
   const transit = usableTransit(apt.transitDetails);
   const notes = publicNotes(apt.notes);
   const fee = feeLabel(apt.feeStatus);
+  const lease = leaseLabel(apt.leaseTerm);
+  const sqft = apt.sqft && !untrustedSqft.has(apt.id) ? apt.sqft : undefined;
   const floorPlanUrl =
     apt.floorPlanImageUrl && !untrustedFloorPlans.has(apt.floorPlanImageUrl) ? apt.floorPlanImageUrl : undefined;
+  const floorPlanHidden = Boolean(apt.floorPlanImageUrl) && !floorPlanUrl;
 
   // Say "Copied!" only when the browser actually accepted the write.
   const copyToClipboard = (text: string, field: "phone" | "email") => {
@@ -290,7 +294,7 @@ export default function ViewApartmentModal({
                     </div>
                     <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col gap-0.5">
                       <span className="text-gray-400 text-[10px]">Living Space</span>
-                      <span className={`font-semibold ${apt.sqft ? "text-white" : "text-gray-500"}`}>{apt.sqft ? `${apt.sqft.toLocaleString()} sqft` : "Not specified"}</span>
+                      <span className={`font-semibold ${sqft ? "text-white" : "text-gray-500"}`}>{sqft ? `${sqft.toLocaleString()} sqft` : "Not specified"}</span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col gap-0.5">
                       <span className="text-gray-400 text-[10px]">Broker Fee</span>
@@ -300,7 +304,7 @@ export default function ViewApartmentModal({
                     </div>
                     <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col gap-0.5">
                       <span className="text-gray-400 text-[10px]">Lease Term</span>
-                      <span className={`font-semibold ${apt.leaseTerm ? "text-white" : "text-gray-500"}`}>{apt.leaseTerm || "Not specified"}</span>
+                      <span className={`font-semibold ${lease ? "text-white" : "text-gray-500"}`}>{lease || "Not specified"}</span>
                     </div>
                   </div>
                 </div>
@@ -348,14 +352,20 @@ export default function ViewApartmentModal({
                     fallback={<p className="text-sm text-gray-500">Floor plan image could not be loaded.</p>}
                   />
                   <div className="absolute bottom-3 right-3 text-xs bg-black/80 text-white px-3 py-1 rounded-full backdrop-blur-md border border-white/20">
-                    {apt.floorPlan} • {apt.sqft ? `${apt.sqft} sqft` : "Architectural Layout"}
+                    {apt.floorPlan}{sqft ? ` • ${sqft.toLocaleString()} sqft` : ""}
                   </div>
                 </div>
               ) : (
                 <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-12 flex flex-col items-center justify-center gap-3 text-gray-500 text-center">
                   <Layers className="w-12 h-12 opacity-30" />
-                  <p className="text-sm font-medium">Floor plan image not available for this unit.</p>
-                  <p className="text-xs text-gray-600">Please schedule a tour or inquire directly for layout diagrams.</p>
+                  <p className="text-sm font-medium">
+                    {floorPlanHidden ? "Floor plan image hidden." : "Floor plan image not available for this unit."}
+                  </p>
+                  <p className="text-xs text-gray-600 max-w-sm">
+                    {floorPlanHidden
+                      ? "The listing's image is also used for units with a different number of bedrooms, so it is probably not this unit's plan."
+                      : "Ask the building for the layout when you book a tour."}
+                  </p>
                 </div>
               )}
             </div>
