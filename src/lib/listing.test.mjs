@@ -207,3 +207,14 @@ test("run 3 F1/F3: the form rejects bad numbers and accepts a 4.7 rating", () =>
   assert.ok(validateListingInput({ rentBase: 3000, rentMonthsFree: 1, ranking: 6 }).ranking);
   assert.deepEqual(validateListingInput({ rentBase: 2000, rentMonthsFree: 1, ranking: 4.7, leaseTerm: 12 }), {});
 });
+
+test("run 3 F5: city labels name the real borough where two sources agree", () => {
+  const label = (n) => DATA.find((a) => a.name === n).address;
+  assert.match(label("500 Degraw Street #403"), /, Brooklyn, NY$/);   // tour link: society-brooklyn-at-degraw
+  assert.match(label("60 Wharf Dr #3304"), /, Brooklyn, NY$/);        // West Wharf, Greenpoint 11222
+  assert.match(label("97-12 65th Road #4C"), /, Queens, NY$/);
+  // Astor on Third is in Astoria (11102): label AND pin must be in Queens, not Brooklyn's 3rd Street
+  const astor = DATA.find((a) => a.name === "26-41 3rd Street #370");
+  assert.match(astor.address, /, Queens, NY$/);
+  assert.ok(astor.coordinates[0] > 40.74 && astor.coordinates[1] > -73.96, `pin ${astor.coordinates}`);
+});
