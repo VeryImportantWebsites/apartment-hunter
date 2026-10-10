@@ -57,7 +57,7 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
   ];
 
   return (
-    <div className="absolute top-4 left-4 z-10 w-[calc(100vw-2rem)] sm:w-[410px] max-h-[calc(100dvh-2rem)] max-sm:max-h-[calc(100dvh-8.5rem)] flex flex-col glass-panel-elevated rounded-2xl overflow-hidden [@media(max-height:560px)]:overflow-y-auto shadow-2xl border border-white/10 transition-all duration-300">
+    <div data-list-panel className="absolute top-4 left-4 z-10 w-[calc(100vw-2rem)] sm:w-[410px] max-h-[calc(100dvh-2rem)] max-sm:max-h-[calc(100dvh-12rem)] flex flex-col glass-panel-elevated rounded-2xl overflow-hidden [@media(max-height:560px)]:overflow-y-auto shadow-2xl border border-white/10 transition-all duration-300">
       {/* Header */}
       <div className="p-4 border-b border-white/5 flex flex-col gap-3 shrink-0">
         <div className="flex items-center justify-between">

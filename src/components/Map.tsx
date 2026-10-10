@@ -267,7 +267,7 @@ function MapControls({ shownCount, totalCount }: { shownCount: number; totalCoun
   const popupOpen = useFilterStore((s) => s.popupOpen);
 
   return (
-    <div className={`absolute top-4 right-4 max-sm:top-auto max-sm:bottom-8 max-sm:flex-row max-sm:items-end z-[400] flex flex-col items-end gap-2 pointer-events-auto ${popupOpen ? "max-sm:hidden" : ""}`}>
+    <div className={`absolute top-4 right-4 max-sm:top-auto max-sm:bottom-8 max-sm:flex-row max-sm:items-end z-[400] flex flex-col items-end gap-2 pointer-events-none [&>*]:pointer-events-auto ${popupOpen ? "max-sm:hidden" : ""}`}>
       <div className="glass-panel px-3.5 py-1.5 rounded-full flex items-center gap-2 text-xs font-semibold text-white shadow-2xl border border-white/10">
         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
         <span>{shownCount === totalCount ? `${totalCount} Units Tracked` : `${shownCount} of ${totalCount} Units`}</span>
@@ -331,8 +331,8 @@ const TILES = CARTO_KEY
     };
 
 // When filters narrow the list, move the map so the matching pins are in the visible area, not
-// under the list panel (blind QA re-run F6). Desktop pads for the 410px panel on the left; phones
-// pad for the collapsed pill at the top and the controls strip at the bottom.
+// under the list panel (blind QA re-run F6). The panel is measured at fit time: on desktop it sits
+// on the left, on phones it covers the top of the screen, so pad that side by its real size.
 function FitToResults({ positions, filtered }: { positions: globalThis.Map<string, [number, number]>; filtered: boolean }) {
   const map = useMap();
   const key = [...positions.keys()].join(",");
@@ -340,12 +340,21 @@ function FitToResults({ positions, filtered }: { positions: globalThis.Map<strin
     if (!filtered || positions.size === 0) return;
     const pts = [...positions.values()];
     const wide = window.innerWidth >= 640;
-    map.flyToBounds(L.latLngBounds(pts), {
-      paddingTopLeft: wide ? [458, 32] : [24, 96],
-      paddingBottomRight: wide ? [80, 32] : [24, 96],
-      maxZoom: 16,
-      duration: 0.8,
-    });
+    const panel = document.querySelector("[data-list-panel]")?.getBoundingClientRect();
+    const left = wide && panel ? panel.right + 24 : 24;
+    const top = !wide && panel ? panel.bottom + 16 : 32;
+    const opts = {
+      paddingTopLeft: [left, top] as L.PointTuple,
+      paddingBottomRight: (wide ? [80, 32] : [72, 24]) as L.PointTuple, // phones: controls on the right
+      // 18, not 16: units of one building are spread ~12 m apart, which is ~5 px at zoom 16
+      // (pins overlap) and ~20 px at zoom 18 (each can be picked).
+      maxZoom: 18,
+    };
+    // Fly only when it can be seen: users who ask for reduced motion, and hidden tabs (which run
+    // no animation frames, so a flight would never start), get the result immediately.
+    const still = document.hidden || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (still) map.fitBounds(L.latLngBounds(pts), { ...opts, animate: false });
+    else map.flyToBounds(L.latLngBounds(pts), { ...opts, duration: 0.8 });
     // positions is derived from the same filter result as key
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, filtered, map]);
