@@ -65,9 +65,11 @@ export default function AddApartmentModal({ onClose, editingId }: { onClose: () 
     onClose();
   };
 
+  // items-start + my-auto: centered when the form fits, top-aligned (and fully scrollable) when it
+  // is taller than the screen. items-center clipped the top of the form out of reach on phones.
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto pt-24 pb-24">
-      <div className="glass-panel w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-[100] flex items-start justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+      <div className="my-auto glass-panel w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
         <div className="flex items-center justify-between p-6 border-b border-white/5 bg-[#050505] sticky top-0 z-10">
           <h2 className="text-xl font-semibold text-white">{editingId ? "Edit Apartment" : "Add Apartment"}</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
