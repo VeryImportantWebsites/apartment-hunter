@@ -1,4 +1,16 @@
 import { useApartmentStore } from "@/store/apartmentStore";
+import { useListingView } from "@/store/filterStore";
+import SafeImage from "@/components/SafeImage";
+import {
+  availabilityLabel,
+  feeLabel,
+  formatRating,
+  isNoFee,
+  publicNotes,
+  usableBookingLink,
+  usablePhone,
+  usableTransit,
+} from "@/lib/listing";
 import {
   X,
   MapPin,
@@ -19,7 +31,6 @@ import {
   Layers,
   Sparkles,
   Info,
-  Maximize2
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -33,11 +44,13 @@ export default function ViewApartmentModal({
   onClose: () => void;
 }) {
   const { apartments } = useApartmentStore();
+  const { today, untrustedFloorPlans } = useListingView();
   const apt = apartments.find((a) => a.id === apartmentId);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<ModalTab>("overview");
   const [copiedField, setCopiedField] = useState<"phone" | "email" | null>(null);
+  const [copyFailed, setCopyFailed] = useState<"phone" | "email" | null>(null);
 
   // Keyboard navigation
   useEffect(() => {
@@ -56,10 +69,25 @@ export default function ViewApartmentModal({
 
   if (!apt) return null;
 
+  // Scraped placeholders ("N/A", 555 numbers, Wikipedia "tour" links, reused floor plans) are
+  // treated as missing instead of shown as facts (blind QA #7; repo rule: no mock data).
+  const phone = usablePhone(apt.contactPhone);
+  const bookingLink = usableBookingLink(apt.appointmentLink);
+  const transit = usableTransit(apt.transitDetails);
+  const notes = publicNotes(apt.notes);
+  const fee = feeLabel(apt.feeStatus);
+  const floorPlanUrl =
+    apt.floorPlanImageUrl && !untrustedFloorPlans.has(apt.floorPlanImageUrl) ? apt.floorPlanImageUrl : undefined;
+
+  // Say "Copied!" only when the browser actually accepted the write.
   const copyToClipboard = (text: string, field: "phone" | "email") => {
-    navigator.clipboard.writeText(text);
-    setCopiedField(field);
-    setTimeout(() => setCopiedField(null), 2000);
+    const done = (ok: boolean) => {
+      setCopiedField(ok ? field : null);
+      setCopyFailed(ok ? null : field);
+      setTimeout(() => { setCopiedField(null); setCopyFailed(null); }, 2000);
+    };
+    if (!navigator.clipboard) return done(false);
+    navigator.clipboard.writeText(text).then(() => done(true), () => done(false));
   };
 
   const nextImage = (e: React.MouseEvent) => {
@@ -78,23 +106,28 @@ export default function ViewApartmentModal({
 
   const tabs: { id: ModalTab; label: string; badge?: string }[] = [
     { id: "overview", label: "Overview" },
-    { id: "floorplan", label: "Floor Plan", badge: apt.floorPlanImageUrl ? "Available" : undefined },
-    { id: "amenities", label: "Amenities & Perks" },
+    { id: "floorplan", label: "Floor Plan", badge: floorPlanUrl ? "Available" : undefined },
+    { id: "amenities", label: "Amenities" },
     { id: "transit", label: "Transit & Contact" },
   ];
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="glass-panel-elevated w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh] border border-white/10 relative">
+      <div className="glass-panel-elevated w-full max-w-3xl rounded-3xl overflow-hidden [@media(max-height:600px)]:overflow-y-auto shadow-2xl flex flex-col max-h-[92dvh] border border-white/10 relative">
         
         {/* Header Hero Section */}
-        <div className="h-64 sm:h-72 bg-[#0a0a0a] relative border-b border-white/5 overflow-hidden group shrink-0">
+        <div className="h-64 sm:h-72 [@media(max-height:600px)]:h-44 bg-[#0a0a0a] relative border-b border-white/5 overflow-hidden group shrink-0">
           {apt.images && apt.images.length > 0 ? (
             <>
-              <img 
-                src={apt.images[currentImageIndex]} 
-                alt={`${apt.name} view`} 
+              <SafeImage
+                src={apt.images[currentImageIndex]}
+                alt={`${apt.name} view`}
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
+                fallback={
+                  <div className="absolute inset-0 flex items-center justify-center text-gray-600 bg-[#0d0d0d]">
+                    <Building2 className="w-12 h-12 opacity-30" />
+                  </div>
+                }
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-black/40 to-black/20" />
               
@@ -102,14 +135,14 @@ export default function ViewApartmentModal({
                 <>
                   <button
                     onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md z-10 transition-all cursor-pointer"
+                    className="absolute left-4 top-16 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md z-10 transition-all cursor-pointer"
                     title="Previous photo (←)"
                   >
                     <ChevronLeft className="w-5 h-5" />
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md z-10 transition-all cursor-pointer"
+                    className="absolute right-4 top-16 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md z-10 transition-all cursor-pointer"
                     title="Next photo (→)"
                   >
                     <ChevronRight className="w-5 h-5" />
@@ -159,16 +192,16 @@ export default function ViewApartmentModal({
               )}
               {apt.availability && (
                 <span className="px-2.5 py-0.5 rounded-full bg-blue-500/20 backdrop-blur-md border border-blue-500/30 text-xs font-medium text-blue-200 flex items-center gap-1">
-                  <CalendarDays className="w-3 h-3" /> {apt.availability}
+                  <CalendarDays className="w-3 h-3" /> {availabilityLabel(apt.availability, today)}
                 </span>
               )}
               <div className="flex items-center gap-1 ml-auto bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-sm border border-white/10">
                 <Star className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-                <span className="text-xs font-bold text-white">{apt.ranking}.0</span>
+                <span className="text-xs font-bold text-white">{formatRating(apt.ranking)}</span>
               </div>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight drop-shadow-md">
+            <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight drop-shadow-md break-words">
               {apt.name}
             </h2>
 
@@ -180,7 +213,7 @@ export default function ViewApartmentModal({
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex border-b border-white/10 bg-[#141414] px-6 gap-2 shrink-0">
+        <div className="flex flex-wrap border-b border-white/10 bg-[#141414] px-3 sm:px-6 gap-x-1 sm:gap-x-2 shrink-0">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -206,7 +239,7 @@ export default function ViewApartmentModal({
         </div>
 
         {/* Scrollable Content Body */}
-        <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-6">
+        <div className="p-4 sm:p-6 overflow-y-auto [@media(max-height:600px)]:overflow-visible flex-1 [@media(max-height:600px)]:flex-none flex flex-col gap-6">
           {activeTab === "overview" && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Pricing Breakdown Card */}
@@ -214,9 +247,11 @@ export default function ViewApartmentModal({
                 <div className="bg-white/[0.025] border border-white/10 rounded-2xl p-4 flex flex-col gap-3">
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider">Pricing Structure</span>
-                    <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 font-medium">
-                      Active Promotion
-                    </span>
+                    {apt.rentMonthsFree > 0 && (
+                      <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 font-medium">
+                        Active Promotion
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex justify-between items-center text-sm">
@@ -255,17 +290,17 @@ export default function ViewApartmentModal({
                     </div>
                     <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col gap-0.5">
                       <span className="text-gray-400 text-[10px]">Living Space</span>
-                      <span className="font-semibold text-white">{apt.sqft ? `${apt.sqft.toLocaleString()} sqft` : "Inquire"}</span>
+                      <span className={`font-semibold ${apt.sqft ? "text-white" : "text-gray-500"}`}>{apt.sqft ? `${apt.sqft.toLocaleString()} sqft` : "Not specified"}</span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col gap-0.5">
                       <span className="text-gray-400 text-[10px]">Broker Fee</span>
-                      <span className={`font-semibold ${apt.feeStatus?.toLowerCase().includes("no fee") ? "text-emerald-400" : "text-amber-400"}`}>
-                        {apt.feeStatus || "Standard"}
+                      <span className={`font-semibold ${isNoFee(apt.feeStatus) ? "text-emerald-400" : fee ? "text-amber-400" : "text-gray-500"}`}>
+                        {fee || "Not specified"}
                       </span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col gap-0.5">
                       <span className="text-gray-400 text-[10px]">Lease Term</span>
-                      <span className="font-semibold text-white">{apt.leaseTerm || "12 Months"}</span>
+                      <span className={`font-semibold ${apt.leaseTerm ? "text-white" : "text-gray-500"}`}>{apt.leaseTerm || "Not specified"}</span>
                     </div>
                   </div>
                 </div>
@@ -278,7 +313,7 @@ export default function ViewApartmentModal({
                     <Info className="w-3.5 h-3.5 text-blue-400" /> Building & Unit Notes
                   </span>
                   <p className="text-gray-300 text-xs leading-relaxed pt-1">
-                    {apt.notes || "No additional notes specified for this listing."}
+                    {notes || "No additional notes for this listing."}
                   </p>
                 </div>
 
@@ -304,12 +339,13 @@ export default function ViewApartmentModal({
 
           {activeTab === "floorplan" && (
             <div className="flex flex-col gap-4">
-              {apt.floorPlanImageUrl ? (
-                <div className="bg-white rounded-2xl overflow-hidden p-6 flex flex-col items-center justify-center min-h-[380px] shadow-inner relative group/fp">
-                  <img 
-                    src={apt.floorPlanImageUrl} 
-                    alt={`${apt.name} Architectural Floor Plan`} 
+              {floorPlanUrl ? (
+                <div className="bg-white rounded-2xl overflow-hidden p-6 flex flex-col items-center justify-center min-h-[240px] sm:min-h-[380px] shadow-inner relative group/fp">
+                  <SafeImage
+                    src={floorPlanUrl}
+                    alt={`${apt.name} Architectural Floor Plan`}
                     className="max-h-[380px] w-auto object-contain rounded-lg transition-transform duration-300 group-hover/fp:scale-[1.02]"
+                    fallback={<p className="text-sm text-gray-500">Floor plan image could not be loaded.</p>}
                   />
                   <div className="absolute bottom-3 right-3 text-xs bg-black/80 text-white px-3 py-1 rounded-full backdrop-blur-md border border-white/20">
                     {apt.floorPlan} • {apt.sqft ? `${apt.sqft} sqft` : "Architectural Layout"}
@@ -371,7 +407,7 @@ export default function ViewApartmentModal({
                   <PawPrint className="w-5 h-5 text-amber-400 shrink-0" />
                   <div className="flex flex-col">
                     <span className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Pet Policy</span>
-                    <span className="text-xs text-gray-200 font-medium">{apt.petPolicy || "Contact building management"}</span>
+                    <span className={`text-xs font-medium ${apt.petPolicy ? "text-gray-200" : "text-gray-500"}`}>{apt.petPolicy || "Not specified"}</span>
                   </div>
                 </div>
               </div>
@@ -385,8 +421,8 @@ export default function ViewApartmentModal({
                 <span className="text-xs text-gray-400 uppercase font-semibold tracking-wider flex items-center gap-1.5">
                   <TrainFront className="w-3.5 h-3.5 text-blue-400" /> Public Transit & Commute
                 </span>
-                <p className="text-xs text-gray-200 leading-relaxed pt-1">
-                  {apt.transitDetails || "Convenient access to nearby subway and rail stations."}
+                <p className={`text-xs leading-relaxed pt-1 ${transit ? "text-gray-200" : "text-gray-500 italic"}`}>
+                  {transit || "Transit details not available for this listing."}
                 </p>
                 <div className="mt-2 pt-3 border-t border-white/5 flex items-center gap-2 text-xs text-gray-400">
                   <MapPin className="w-3.5 h-3.5 text-blue-400" />
@@ -401,20 +437,22 @@ export default function ViewApartmentModal({
                 </span>
                 
                 <div className="flex flex-col gap-2.5 pt-1">
-                  {apt.contactPhone && (
+                  {phone && (
                     <div className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/5">
                       <div className="flex items-center gap-2 text-xs text-white">
                         <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                        <span>{apt.contactPhone}</span>
+                        <span>{phone}</span>
                       </div>
                       <button
-                        onClick={() => copyToClipboard(apt.contactPhone!, "phone")}
+                        onClick={() => copyToClipboard(phone, "phone")}
                         className="text-[11px] text-gray-400 hover:text-white px-2 py-1 rounded bg-white/5 hover:bg-white/10 flex items-center gap-1 cursor-pointer transition-all"
                       >
                         {copiedField === "phone" ? (
                           <>
                             <Check className="w-3 h-3 text-emerald-400" /> Copied!
                           </>
+                        ) : copyFailed === "phone" ? (
+                          <>Copy failed</>
                         ) : (
                           <>
                             <Copy className="w-3 h-3" /> Copy
@@ -438,6 +476,8 @@ export default function ViewApartmentModal({
                           <>
                             <Check className="w-3 h-3 text-emerald-400" /> Copied!
                           </>
+                        ) : copyFailed === "email" ? (
+                          <>Copy failed</>
                         ) : (
                           <>
                             <Copy className="w-3 h-3" /> Copy
@@ -447,8 +487,10 @@ export default function ViewApartmentModal({
                     </div>
                   )}
 
-                  {!apt.contactPhone && !apt.contactEmail && (
-                    <span className="text-xs text-gray-500 italic">No direct phone/email specified. Use the tour booking link below.</span>
+                  {!phone && !apt.contactEmail && (
+                    <span className="text-xs text-gray-500 italic">
+                      No verified phone or email for this listing.{bookingLink ? " Use Schedule Tour below." : ""}
+                    </span>
                   )}
                 </div>
               </div>
@@ -457,7 +499,7 @@ export default function ViewApartmentModal({
         </div>
 
         {/* Action Footer */}
-        <div className="p-4 border-t border-white/10 bg-[#141414] flex items-center justify-between gap-3 shrink-0">
+        <div className="p-3 sm:p-4 border-t border-white/10 bg-[#141414] flex flex-wrap items-center justify-between gap-2 sm:gap-3 shrink-0 [@media(max-height:600px)]:sticky [@media(max-height:600px)]:bottom-0 z-10">
           <div className="flex items-baseline gap-1.5">
             <span className="text-lg font-bold text-emerald-400">
               ${apt.netEffectiveRent.toLocaleString()}
@@ -466,9 +508,9 @@ export default function ViewApartmentModal({
           </div>
 
           <div className="flex items-center gap-2">
-            {apt.appointmentLink && (
-              <a 
-                href={apt.appointmentLink} 
+            {bookingLink && (
+              <a
+                href={bookingLink}
                 target="_blank" 
                 rel="noreferrer"
                 className="bg-white text-black font-semibold hover:bg-gray-200 transition-all py-2 px-4 rounded-xl flex items-center gap-1.5 text-xs shadow-md cursor-pointer"

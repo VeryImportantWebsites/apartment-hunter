@@ -1,17 +1,22 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { useEffect, useState, useRef, useMemo } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useApartmentStore, Apartment } from "@/store/apartmentStore";
+import { Apartment } from "@/store/apartmentStore";
+import { useFilterStore, useListingView } from "@/store/filterStore";
+import SafeImage from "@/components/SafeImage";
+import { availabilityLabel, feeLabel, formatRating, spreadCoordinates, usableBookingLink } from "@/lib/listing";
 import { Building2, MapPin, Star, Calendar, ChevronLeft, ChevronRight, Eye, ExternalLink, Plus, Minus, Navigation } from "lucide-react";
 
 // Fix Leaflet's default icon issue in Next.js
+// Icons are served from /public/leaflet (copied from the leaflet package) instead of unpkg /
+// raw.githubusercontent.com, so the map does not depend on third-party hosts for its pins.
 const customIcon = new L.Icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconUrl: "/leaflet/marker-icon.png",
+  iconRetinaUrl: "/leaflet/marker-icon-2x.png",
+  shadowUrl: "/leaflet/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -20,8 +25,9 @@ const customIcon = new L.Icon({
 
 // Selected Pin Icon (Gold accent with prominent sizing)
 const selectedIcon = new L.Icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconUrl: "/leaflet/marker-icon-2x.png",
+  shadowUrl: "/leaflet/marker-shadow.png",
+  className: "marker-selected",
   iconSize: [28, 45],
   iconAnchor: [14, 45],
   popupAnchor: [1, -38],
@@ -30,16 +36,21 @@ const selectedIcon = new L.Icon({
 
 function ApartmentPopupCard({
   apt,
-  onViewClick
+  onViewClick,
+  today,
+  untrustedFloorPlans,
 }: {
   apt: Apartment;
   onViewClick?: (id: string) => void;
+  today: Date;
+  untrustedFloorPlans: Set<string>;
 }) {
+  const bookingLink = usableBookingLink(apt.appointmentLink);
   const [activeTab, setActiveTab] = useState<"photo" | "floorplan">("photo");
   const [photoIndex, setPhotoIndex] = useState(0);
 
   const hasPhotos = Boolean(apt.images && apt.images.length > 0);
-  const hasFloorPlan = Boolean(apt.floorPlanImageUrl);
+  const hasFloorPlan = Boolean(apt.floorPlanImageUrl) && !untrustedFloorPlans.has(apt.floorPlanImageUrl!);
 
   const nextPhoto = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -56,16 +67,22 @@ function ApartmentPopupCard({
   };
 
   return (
-    <div className="flex flex-col w-[300px] text-white select-none">
+    <div className="flex flex-col w-[min(300px,calc(100vw-5rem))] text-white select-none">
       {/* Media Header with Photo / Floor Plan tabs */}
       <div className="relative h-44 w-full bg-[#0a0a0a] overflow-hidden group">
         {activeTab === "photo" && hasPhotos ? (
           <>
-            <img
+            <SafeImage
               src={apt.images![photoIndex]}
               alt={`${apt.name} interior`}
               className="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105"
               onClick={() => onViewClick?.(apt.id)}
+              fallback={
+                <div className="w-full h-full flex flex-col items-center justify-center text-gray-500 gap-1 bg-[#111]">
+                  <Building2 className="w-8 h-8 opacity-40" />
+                  <span className="text-xs">Photo unavailable</span>
+                </div>
+              }
             />
             {apt.images!.length > 1 && (
               <>
@@ -163,7 +180,7 @@ function ApartmentPopupCard({
             </h3>
             <div className="flex items-center gap-0.5 shrink-0">
               <Star className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-              <span className="text-xs font-semibold text-white">{apt.ranking}.0</span>
+              <span className="text-xs font-semibold text-white">{formatRating(apt.ranking)}</span>
             </div>
           </div>
 
@@ -184,9 +201,9 @@ function ApartmentPopupCard({
               {apt.sqft.toLocaleString()} sqft
             </span>
           )}
-          {apt.feeStatus && (
+          {feeLabel(apt.feeStatus) && (
             <span className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 font-medium border border-emerald-500/20">
-              {apt.feeStatus}
+              {feeLabel(apt.feeStatus)}
             </span>
           )}
         </div>
@@ -210,7 +227,7 @@ function ApartmentPopupCard({
           {apt.availability && (
             <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-300 font-medium border border-blue-500/30 flex items-center gap-1">
               <Calendar className="w-2.5 h-2.5" />
-              {apt.availability}
+              {availabilityLabel(apt.availability, today)}
             </span>
           )}
         </div>
@@ -225,9 +242,9 @@ function ApartmentPopupCard({
             <Eye className="w-3.5 h-3.5 text-blue-400" />
             View Full Details
           </button>
-          {apt.appointmentLink && (
+          {bookingLink && (
             <a
-              href={apt.appointmentLink}
+              href={bookingLink}
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white border border-white/10 transition-all flex items-center justify-center"
@@ -242,21 +259,16 @@ function ApartmentPopupCard({
   );
 }
 
-// A component to recenter the map if needed
-function ChangeView({ center, zoom }: { center: [number, number]; zoom: number }) {
-  const map = useMap();
-  map.setView(center, zoom);
-  return null;
-}
 
-function MapControls({ totalCount }: { totalCount: number }) {
+function MapControls({ shownCount, totalCount }: { shownCount: number; totalCount: number }) {
   const map = useMap();
+  const popupOpen = useFilterStore((s) => s.popupOpen);
 
   return (
-    <div className="absolute top-4 right-4 z-[400] flex flex-col items-end gap-2 pointer-events-auto">
+    <div className={`absolute top-4 right-4 z-[400] flex flex-col items-end gap-2 pointer-events-auto ${popupOpen ? "max-sm:hidden" : ""}`}>
       <div className="glass-panel px-3.5 py-1.5 rounded-full flex items-center gap-2 text-xs font-semibold text-white shadow-2xl border border-white/10">
         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-        <span>{totalCount} Units Tracked</span>
+        <span>{shownCount === totalCount ? `${totalCount} Units Tracked` : `${shownCount} of ${totalCount} Units`}</span>
       </div>
 
       <div className="glass-panel p-1 rounded-xl flex flex-col gap-1 shadow-2xl border border-white/10">
@@ -289,6 +301,32 @@ function MapControls({ totalCount }: { totalCount: number }) {
     </div>
   );
 }
+
+// Tracks whether a popup is open so phone-sized layouts can move overlapping controls aside.
+function PopupTracker() {
+  const setPopupOpen = useFilterStore((s) => s.setPopupOpen);
+  useMapEvents({
+    popupopen: () => setPopupOpen(true),
+    popupclose: () => setPopupOpen(false),
+  });
+  return null;
+}
+
+// CARTO raster basemaps now need a free key (keyless tiles come back as an "API KEY REQUIRED"
+// image, blind QA #2). With NEXT_PUBLIC_CARTO_API_KEY set we use CARTO dark_all; without it we
+// fall back to keyless OpenStreetMap tiles, darkened in CSS (.tiles-dark in globals.css).
+const CARTO_KEY = process.env.NEXT_PUBLIC_CARTO_API_KEY;
+const TILES = CARTO_KEY
+  ? {
+      url: `https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}{r}.png?key=${CARTO_KEY}`,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      className: "",
+    }
+  : {
+      url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      className: "tiles-dark",
+    };
 
 export interface FocusCommand {
   id: string;
@@ -346,17 +384,12 @@ export default function Map({
   onSelectPin?: (apt: Apartment) => void;
   onViewClick?: (id: string) => void;
 }) {
-  const [mounted, setMounted] = useState(false);
-  const { apartments } = useApartmentStore();
+  const { visible, total, today, untrustedFloorPlans } = useListingView();
   const markerRefs = useRef<Record<string, L.Marker>>({});
+  // Spread listings that share exact coordinates so each pin can be picked.
+  const positions = useMemo(() => spreadCoordinates(visible), [visible]);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <div className="w-full h-full bg-[#050505] animate-pulse" />;
-  }
+  // No mounted guard needed: page.tsx loads this component with dynamic(..., { ssr: false }).
 
   // Default to Long Island City coordinates
   const defaultCenter: [number, number] = [40.7447, -73.9485];
@@ -369,18 +402,16 @@ export default function Map({
         className="w-full h-full"
         zoomControl={false}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-        />
-        <MapControls totalCount={apartments.length} />
+        <TileLayer attribution={TILES.attribution} url={TILES.url} className={TILES.className} />
+        <MapControls shownCount={visible.length} totalCount={total} />
+        <PopupTracker />
         <MapController focusCommand={focusCommand} markerRefs={markerRefs} />
-        {apartments.map((apt) => {
+        {visible.map((apt) => {
           const isSelected = selectedId === apt.id;
           return (
             <Marker
               key={apt.id}
-              position={apt.coordinates}
+              position={positions.get(apt.id) ?? apt.coordinates}
               icon={isSelected ? selectedIcon : customIcon}
               zIndexOffset={isSelected ? 1000 : 0}
               ref={(ref) => {
@@ -396,8 +427,14 @@ export default function Map({
                 }
               }}
             >
-              <Popup className="premium-popup" minWidth={300} maxWidth={320}>
-                <ApartmentPopupCard apt={apt} onViewClick={onViewClick} />
+              <Popup
+                className="premium-popup"
+                minWidth={260}
+                maxWidth={320}
+                autoPanPaddingTopLeft={[16, 88]}
+                autoPanPaddingBottomRight={[16, 16]}
+              >
+                <ApartmentPopupCard apt={apt} onViewClick={onViewClick} today={today} untrustedFloorPlans={untrustedFloorPlans} />
               </Popup>
             </Marker>
           );
