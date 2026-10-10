@@ -438,6 +438,11 @@ export default function ViewApartmentModal({
                   <MapPin className="w-3.5 h-3.5 text-blue-400" />
                   <span>{apt.address}</span>
                 </div>
+                {apt.locationUnverified && (
+                  <p className="text-[11px] text-amber-300/80">
+                    Map location unverified: this address could not be matched to a map position, so it is not shown on the map.
+                  </p>
+                )}
               </div>
 
               {/* Contact Information with copy buttons */}

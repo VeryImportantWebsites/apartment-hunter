@@ -411,7 +411,9 @@ export default function Map({
   const { visible, total, today, untrustedFloorPlans, untrustedSqft } = useListingView();
   const markerRefs = useRef<Record<string, L.Marker>>({});
   // Spread listings that share exact coordinates so each pin can be picked.
-  const positions = useMemo(() => spreadCoordinates(visible), [visible]);
+  // Listings whose pin is known to be wrong (locationUnverified) are not drawn.
+  const mapped = useMemo(() => visible.filter((a) => !a.locationUnverified), [visible]);
+  const positions = useMemo(() => spreadCoordinates(mapped), [mapped]);
 
   // No mounted guard needed: page.tsx loads this component with dynamic(..., { ssr: false }).
 
@@ -431,7 +433,7 @@ export default function Map({
         <PopupTracker />
         <FitToResults positions={positions} filtered={visible.length < total} />
         <MapController focusCommand={focusCommand} markerRefs={markerRefs} />
-        {visible.map((apt) => {
+        {mapped.map((apt) => {
           const isSelected = selectedId === apt.id;
           return (
             <Marker

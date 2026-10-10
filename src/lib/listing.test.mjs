@@ -159,3 +159,15 @@ test("prices are formatted with thousands separators", () => {
   assert.equal(formatMoney(3250), "$3,250");
   assert.equal(formatMoney(3483.4), "$3,483");
 });
+
+test("re-run F2/F5: units of one building share a location, and pins sit on the right side of the river", () => {
+  const isNJ = (a) => /\b(NJ|Jersey City|Hoboken|Weehawken)\b/.test(a.address);
+  const km = ([a, b], [c, d]) => Math.hypot((a - c) * 111, (b - d) * 111 * Math.cos((a * Math.PI) / 180));
+  // A New York address pinned deep in New Jersey (or the reverse) must be flagged unverified.
+  const wrongSide = DATA.filter((a) => !a.locationUnverified && (isNJ(a) ? a.coordinates[1] > -73.99 : a.coordinates[1] < -74.035));
+  assert.deepEqual(wrongSide.map((a) => a.name), []);
+  const pacific = DATA.filter((a) => a.address.startsWith("328 Pacific Avenue"));
+  const spread = Math.max(...pacific.flatMap((x) => pacific.map((y) => km(x.coordinates, y.coordinates))));
+  assert.ok(spread < 0.05, `328 Pacific units ${spread.toFixed(2)} km apart`);
+  assert.deepEqual(DATA.filter((a) => a.locationUnverified).map((a) => a.name), ["1065 Second Avenue #6L"]);
+});
