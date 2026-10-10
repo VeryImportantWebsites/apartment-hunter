@@ -1,7 +1,7 @@
 "use client";
 
-import { Plus, Building2, MapPin, Star, ArrowUpDown, Pencil, Search, X, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { Plus, Building2, MapPin, Star, StarHalf, ArrowUpDown, Pencil, Search, X, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 import { useFilterStore, useListingView } from "@/store/filterStore";
 import SafeImage from "@/components/SafeImage";
 import {
@@ -11,18 +11,29 @@ import {
   availabilityLabel,
   effectiveAvailability,
   feeLabel,
-  filledStars,
   formatMoney,
+  starParts,
+  toggleQuick,
   monthLabel,
 } from "@/lib/listing";
 
 export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAddClick: () => void, onEditClick: (id: string) => void, onViewClick: (id: string) => void }) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const isCollapsed = useFilterStore((st) => st.panelCollapsed);
+  const setIsCollapsed = useFilterStore((st) => st.setPanelCollapsed);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const filters = useFilterStore((st) => st.filters);
   const setFilters = useFilterStore((st) => st.setFilters);
   const resetFilters = useFilterStore((st) => st.resetFilters);
   const popupOpen = useFilterStore((st) => st.popupOpen);
-  const { visible: sortedApartments, total, months, today, untrustedSqft } = useListingView();
+  const { visible: sortedApartments, total, months, today, untrustedSqft, untrustedImages } = useListingView();
+
+  // A filter change shows the new list from its first (best) result, not the old scroll position
+  // (blind QA run 3, F11). On short screens the whole panel scrolls, so reset both.
+  useEffect(() => {
+    listRef.current?.scrollTo({ top: 0 });
+    panelRef.current?.scrollTo({ top: 0 });
+  }, [filters]);
   const filteredApartments = sortedApartments;
   const searchQuery = filters.search;
   const isFiltered = JSON.stringify(filters) !== JSON.stringify(DEFAULT_FILTERS);
@@ -57,7 +68,7 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
   ];
 
   return (
-    <div data-list-panel className="absolute top-4 left-4 z-10 w-[calc(100vw-2rem)] sm:w-[410px] max-h-[calc(100dvh-2rem)] max-sm:max-h-[calc(100dvh-12rem)] flex flex-col glass-panel-elevated rounded-2xl overflow-hidden [@media(max-height:560px)]:overflow-y-auto shadow-2xl border border-white/10 transition-all duration-300">
+    <div ref={panelRef} data-list-panel className="absolute top-4 left-4 z-10 w-[calc(100vw-2rem)] sm:w-[410px] max-h-[calc(100dvh-2rem)] max-sm:max-h-[calc(100dvh-12rem)] flex flex-col glass-panel-elevated rounded-2xl overflow-hidden [@media(max-height:560px)]:overflow-y-auto shadow-2xl border border-white/10 transition-all duration-300">
       {/* Header */}
       <div className="p-4 border-b border-white/5 flex flex-col gap-3 shrink-0">
         <div className="flex items-center justify-between">
@@ -115,11 +126,11 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
         {/* Quick Filter Pills */}
         <div className="flex flex-wrap items-center gap-1.5">
           {quickPills.map((pill) => {
-            const isActive = filters.quick === pill.id;
+            const isActive = pill.id === "all" ? filters.quick.length === 0 : filters.quick.includes(pill.id);
             return (
               <button
                 key={pill.id}
-                onClick={() => setFilters({ quick: pill.id })}
+                onClick={() => setFilters({ quick: toggleQuick(filters.quick, pill.id) })}
                 aria-pressed={isActive}
                 className={`pill-filter text-[11px] font-medium whitespace-nowrap px-2.5 py-1 rounded-full border cursor-pointer ${
                   isActive
@@ -174,7 +185,7 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
       </div>
 
       {/* List */}
-      <div className="flex-1 overflow-y-auto [@media(max-height:560px)]:overflow-visible [@media(max-height:560px)]:flex-none p-4 flex flex-col gap-3">
+      <div ref={listRef} className="flex-1 overflow-y-auto [@media(max-height:560px)]:overflow-visible [@media(max-height:560px)]:flex-none p-4 flex flex-col gap-3">
         {sortedApartments.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12 text-gray-500 gap-3 text-center px-4">
             <Building2 className="w-12 h-12 opacity-20" />
@@ -199,7 +210,7 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
                 {/* Thumbnail */}
                 <div className="w-20 h-20 shrink-0 rounded-lg overflow-hidden bg-[#0d0d0d] border border-white/10 relative">
                   <SafeImage
-                    src={apt.images?.[0]}
+                    src={apt.images?.find((u) => !untrustedImages.has(u))}
                     alt={apt.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     fallback={
@@ -229,15 +240,13 @@ export default function Sidebar({ onAddClick, onEditClick, onViewClick }: { onAd
                       >
                         <Pencil className="w-3.5 h-3.5" />
                       </button>
-                      <div className="flex gap-0.5">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-3.5 h-3.5 ${
-                              i < filledStars(apt.ranking) ? "text-yellow-400 fill-yellow-400" : "text-gray-700"
-                            }`}
-                          />
-                        ))}
+                      <div className="flex gap-0.5" title={`Rated ${apt.ranking} of 5`} aria-label={`Rated ${apt.ranking} of 5`}>
+                        {Array.from({ length: 5 }).map((_, i) => {
+                          const { full, half } = starParts(apt.ranking);
+                          if (i < full) return <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />;
+                          if (i === full && half) return <StarHalf key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />;
+                          return <Star key={i} className="w-3.5 h-3.5 text-gray-700" />;
+                        })}
                       </div>
                     </div>
                   </div>

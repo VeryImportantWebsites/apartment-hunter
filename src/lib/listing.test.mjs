@@ -9,6 +9,7 @@ import {
   usablePhone, usableBookingLink, publicNotes, usableTransit, untrustedFloorPlanUrls,
   spreadCoordinates, visibleListings, matchesFilters, DEFAULT_FILTERS,
   filtersToQuery, filtersFromQuery, leaseLabel, untrustedSqftIds, formatMoney,
+  toggleQuick, starParts, untrustedImageUrls, validateListingInput,
 } from "./listing.ts";
 
 const TODAY = new Date(2026, 9, 10); // 2026-10-10, the day of the blind run
@@ -53,7 +54,9 @@ test("#3: month options are derived from data and never list a past month", () =
 test("#6 F4: rating shows one decimal, never '4.7.0'; stars do not round up", () => {
   assert.equal(formatRating(4.7), "4.7");
   assert.equal(formatRating(4), "4.0");
-  assert.equal(filledStars(4.7), 4);
+  assert.deepEqual(starParts(4.7), { full: 4, half: true });   // 4.7 must not look like 4.0 (run 3 F4)
+  assert.deepEqual(starParts(4.0), { full: 4, half: false });
+  assert.deepEqual(starParts(4.8), { full: 5, half: false });
   assert.equal(filledStars(5), 5);
   assert.ok(DATA.every((a) => !formatRating(a.ranking).includes(".0.")));
 });
@@ -61,7 +64,7 @@ test("#6 F4: rating shows one decimal, never '4.7.0'; stars do not round up", ()
 test("#6: 'No Fee' chip matches every spelling in the data", () => {
   for (const s of ["No Fee", "no-fee", "No-fee"]) assert.equal(isNoFee(s), true, s);
   assert.equal(isNoFee("Broker fee 1 month"), false);
-  const noFee = visibleListings(DATA, { ...DEFAULT_FILTERS, quick: "nofee" }, TODAY);
+  const noFee = visibleListings(DATA, { ...DEFAULT_FILTERS, quick: ["nofee"] }, TODAY);
   assert.equal(noFee.length, DATA.filter((a) => isNoFee(a.feeStatus)).length);
   assert.equal(noFee.length, 420); // 397 + 15 + 8; the old includes("no fee") found 397
 });
@@ -72,7 +75,7 @@ test("#6: bed chips match '1 Bed / 1 Bath' as well as '1B'", () => {
   assert.equal(bedrooms("1 Bed / 1.5 Bath"), 1);
   assert.equal(bedrooms("2 Bed / 2 Bath"), 2);
   assert.equal(bedrooms("Studio"), "studio");
-  const one = visibleListings(DATA, { ...DEFAULT_FILTERS, quick: "1b" }, TODAY);
+  const one = visibleListings(DATA, { ...DEFAULT_FILTERS, quick: ["1b"] }, TODAY);
   assert.equal(one.length, 269 + 7 + 1);
 });
 
@@ -125,7 +128,7 @@ test("#5: map and list share one filter result (search 'Halladay' → 1)", () =>
 });
 
 test("#5 F10: filters and the open listing round-trip through the URL", () => {
-  const f = { search: "pine", quick: "under3500", availability: "2026-11", sort: "name" };
+  const f = { search: "pine", quick: ["under3500", "1b"], availability: "2026-11", sort: "name" };
   const q = filtersToQuery(f, "apt-1");
   const back = filtersFromQuery(q);
   assert.deepEqual(back.filters, f);
@@ -170,4 +173,37 @@ test("re-run F2/F5: units of one building share a location, and pins sit on the 
   const spread = Math.max(...pacific.flatMap((x) => pacific.map((y) => km(x.coordinates, y.coordinates))));
   assert.ok(spread < 0.05, `328 Pacific units ${spread.toFixed(2)} km apart`);
   assert.deepEqual(DATA.filter((a) => a.locationUnverified).map((a) => a.name), ["1065 Second Avenue #6L"]);
+});
+
+test("run 3 F9: chips combine; bed chips replace each other; 'All' clears", () => {
+  let q = toggleQuick([], "under3500");
+  q = toggleQuick(q, "1b");
+  assert.deepEqual(q, ["under3500", "1b"]);
+  assert.deepEqual(toggleQuick(q, "2b"), ["under3500", "2b"]);
+  assert.deepEqual(toggleQuick(q, "1b"), ["under3500"]);
+  assert.deepEqual(toggleQuick(q, "all"), []);
+  const both = visibleListings(DATA, { ...DEFAULT_FILTERS, quick: q }, TODAY);
+  assert.ok(both.length > 0 && both.every((a) => bedrooms(a.floorPlan) === 1 && a.netEffectiveRent < 3500));
+  assert.ok(both.some((a) => a.name === "19 Dutch"));
+});
+
+test("run 3 F6: a photo used by more than one building is not trusted", () => {
+  const bad = untrustedImageUrls(DATA);
+  const e36 = DATA.find((a) => a.name === "162 East 36th Street #5H");
+  const degraw = DATA.find((a) => a.name === "500 Degraw Street #403");
+  const shared = e36.images.filter((u) => degraw.images.includes(u));
+  assert.ok(shared.length > 0 && shared.every((u) => bad.has(u)));
+  // units of ONE building may share photos
+  const ok = untrustedImageUrls([
+    { ...e36, id: "a", address: "1 X St #1, New York, NY", images: ["p"] },
+    { ...e36, id: "b", address: "1 X St #2, New York, NY", images: ["p"] },
+  ]);
+  assert.equal(ok.size, 0);
+});
+
+test("run 3 F1/F3: the form rejects bad numbers and accepts a 4.7 rating", () => {
+  assert.ok(validateListingInput({ rentBase: -500, rentMonthsFree: 0, ranking: 5 }).rentBase);
+  assert.ok(validateListingInput({ rentBase: 3000, rentMonthsFree: 20, ranking: 5, leaseTerm: "12 months" }).rentMonthsFree);
+  assert.ok(validateListingInput({ rentBase: 3000, rentMonthsFree: 1, ranking: 6 }).ranking);
+  assert.deepEqual(validateListingInput({ rentBase: 2000, rentMonthsFree: 1, ranking: 4.7, leaseTerm: 12 }), {});
 });
