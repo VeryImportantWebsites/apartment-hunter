@@ -66,7 +66,7 @@ test("#6: 'No Fee' chip matches every spelling in the data", () => {
   assert.equal(isNoFee("Broker fee 1 month"), false);
   const noFee = visibleListings(DATA, { ...DEFAULT_FILTERS, quick: ["nofee"] }, TODAY);
   assert.equal(noFee.length, DATA.filter((a) => isNoFee(a.feeStatus)).length);
-  assert.equal(noFee.length, 420); // 397 + 15 + 8; the old includes("no fee") found 397
+  assert.equal(noFee.length, 440); // 420 + 20 new listings; the old includes("no fee") found 397
 });
 
 test("#6: bed chips match '1 Bed / 1 Bath' as well as '1B'", () => {
@@ -76,7 +76,7 @@ test("#6: bed chips match '1 Bed / 1 Bath' as well as '1B'", () => {
   assert.equal(bedrooms("2 Bed / 2 Bath"), 2);
   assert.equal(bedrooms("Studio"), "studio");
   const one = visibleListings(DATA, { ...DEFAULT_FILTERS, quick: ["1b"] }, TODAY);
-  assert.equal(one.length, 269 + 7 + 1);
+  assert.equal(one.length, 269 + 7 + 1 + 15);
 });
 
 test("#7 F11: N/A and 555 phones and Wikipedia 'tour' links are treated as missing", () => {
